@@ -1,0 +1,91 @@
+/* LOGIN FORM Decoration */
+.form-elegant .font-small {
+    font-size: 0.8rem; }
+
+.form-elegant .z-depth-1a {
+    -webkit-box-shadow: 0 2px 5px 0 rgba(55, 161, 255, 0.26), 0 4px 12px 0 rgba(121, 155, 254, 0.25);
+    box-shadow: 0 2px 5px 0 rgba(55, 161, 255, 0.26), 0 4px 12px 0 rgba(121, 155, 254, 0.25); }
+
+.form-elegant .z-depth-1-half,
+.form-elegant .btn:hover {
+    -webkit-box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15);
+    box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15); }
+
+.form-elegant .modal-header {
+    border-bottom: none; }
+
+.modal-dialog .form-elegant .btn .fab {
+    color: #2196f3!important; }
+
+.form-elegant .modal-body, .form-elegant .modal-footer {
+    font-weight: 400; }
+
+/*======================================================================*/
+
+.modal-join-classroom {
+    color: #636363;
+    width: 350px;
+    margin: 30px auto;
+}
+.modal-join-classroom .modal-content {
+    padding: 20px;
+    border-radius: 5px;
+    border: none;
+}
+.modal-join-classroom .modal-header {
+    border-bottom: none;
+    position: relative;
+    justify-content: center;
+}
+.modal-join-classroom h4 {
+    text-align: center;
+    font-size: 26px;
+}
+.modal-join-classroom  .form-group {
+    position: relative;
+}
+.modal-join-classroom i {
+    position: absolute;
+    left: 13px;
+    top: 11px;
+    font-size: 18px;
+}
+.modal-join-classroom .form-control {
+    padding-left: 40px;
+}
+.modal-join-classroom .form-control:focus {
+    border-color: #00ce81;
+}
+.modal-join-classroom .form-control, .modal-join-classroom .btn {
+    min-height: 40px;
+    border-radius: 3px;
+}
+.modal-join-classroom .hint-text {
+    text-align: center;
+    padding-top: 10px;
+}
+.modal-join-classroom .close {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}
+.modal-join-classroom .btn {
+    background: #00ce81;
+    border: none;
+    line-height: normal;
+}
+.modal-join-classroom .btn:hover, .modal-join-classroom .btn:focus {
+    background: #00bf78;
+}
+.modal-join-classroom .modal-footer {
+    background: #ecf0f1;
+    border-color: #dee4e7;
+    text-align: center;
+    margin: 0 -20px -20px;
+    border-radius: 5px;
+    font-size: 13px;
+    justify-content: center;
+}
+.modal-join-classroom .modal-footer a {
+    color: #999;
+}

@@ -1,0 +1,47 @@
+/*Set visibility for icon*/
+.fa-check-circle {
+    visibility: hidden;
+}
+
+.fa-exclamation-circle{
+    visibility: hidden;
+}
+
+/*Change small(text) behavior upon success or error*/
+.wrap-input100 small{
+    color: red;
+    position: absolute;
+    visibility: hidden;
+}
+
+.wrap-input100.error small{
+    color: red;
+
+    visibility: visible;
+}
+
+/*Change border upon success or error*/
+.wrap-input100.success .input100{
+    border: 2px solid greenyellow;
+}
+
+.wrap-input100.error .input100{
+    border:2px solid red;
+}
+
+/*Change icon behavior upon success or error*/
+.wrap-input100.success .fa-check-circle{
+    visibility: visible;
+    color: greenyellow;
+
+}
+.wrap-input100.error .fa-exclamation-circle{
+    visibility: visible;
+    color : red;
+}
+
+
+
+
+
+

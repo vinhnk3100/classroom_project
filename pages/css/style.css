@@ -1,0 +1,894 @@
+/* Logo top style */
+/* Body background color */
+body{
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* NAVBAR top images */
+.navbar-brand img{
+    width: 40px;
+    height: 40px;
+}
+
+/* Image preview in class modal*/
+#image-class-preview{
+    margin-top: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+#images-class-background{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* Font top */
+.nav-link{
+    font-weight: bold;
+    font-size: 18px;
+    font-family: Calibri;
+}
+
+.navbar{
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.67),rgb(255, 255, 255),rgb(255, 255, 255),rgb(255, 255, 255),rgb(255, 255, 255), rgba(0, 0, 0, 0.44));
+}
+
+/* CSS CARD */
+.card-size {
+    width: 340px;
+    height: 250px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.card{
+    border-radius: 12px;
+    box-shadow: 6px 6px 10px rgb(0, 0, 0);
+    background-color: unset;
+}
+
+.card:hover {
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+}
+
+.card-body{
+    position: absolute;
+    bottom: 0;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.07);
+    width: 100%;
+    padding: unset;
+    padding-left: 20px;
+}
+
+.card-creator{
+    color: #ffffff;
+}
+
+.col-3 {
+    margin-bottom: 60px;
+    max-width: unset;
+    width: unset;
+}
+
+.card-title{
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    font-family: Calibri;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.margin_bottom_card {
+    margin-bottom: 30px;
+}
+
+.rounded-circle {
+    width: 100px;
+    height: 80px;
+    position: absolute;
+    margin-top: 5%;
+    margin-left: 60%;
+}
+
+
+
+/* Image -- Card view */
+.p-3 {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Class name*/
+.truncate {
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Login alert */
+.alertLogin {
+    font-weight: bold;
+    margin-top: 30px;
+    font-size: 18px;
+    color: red;
+}
+
+
+
+/* Avatar profile */
+.avatar-profile {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: 0.2s ease-in-out;
+}
+
+.avatar-profile:hover{
+    transition: 0.2s ease-in-out;
+    box-shadow: 0px 0px 20px #00901e;
+}
+
+.circle{
+    margin-right: 50px;
+}
+
+.text-align-profile {
+    transition: 0.2s ease-in-out;
+    text-decoration: none;
+    font-family: Calibri;
+    color: black;
+    font-weight: 400;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.text-align-profile:hover {
+    transition: 0.2s ease-in-out;
+    text-decoration: none;
+    color: #368b00;
+}
+
+/* CONTAINER BODY */
+
+.container-background{
+    background-image: url("images/wood-background-realistic_107791-102.png");
+}
+
+
+
+.container {
+    max-width: unset;
+    padding-left: 80px;
+    padding-right: 80px;
+    margin-top: -30px;
+}
+
+
+/* AVATAR */
+:root {
+    --avatar-size: 60px;
+    /* change this value anything, e.g., 100px, 10rem, etc. */
+}
+
+.circle {
+    background-color: #ccc;
+    border-radius: 50%;
+    height: var(--avatar-size);
+    text-align: center;
+    width: var(--avatar-size);
+}
+
+.initials {
+    font-size: calc(var(--avatar-size) / 2); /* 50% of parent */
+    line-height: 1;
+    position: relative;
+    top: calc(var(--avatar-size) / 4); /* 25% of parent */
+}
+
+/* PROGRESS BAR FOR STRENGTH PASSWORD*/
+
+progress {
+    width: 100%;
+    height: 3px;
+    background: #ccc;
+}
+
+progress[value="25"]::-webkit-progress-value {
+    background: red;
+}
+
+progress[value="50"]::-webkit-progress-value {
+    background: yellow;
+}
+
+progress[value="75"]::-webkit-progress-value {
+    background: #ffb700;
+}
+
+progress[value="100"]::-webkit-progress-value {
+    background: #008000;
+}
+
+/* BUTTON CLASS */
+
+    /* Input */
+.wrap-input100-setsize {
+    margin-bottom: unset;
+}
+
+.fa-margin {
+    margin-bottom: 20px;
+}
+
+.back-btn {
+    font-family: Montserrat-Bold;
+    font-size: 22px;
+    line-height: 1.5;
+    color: #fff;
+    text-transform: uppercase;
+
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    background: rgb(255, 135, 0);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 25px;
+
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.back-btn:hover {
+    background: rgb(208, 116, 0);
+}
+
+.manage-btn{
+    float: right;
+}
+
+.color-red{
+    border: 1px solid #ac0000;
+    color: red;
+}
+
+.color-red:hover{
+    border: 1px solid #ac0000;
+    background-color: #e80000;
+    color: white;
+}
+
+
+.color-orange{
+    border: 1px solid #ac5f00;
+    color: #ff9900;
+}
+
+.color-orange:hover{
+    border: 1px solid #ac5f00;
+    background-color: #e87800;
+    color: white;
+}
+
+/* danh sách giáo viên và học sinh */
+/* chia 3 cột */
+/* canh giữa */
+div.center
+{
+    margin: 0 auto;
+    max-width: 70rem;
+    padding: 1.5rem 1.5rem;
+}
+
+div.divline
+{
+    border-bottom: 1.5px solid #129eaf;
+    margin-bottom: 0.25rem;
+    padding-left: 1rem;
+    height: 4.5rem;
+}
+.colorlist{
+    color: #007b83;
+}
+.giaovien, .hocsinh
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 2.5rem;
+}
+.tex
+{
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: grey;
+}
+
+/*table position mở rộng */
+.te
+{
+    position: relative;
+    border-collapse: collapse;
+    width: 100%;
+}
+/*table position */
+.tp
+{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: 0.5rem;
+    max-width: 30rem;
+}
+/*font chữ của từng người*/
+.tf
+{
+    transition: 0.2s ease-in-out;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    line-height: 1.25rem;
+    color: #3c4043;
+}
+
+.tf:hover
+{
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+    color: #257d00;
+}
+/* kích thước, hình dáng img */
+.imgcc
+{
+    border-radius: 50%;
+    padding: 5px;
+    width: 50px;
+}
+/* thân của table */
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr
+{
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+.trex
+{
+    border-top: .0625rem solid #e0e0e0;
+    height: 3.75rem;
+}
+td
+{
+    display: table-cell;
+    vertical-align: inherit;
+}
+.tdex
+{
+    border: .0625rem solid #e0e0e0;
+    padding: 0.5rem;
+}
+
+/* Class interface*/
+.classuis
+{
+    margin: 0 auto;
+    margin-top: 30px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    width: -webkit-calc(100% - 2*1.5rem);
+    width: calc(100% - 2*1.5rem);
+    max-width: 62.5rem;
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.63);
+    border-radius: 6px;
+}
+
+/* thuộc tính Ui */
+.classui
+{
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149);
+}
+/* thuộc tính box*/
+.classuib
+{
+    height: 15rem;
+    width: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0.5rem;
+}
+/* thuộc tính image */
+.classuibi
+{
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.classuibb
+{
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: .8;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+/* thuộc tính chủ đề(lớp) trong image*/
+.classuibt
+{
+    position: absolute;
+    top: 0px;
+    left: 25px; 
+    height: 15rem;
+    width: 95%;
+    text-align: left;
+}
+
+.classuib1
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.25rem;
+    font-weight: 500;
+    line-height: 2.75rem;
+    color: #fff;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+}
+
+.classuib2
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.375rem;
+    font-weight: 400;
+    line-height: 1.75rem;
+    color: #fff;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+}
+
+.classuib3
+{
+    background-color: rgba(255, 255, 255, 0.46);
+    padding: 20px;
+    margin-top: 34px;
+    display: inline-flex;
+    align-items: center;
+    float: right;
+    border-radius: 10px;
+    letter-spacing: .01428571em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 1.25rem;
+    text-shadow: 2px 2px 5px black;
+}
+
+.custom_image_text{
+    float: right;
+    padding-right: 20px;
+    letter-spacing: .01428571em;
+    font-size: 32px;
+}
+
+.classuib3-1
+{
+    color: #ffffff;
+    margin-right: 0.5rem;
+}
+
+.classuib4
+{
+    background-color: #fff;
+    padding: 1.5rem;
+}
+
+.classuib4-1
+{
+    letter-spacing: .01428571em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    line-height: 1.25rem;
+    color: #3c4043;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+}
+em
+{
+    font-weight: 500;
+    font-style: normal;
+    font-weight: bold;
+}
+
+svg
+{
+    width: 24px;
+    height: 24px;
+}
+svg:not(:root) {
+    overflow: hidden;
+}
+.svgclass
+{
+    fill: currentColor;
+    flex-shrink: 0;
+    line-height: 0;
+    color: #fff;
+    cursor: default;
+}
+
+
+div
+{
+    display: block;
+}
+/*  */
+
+
+.classuib-1aba
+{
+    letter-spacing: .01428571em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    color: #3c4043;
+    cursor: pointer;
+}
+.classpan
+{
+    font-size: .0625rem;
+    height: .0625rem;
+    line-height: 1;
+    opacity: .001;
+    overflow: hidden;
+    position: absolute;
+    width: .0625rem;
+}
+.imgcd
+{
+    height: auto;
+    width: auto;
+    cursor: pointer;
+}
+
+/* Comment part */
+.classuib5
+{
+    background-color: #fff;
+    border: .0625rem solid #dadce0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin: 1rem;
+}
+.classuib5-1
+{
+    padding: 0.5rem 0;
+}
+.classuib5-2
+{
+    padding: 0.5rem 0;
+    cursor: pointer;
+}
+.classuib5-1a
+{
+    height: 6rem;
+    padding-right: 0.5rem;
+    white-space: nowrap;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 6px;
+}
+.avatar-icon
+{
+    background-color: #5befff;
+    color: #fff;
+    fill: #fff;
+    align-items: center;
+    display: flex;
+    border-radius: 50%;
+    cursor: default;
+    flex-shrink: 0;
+    height: 2.5rem;
+    line-height: 0;
+    margin: 0 1rem 0 1.5rem;
+    width: 2.5rem;
+    white-space: nowrap;
+    justify-content: center;
+    text-align: center;
+}
+.avatar-icon:active
+{
+    position:relative;
+}
+
+div
+{
+    display: block;
+}
+/*text-area  */
+
+div.enter_button
+{
+    display:inline-block;
+    position:relative;
+}
+.enter_button
+{
+    height: 2.5rem;
+    cursor: pointer;
+    width: 200%;
+}
+.classpan
+{
+    font-size: .0625rem;
+    height: .0625rem;
+    line-height: 1;
+    opacity: .001;
+    overflow: hidden;
+    position: absolute;
+    width: .0625rem;
+}
+.imgcd
+{
+    cursor: pointer;
+    background-color: #5befff;
+    align-items: center;
+    display: flex;
+    border-radius: 50%;
+    cursor: default;
+    flex-shrink: 0;
+    height: 2.5rem;
+    line-height: 0;
+    width: 2.5rem;
+    white-space: nowrap;
+    justify-content: center;
+    text-align: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+;
+}
+button.collapsible
+{
+    padding: 0 0 0 0;
+    border: none;
+}
+.collapsible {
+    cursor: pointer;
+    height:fit-content;
+    width: 100%;
+    text-align: left;
+    position: relative;
+}
+/*.collapsible:hover
+{
+    background-color:#5befff;
+}*/
+
+input[type=submit]
+{
+    width: 50%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#comment_textarea
+{
+    width: 75%;
+    border: 2px solid #b3b3b3;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 0.5rem;
+    display:inline-block;
+    font-size: 20px;
+    position: absolute;
+    outline: none;
+    resize: none;
+    padding-left: 0.5rem;
+}
+.myButton {
+    box-shadow:inset 0px 1px 0px 0px #dcecfb;
+    background:linear-gradient( bottom, #bddbfa 5%, #80b5ea 100%);
+    background-color:#bddbfa;
+    border-radius:6px;
+    border:1px solid #84bbf3;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:18px;
+    font-weight:bold;
+    padding: 0.5rem;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #528ecc;
+    position: relative;
+    float: right;
+}
+.myButton:hover {
+    background:linear-gradient(bottom, #80b5ea 5%, #bddbfa 100%);
+    text-decoration:none;
+    background-color:#80b5ea;
+}
+.myButton:active {
+    position:relative;
+    top:1px;
+}
+.nav_bar_2
+{
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    max-width: 100%;
+    white-space: nowrap;
+}
+.nav_bar_2_item
+{
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+    height: 100%;
+}
+.nav_bar_2_text_a
+{
+    display: flex;
+    position: relative;
+    color: #007b83;
+    height: 4rem;
+    padding: 1rem 2rem 1rem 2rem;
+    text-decoration: none;
+    box-sizing: border-box;
+    border-bottom: solid 1.5px;
+    letter-spacing: .01785714em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    text-transform: none;
+    white-space: nowrap;
+    border-color:#007b83;
+    cursor: pointer;
+    text-align: center;
+}
+.nav_bar_2_text_a:hover
+{
+    background-color: #d8d8d8;
+}
+.nav_bar_2_text_a:focus
+{
+    display: flex;
+    position: relative;
+    color: #02464b;
+    height: 4rem;
+    padding: 1rem 2rem 1rem 2rem;
+    text-decoration: none;
+    box-sizing: border-box;
+    border-bottom: solid 1.5px;
+    letter-spacing: .01785714em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    text-transform: none;
+    white-space: nowrap;
+    border-color: #02464b;
+    cursor: pointer;
+    text-align: center;
+}
+.nav_bar_2_text_a::after
+{
+    border-top-width: 0.25rem;
+    border-top-style: solid;
+    -webkit-border-radius: 0.25rem 0.25rem 0 0;
+    border-radius: 0.25rem 0.25rem 0 0;
+    bottom: -1.5px;
+    content: "";
+    height: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+}
+a
+{
+    text-decoration: none;
+}
+
+.nav_bar_2_text_b
+{
+    display: flex;
+    position: relative;
+    color: #5f6368;
+    height: 4rem;
+    padding: 1rem 2rem 1rem 2rem;
+    text-decoration: none;
+    box-sizing: border-box;
+    border-bottom: solid 1.5px;
+    letter-spacing: .01785714em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    text-transform: none;
+    white-space: nowrap;
+    border-color:#5f6368;
+    cursor: pointer;
+    text-align: center;
+}
+.nav_bar_2_text_b:hover
+{
+    background-color: #d8d8d8;
+}
+.nav_bar_2_text_b:focus
+{
+    display: flex;
+    position: relative;
+    color: #007b83;
+    height: 4rem;
+    padding: 1rem 2rem 1rem 2rem;
+    text-decoration: none;
+    box-sizing: border-box;
+    border-bottom: solid 1.5px;
+    letter-spacing: .01785714em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    text-transform: none;
+    white-space: nowrap;
+    border-color: #007b83;
+    cursor: pointer;
+    text-align: center;
+}
+.nav_bar_2_text_b::after
+{
+    border-top-width: 0.25rem;
+    border-top-style: solid;
+    -webkit-border-radius: 0.25rem 0.25rem 0 0;
+    border-radius: 0.25rem 0.25rem 0 0;
+    bottom: -1.5px;
+    content: "";
+    height: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+}
