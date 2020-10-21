@@ -12,13 +12,17 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--===============================================================================================-->
+    <!--=================================================================================================================-->
+    <!--=================================================================================================================-->
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="stylesheet" type="text/css" href="./css/login_main.css">
     <link rel="stylesheet" type="text/css" href="./css/util.css">
-    <!--===============================================================================================-->
+
+    <!--=================================================================================================================-->
+    <!--=================================================================================================================-->
 </head>
 <body>
 <div class="limiter">
@@ -27,6 +31,10 @@ session_start();
             <div class="login100-pic">
                 <img src="./css/images/img-01.png" alt="IMG">
             </div>
+
+            <!--=================================================================================================================-->
+            <!--=================================================================================================================-->
+
             <!-- PASSWORD FORM -->
             <form class="login100-form validate-form" method="post" action="/myownclassroom/pages/actions/return_password.php" onsubmit="return password">
 					<span class="login100-form-title">
@@ -41,8 +49,6 @@ session_start();
 							<i class="fa fa-envelope" aria-hidden="true"></i>
 						</span>
                 </div>
-
-                <!--  include('errors.php'); -->
 
                 <div class="container-login100-form-btn">
                     <button class="login100-form-btn" name="forgot-btn-submit" type="submit">

@@ -52,27 +52,6 @@ require("Initials.php");
                     <li class="nav-item active">
                         <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Classroom
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <?php
-                            // Check if admin, teacher, student
-                            if (isset($_SESSION['role'])){
-                                if($_SESSION['role'] == 'adm'){
-                                    echo "<a href=\"#modal-create-classroom\" class=\"dropdown-item btn btn-default btn-rounded trigger-btn\" data-toggle=\"modal\">Create classroom</a>";
-                                    echo "<a href=\"#modal-join-classroom\" class=\"dropdown-item btn btn-default btn-rounded trigger-btn\" data-toggle=\"modal\">Join classroom</a>";
-                                    echo "<div class=\"dropdown-divider\"></div>
-                                        <a class=\"dropdown-item\" href=\"#\">Manage</a>";
-                                }elseif ($_SESSION['role'] == 'tea'){
-                                    echo "<a href=\"#modal-create-classroom\" class=\"dropdown-item btn btn-default btn-rounded trigger-btn\" data-toggle=\"modal\">Create classroom</a>";
-                                }elseif ($_SESSION['role'] == 'stu'){
-                                    echo "<a href=\"#modal-join-classroom\" class=\"dropdown-item btn btn-default btn-rounded trigger-btn\" data-toggle=\"modal\">Join classroom</a>";
-                                }
-                            }?>
-                        </div>
-                    </li>
                     <?php
                     // Check if admin, teacher, student
                     if (isset($_SESSION['role'])){
@@ -84,118 +63,8 @@ require("Initials.php");
                     }?>
                 </ul>
 
-                <!--==============================================================================  ============-->
-
-                <!-- Modal for CREATE CLASSROOM  -->
-
-                <!-- Modal HTML -->
-                <div id="modal-create-classroom" class="modal fade">
-                    <div class="modal-dialog modal-login">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title">Create classroom</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            </div>
-                            <div class="modal-body">
-                                <form action=" " method="post">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" name="create-classroom-name" placeholder="Class name" required="required">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" name="create-classroom-subject" placeholder="Subject" required="required">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" name="create-classroom-topic" placeholder="Topic" required="required">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" name="create-classroom-room" placeholder="Room" required="required">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="submit" class="btn btn-primary btn-block btn-lg" value="Create">
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Modal for CREATE CLASSROOM  -->
-
-                <!-- Modal for JOIN CLASSROOM  -->
-                <div id="modal-join-classroom" class="modal fade">
-                    <div class="modal-dialog modal-join-classroom">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title">You're Login as <?php echo $_SESSION['fullname'];?></h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            </div>
-                            <div class="modal-body">
-                                <form action=" " method="post">
-                                    <label>Enter classroom code : </label>
-                                    <div class="form-group">
-                                        <i class="fa fa-book"></i>
-                                        <input type="text" class="form-control" name="classroom-code" placeholder="Classroom Code" required="required">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="submit" class="btn btn-primary btn-block btn-lg" value="Join">
-                                    </div>
-                                </form>
-
-                            </div>
-                            <div class="modal-footer">
-                                <p>Ask your teacher for the class code and enter it here.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- END Modal for JOIN CLASSROOM  -->
-
-                <!-- Modal for ACTION  -->
-                <div id="modal-action"  class="modal fade">
-                    <div class="modal-dialog modal-join-classroom">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title">Action</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            </div>
-                            <div class="modal-body">
-                                <form action=" " method="post">
-                                    <label class="text-align-profile">Name : </label><br>
-                                        <?php
-                                        if($rows = mysqli_fetch_assoc($teacher)){
-                                            if($rows['role'] == "tea"){
-                                                echo $rows['fullName'];
-                                            }
-                                        }
-                                        ?>
-                                        <?php
-                                        if($rows = mysqli_fetch_assoc($student)){
-                                            if($rows['role'] == "stu"){
-                                                echo $rows['fullName'];
-                                            }
-                                        }
-                                        ?>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" name="edit-role" placeholder="Edit role : tea, stu" required="required">
-                                        <hr>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="submit" class="btn btn-outline-success my-2 my-sm-0 " value="Save" name="save-button">
-                                        <a href="users_infomation.php" class="btn btn-outline-success my-2 my-sm- color-orange" name="profile-button">Profile</a>
-                                        <a href="#" class="btn btn-outline-success my-2 my-sm- color-red" name="delete-user-button">Delete User</a>
-                                    </div>
-                                </form>
-
-                            </div>
-                            <div class="modal-footer">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- END Modal for ACTION  -->
+                <!--=================================================================================================================-->
+                <!--=================================================================================================================-->
 
                 <!-- BUTTON LOGOUT - AVATAR ACCOUNT INFORMATION -->
 
@@ -229,9 +98,13 @@ require("Initials.php");
 
     <!--====== NAVBAR TOP =======================-->
 
+    <!--=================================================================================================================-->
+    <!--=================================================================================================================-->
+
     <!--====== LIST OF USERS ========================================-->
+
+    //===================================== DATABASE QUERY =====================================
     <?php
-    //===================================== Connect to Database =====================================
     require ('actions/database.php');
 
     $query = "SELECT * FROM users";
@@ -327,7 +200,11 @@ require("Initials.php");
             </tbody>
         </table>
     </div>
+
     <!--====== LIST OF USERS ========================================-->
+
+    <!--=================================================================================================================-->
+    <!--=================================================================================================================-->
 
     <br><br><br>
 

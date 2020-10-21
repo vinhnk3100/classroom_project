@@ -73,7 +73,7 @@ session_start();
 
 
 
-                <?php // Show error if password is incorrect, will be updated later
+                <?php // SHOW ERROR IF PASSWORD IS INCORRECT
                     if(isset($_SESSION['errorsPassword'])){
                         if($_SESSION['errorsPassword'] == 1){
                             echo "<div class='alertLogin'>Wrong username or password</div>";

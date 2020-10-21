@@ -3,14 +3,14 @@
 
 require ('database.php');
 
-    //===================================== If recovery button is clicked =====================================
+    // =================================================================================================================
+    // =================================================================================================================
+    //===================================== IF RECOVERY PASSWORD BUTTON IS CLICKED =====================================
         session_start();
 
-        // For example, if your database has md5 encrypted password, then the query will be,
-        //
-        //mysql_query(“UPDATE users set password='” . md5($_POST[“newPassword”]) . “‘ WHERE userId='” . $_SESSION[“userId”] . “‘”);
-
-        //===================================== Get value from form to compare with database =====================================
+    // =================================================================================================================
+    // =================================================================================================================
+    //===================================== GET VALUE FROM INPUT FORM TO COMPARE WITH DATABASE =========================
         $newpassword = mysqli_real_escape_string($db, $_POST['users-new-password']);
         $confirmPwd = $_POST['users-new-password-confirm'];
         // Get value from input and session
@@ -21,8 +21,13 @@ require ('database.php');
         $result = mysqli_query($db,$query);
         $rows = mysqli_fetch_assoc($result);
 
-        // Check if session code generate is set or not
+        // =================================================================================================================
+        // =================================================================================================================
+        // CHECK WHETHER THE SESSION CODE IS GENERATE OR NOT
         if(isset($_SESSION['generatePwdCode'])){
+
+            // =================================================================================================================
+            // =================================================================================================================
             // Check if the input code is equal to the generate code from email
             if($pwdcode == $_SESSION['generatePwdCode']){
                 if(mysqli_num_rows($result) == 1){

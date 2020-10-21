@@ -34,11 +34,18 @@ if (isset($_SESSION['valid'])){
             <div class="login100-pic">
                 <img src="./css/images/img-01.png" alt="IMG">
             </div>
+
+            <!--=================================================================================================================-->
+            <!--=================================================================================================================-->
+
             <!-- PASSWORD FORM -->
             <form name="form-password-recovery" class="login100-form validate-form" method="post" action="./actions/recovery_password.php">
 					<span class="login100-form-title">
 						Forgot Password
 					</span>
+
+                <!--=================================================================================================================-->
+                <!--=================================================================================================================-->
 
                 <!-- ENTER CODE FROM EMAIL -->
                 <div class="wrap-input100">
@@ -49,6 +56,10 @@ if (isset($_SESSION['valid'])){
 						</span>
                 </div>
                 <hr>
+
+                <!--=================================================================================================================-->
+                <!--=================================================================================================================-->
+
                 <!-- ENTER NEW PASSWORD -->
                 <div class="wrap-input100">
                     <input class="input100" type="password" name="users-new-password" placeholder="Password" id="password-register" required>
@@ -62,6 +73,9 @@ if (isset($_SESSION['valid'])){
                 <span id="progresslabel"></span>
                 <br>
 
+                <!--=================================================================================================================-->
+                <!--=================================================================================================================-->
+
                 <!-- NEW PASSWORD CONFIRM -->
                 <div class="wrap-input100">
                     <input class="input100" type="password" name="users-new-password-confirm" id="confirm-password-register" placeholder="Confirm Password" required>
@@ -71,7 +85,6 @@ if (isset($_SESSION['valid'])){
 						</span>
                 </div>
 
-                <!--  include('errors.php'); -->
                 <div class="container-login100-form-btn">
                     <input type="button" id="submit-button" class="login100-form-btn" name="recovery-password-btn-submit" onclick="validate()" value="Change password">
                 </div>

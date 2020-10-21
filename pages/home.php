@@ -1,12 +1,12 @@
 <?php
 session_start();
-if(isset($_SESSION['fullname'])){
-    if($_SESSION['fullname'] == null){
-        header("Location: /myownclassroom");
-    }
+
+if($_SESSION['fullname'] == null){
+    header("Location: /myownclassroom");
+}else{
+    require('actions/database.php');
+    require("Initials.php");
 }
-require('actions/database.php');
-require("Initials.php");
 
 ?>
 
@@ -19,6 +19,7 @@ require("Initials.php");
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/card-classroom.css">
     <link rel="stylesheet" type="text/css" href="./css/util.css">
     <link rel="stylesheet" type="text/css" href="./css/modal-form.css">
 </head>
@@ -70,11 +71,12 @@ require("Initials.php");
                         }
                     }?>
                 </ul>
-                <!--==============================================================================  ============-->
-
                 <!-- Modal for CREATE CLASSROOM  -->
 
-                <!-- Modal HTML -->
+                <!--=================================================================================================================-->
+                <!--=================================================================================================================-->
+
+                <!-- Modal FOR CREATE CLASSROOM -->
                 <div id="modal-create-classroom" class="modal fade">
                     <div class="modal-dialog modal-login">
                         <div class="modal-content">
@@ -107,6 +109,9 @@ require("Initials.php");
 
                 <!-- Modal for CREATE CLASSROOM  -->
 
+                <!--=================================================================================================================-->
+                <!--=================================================================================================================-->
+
                 <!-- Modal for JOIN CLASSROOM  -->
                 <div id="modal-join-classroom" class="modal fade">
                     <div class="modal-dialog modal-join-classroom">
@@ -134,11 +139,10 @@ require("Initials.php");
                         </div>
                     </div>
                 </div>
-
-                <!-- ======= CHECK IF USER LOGGED IN OR NOT ========= -->
-
-
                 <!-- END Modal for JOIN CLASSROOM  -->
+
+                <!--=================================================================================================================-->
+                <!--=================================================================================================================-->
 
                 <!-- BUTTON LOGOUT - AVATAR ACCOUNT INFORMATION -->
 
@@ -174,7 +178,8 @@ require("Initials.php");
 
     <br><br><br>
 
-    <!-- ====================================== Card List View ======================================-->
+
+    <!-- ====================================== START CARD LIST VIEW ======================================-->
     <div class="container container-background">
         <div class="row">
             <?php
@@ -198,8 +203,9 @@ require("Initials.php");
             if (mysqli_num_rows($resultUID) > 0) {
                 // output data of each row
                 while ($row = mysqli_fetch_assoc($resultUID)) {
-
-                    // If session login is teacher
+                    // =================================================================================================================
+                    // ========================================== IF SESSION LOGIN IS TEACHER ==========================================
+                    // =================================================================================================================
                     if($_SESSION['role'] == 'tea'){
                         while($rowCreator = mysqli_fetch_assoc($resultCreator)) {
                             $classid = $rowCreator['class_id'];
@@ -222,6 +228,9 @@ require("Initials.php");
                     </div>
                 </div>";
                         }
+                        // ===============================================================================================================
+                        // ========================================== IF SESSION LOGIN IS ADMIN ==========================================
+                        // ===============================================================================================================
                     }elseif ($_SESSION['role'] == 'adm'){
                         while($rowClassAdmin= mysqli_fetch_assoc($resultClassAdmin)) {
                             $classid = $rowClassAdmin['class_id'];
@@ -252,7 +261,7 @@ require("Initials.php");
 
         </div>
 
-        <?php // Show error if password is incorrect, will be updated later
+        <?php // SHOW ERROR IF PASSWORD IS INCORRECT
         if(isset($_SESSION['errorsPassword'])){
             if($_SESSION['errorsPassword'] == 1){
                 echo "<div class='alertLogin'>Wrong username or password</div>".$_SESSION['result'];
@@ -267,7 +276,7 @@ require("Initials.php");
 
 
 
-    <!-- ====================================== Card List View ======================================-->
+    <!-- ====================================== END CARD LIST VIEW ======================================-->
 
 
 </main>

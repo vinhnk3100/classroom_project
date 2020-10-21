@@ -1,16 +1,16 @@
 <?php
 
 require ('database.php');
-
-//===================================== If login button is clicked =====================================
+// =================================================================================================================
+// =================================================================================================================
+//===================================== IF LOGIN BUTTON IS CLICKED =================================================
 if(isset($_POST['login-btn-submit'])){
 
-    //===================================== Get value from form to compare with database =====================================
+    // =============================================================================================================
+    // =============================================================================================================
+    //===================================== GET VALUE FROM INPUT TO COMPARE WITH DATABASE ===========================
     $useremail = mysqli_real_escape_string($db, $_POST['users-email-login']);
     $userpassword = mysqli_real_escape_string($db, $_POST['users-password-login']);
-
-
-    //$userpassword = md5($userpassword); Encrypted password, update later
 
 
     $query = "SELECT * FROM users WHERE email = '$useremail'";
@@ -22,10 +22,19 @@ if(isset($_POST['login-btn-submit'])){
     $rows = mysqli_fetch_assoc($result);
 
     $rowspwd = mysqli_fetch_assoc($resultpwd);
+
+    // =================================================================================================================
+    // =================================================================================================================
+    // CREATE VARIABLE TO HASHED THE PASSWORD
+
     $hashed = $rowspwd['passWord'];
 
 
     if(mysqli_num_rows($result) == 1){
+
+        // =================================================================================================================
+        // =================================================================================================================
+        // CHECK IF PASSWORD IS UNHASHED VERIFY
         if(password_verify($userpassword,$hashed)){
             session_start();
             $_SESSION['useremail'] = $useremail;

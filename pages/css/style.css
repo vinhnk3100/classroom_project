@@ -4,13 +4,23 @@ body{
     background-color: rgba(0, 0, 0, 0.05);
 }
 
-/* NAVBAR top images */
+/* ===================================== fa style ===================================== */
+.style-fa{
+    color: white;
+    padding-top: 20px;
+}
+
+.style-fa:hover{
+    color: #cffff9;
+}
+
+/* ===================================== NAVBAR top images ===================================== */
 .navbar-brand img{
     width: 40px;
     height: 40px;
 }
 
-/* Image preview in class modal*/
+/* ===================================== Image preview in class modal ===================================== */
 #image-class-preview{
     margin-top: 20px;
     width: 100%;
@@ -24,7 +34,7 @@ body{
 
 
 
-/* Font top */
+/* ===================================== Font top ===================================== */
 .nav-link{
     font-weight: bold;
     font-size: 18px;
@@ -35,82 +45,8 @@ body{
     background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.67),rgb(255, 255, 255),rgb(255, 255, 255),rgb(255, 255, 255),rgb(255, 255, 255), rgba(0, 0, 0, 0.44));
 }
 
-/* CSS CARD */
-.card-size {
-    width: 340px;
-    height: 250px;
-    border-radius: 10px 10px 10px 10px;
-}
 
-.card{
-    border-radius: 12px;
-    box-shadow: 6px 6px 10px rgb(0, 0, 0);
-    background-color: unset;
-}
-
-.card:hover {
-    box-shadow: 0 0 20px rgb(0, 0, 0);
-}
-
-.card-body{
-    position: absolute;
-    bottom: 0;
-    display: inline-block;
-    background-color: rgba(0, 0, 0, 0.07);
-    width: 100%;
-    padding: unset;
-    padding-left: 20px;
-}
-
-.card-creator{
-    color: #ffffff;
-}
-
-.col-3 {
-    margin-bottom: 60px;
-    max-width: unset;
-    width: unset;
-}
-
-.card-title{
-    color: white;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow:ellipsis;
-    font-family: Calibri;
-    font-size: 22px;
-    font-weight: bold;
-}
-
-.margin_bottom_card {
-    margin-bottom: 30px;
-}
-
-.rounded-circle {
-    width: 100px;
-    height: 80px;
-    position: absolute;
-    margin-top: 5%;
-    margin-left: 60%;
-}
-
-
-
-/* Image -- Card view */
-.p-3 {
-    margin: 0px;
-    padding: 0px;
-}
-
-/* Class name*/
-.truncate {
-    width: 250px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-/* Login alert */
+/* ===================================== Login alert ===================================== */
 .alertLogin {
     font-weight: bold;
     margin-top: 30px;
@@ -120,7 +56,7 @@ body{
 
 
 
-/* Avatar profile */
+/* ===================================== Avatar profile ===================================== */
 .avatar-profile {
     vertical-align: middle;
     width: 50px;
@@ -154,7 +90,7 @@ body{
     color: #368b00;
 }
 
-/* CONTAINER BODY */
+/* ===================================== CONTAINER BODY ===================================== */
 
 .container-background{
     background-image: url("images/wood-background-realistic_107791-102.png");
@@ -170,7 +106,7 @@ body{
 }
 
 
-/* AVATAR */
+/* ===================================== AVATAR ===================================== */
 :root {
     --avatar-size: 60px;
     /* change this value anything, e.g., 100px, 10rem, etc. */
@@ -191,7 +127,7 @@ body{
     top: calc(var(--avatar-size) / 4); /* 25% of parent */
 }
 
-/* PROGRESS BAR FOR STRENGTH PASSWORD*/
+/* ===================================== PROGRESS BAR FOR STRENGTH PASSWORD ===================================== */
 
 progress {
     width: 100%;
@@ -215,7 +151,7 @@ progress[value="100"]::-webkit-progress-value {
     background: #008000;
 }
 
-/* BUTTON CLASS */
+/* ===================================== BUTTON CLASS ===================================== */
 
     /* Input */
 .wrap-input100-setsize {
@@ -283,9 +219,8 @@ progress[value="100"]::-webkit-progress-value {
     color: white;
 }
 
-/* danh sách giáo viên và học sinh */
-/* chia 3 cột */
-/* canh giữa */
+/* ===================================== List of member ===================================== */
+
 div.center
 {
     margin: 0 auto;
@@ -318,14 +253,14 @@ div.divline
     border-color: grey;
 }
 
-/*table position mở rộng */
+/* ===================================== Extended table position ===================================== */
 .te
 {
     position: relative;
     border-collapse: collapse;
     width: 100%;
 }
-/*table position */
+/* ===================================== table position ===================================== */
 .tp
 {
     text-overflow: ellipsis;
@@ -334,7 +269,7 @@ div.divline
     margin-left: 0.5rem;
     max-width: 30rem;
 }
-/*font chữ của từng người*/
+/* ===================================== Font style =====================================*/
 .tf
 {
     transition: 0.2s ease-in-out;
@@ -351,14 +286,14 @@ div.divline
     transition: 0.2s ease-in-out;
     color: #257d00;
 }
-/* kích thước, hình dáng img */
+/* ===================================== Image width, height ===================================== */
 .imgcc
 {
     border-radius: 50%;
     padding: 5px;
     width: 50px;
 }
-/* thân của table */
+/* ===================================== Table content ===================================== */
 tbody {
     display: table-row-group;
     vertical-align: middle;
@@ -386,7 +321,7 @@ td
     padding: 0.5rem;
 }
 
-/* Class interface*/
+/* ===================================== Class interface ===================================== */
 .classuis
 {
     margin: 0 auto;
@@ -403,7 +338,7 @@ td
     border-radius: 6px;
 }
 
-/* thuộc tính Ui */
+/* ===================================== UI properties ===================================== */
 .classui
 {
     background-color: #ffffff;
@@ -411,7 +346,7 @@ td
     overflow: hidden;
     box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149);
 }
-/* thuộc tính box*/
+/*  ===================================== Box properties ===================================== */
 .classuib
 {
     height: 15rem;
@@ -422,7 +357,7 @@ td
     background-repeat: no-repeat;
     border-radius: 0.5rem;
 }
-/* thuộc tính image */
+/* ===================================== Image properties ===================================== */
 .classuibi
 {
     background-repeat: no-repeat;
@@ -445,7 +380,7 @@ td
     width: 100%;
 }
 
-/* thuộc tính chủ đề(lớp) trong image*/
+/*  ===================================== Subject in class stream properties ===================================== */
 .classuibt
 {
     position: absolute;
@@ -558,7 +493,6 @@ div
 {
     display: block;
 }
-/*  */
 
 
 .classuib-1aba
@@ -588,7 +522,7 @@ div
     cursor: pointer;
 }
 
-/* Comment part */
+/*  ===================================== COMMENTS =====================================  */
 .classuib5
 {
     background-color: #fff;
@@ -643,7 +577,7 @@ div
 {
     display: block;
 }
-/*text-area  */
+/*  ===================================== Text-area in COMMENTS =====================================  */
 
 div.enter_button
 {
@@ -698,10 +632,6 @@ button.collapsible
     text-align: left;
     position: relative;
 }
-/*.collapsible:hover
-{
-    background-color:#5befff;
-}*/
 
 input[type=submit]
 {
