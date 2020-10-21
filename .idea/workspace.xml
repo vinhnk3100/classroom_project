@@ -20,22 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4f90356-e38e-4199-8c9f-76cceeffb7e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/css/card-classroom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/actions/login_validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/actions/login_validation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/actions/recovery_password.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/actions/recovery_password.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/actions/register_validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/actions/register_validation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/classroom_everyone.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/classroom_everyone.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/classroom_stream.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/classroom_stream.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/actions/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/actions/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/css/card-classroom.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/css/card-classroom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/forgot_password.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/forgot_password.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/login_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login_form.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/manage.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/manage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/password_recovery.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/password_recovery.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/users_infomation.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/users_infomation.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,19 +71,19 @@
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Works\WebDesigner\FinalProject\xampp\htdocs\myownclassroom\pages\css" />
-      <recent name="D:\Works\WebDesigner\FinalProject\xampp\htdocs\myownclassroom\pages\actions" />
-      <recent name="D:\Works\WebDesigner\FinalProject\xampp\htdocs\myownclassroom\pages\action" />
-      <recent name="D:\Works\WebDesigner\FinalProject\xampp\htdocs\myownclassroom\pages" />
-      <recent name="D:\Works\WebDesigner\FinalProject\xampp\htdocs\myownclassroom\views" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Works\WebDesigner\FinalProject\xampp\htdocs\myownclassroom\pages\css\images" />
       <recent name="D:\Works\WebDesigner\FinalProject\xampp\htdocs\myownclassroom\pages\css" />
       <recent name="D:\Works\WebDesigner\FinalProject\xampp\htdocs\myownclassroom\pages" />
       <recent name="D:\Works\WebDesigner\FinalProject\xampp\htdocs\myownclassroom\js" />
       <recent name="D:\Works\WebDesigner\FinalProject\xampp\htdocs\myownclassroom\css\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Works\WebDesigner\FinalProject\xampp\htdocs\myownclassroom\pages\css" />
+      <recent name="D:\Works\WebDesigner\FinalProject\xampp\htdocs\myownclassroom\pages\actions" />
+      <recent name="D:\Works\WebDesigner\FinalProject\xampp\htdocs\myownclassroom\pages\action" />
+      <recent name="D:\Works\WebDesigner\FinalProject\xampp\htdocs\myownclassroom\pages" />
+      <recent name="D:\Works\WebDesigner\FinalProject\xampp\htdocs\myownclassroom\views" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Web Page.PHP Server">
@@ -184,6 +174,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="349" y="67" key="#CLI_Interpreters" timestamp="1600134841178">

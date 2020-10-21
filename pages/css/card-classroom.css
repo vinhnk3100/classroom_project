@@ -1,4 +1,15 @@
 /* ===================================== CSS CARD ===================================== */
+
+.card-text-decoration:hover{
+    text-decoration: none;
+    color: white;
+    text-shadow: 2px 2px 4px rgb(0, 217, 255);
+}
+
+.card-padding-top{
+    padding-top: 30px;
+}
+
 .card-size {
     width: 340px;
     height: 250px;
@@ -6,24 +17,30 @@
 }
 
 .card{
+    overflow: hidden;
+    padding: 2px;
     border-radius: 12px;
     box-shadow: 8px 8px 8px rgb(0, 0, 0);
-    background-color: unset;
+    background-color: black;
 }
 
-.card:hover {
+.card:hover .card-body {
     box-shadow: 0 0 20px rgb(0, 0, 0);
+    transition: 0.5s ease-in-out;
+    bottom: 5px;
 }
 
 .card-body{
+    transition: 0.5s ease-in-out;
     position: absolute;
-    bottom: 0;
+    bottom: -30px;
     display: inline-block;
     background-color: rgba(0, 0, 0, 0.07);
     width: 100%;
     padding: unset;
     padding-left: 20px;
 }
+
 
 .card-creator{
     color: #ffffff;
@@ -47,7 +64,7 @@
 }
 
 .card-title:hover{
-    text-decoration: none;
+
 }
 
 .margin_bottom_card {

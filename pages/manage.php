@@ -7,13 +7,7 @@ if($_SESSION['fullname'] == null){
 }
 
 //===================================== Connect to Database =====================================
-$db = mysqli_connect("localhost","root","admin1234","classroom_project");
-
-//===================================== Check database connection =====================================
-if ($db -> connect_errno) {
-    echo "Failed to connect to MySQL: " . $db -> connect_error;
-    exit();
-}
+require ("actions/database.php");
 
 $query = "SELECT * FROM users";
 $teacher = mysqli_query($db,$query);
@@ -103,7 +97,7 @@ require("Initials.php");
 
     <!--====== LIST OF USERS ========================================-->
 
-    //===================================== DATABASE QUERY =====================================
+    <!-- ===================================== DATABASE QUERY ===================================== -->
     <?php
     require ('actions/database.php');
 

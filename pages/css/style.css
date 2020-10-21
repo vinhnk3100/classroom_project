@@ -42,7 +42,7 @@ body{
 }
 
 .navbar{
-    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.67),rgb(255, 255, 255),rgb(255, 255, 255),rgb(255, 255, 255),rgb(255, 255, 255), rgba(0, 0, 0, 0.44));
+    background: -webkit-linear-gradient(top, rgb(62, 62, 62), rgba(0, 0, 0, 0.44),rgb(62, 62, 62));
 }
 
 

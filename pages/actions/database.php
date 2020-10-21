@@ -1,7 +1,7 @@
 <?php
 
 //===================================== Connect to Database =====================================
-$db = mysqli_connect("localhost","root","admin1234","classroom_project");
+$db = mysqli_connect("localhost","root","","classroom_project");
 
 //===================================== Check database connection =====================================
 if ($db -> connect_errno) {

@@ -176,12 +176,12 @@ if($_SESSION['fullname'] == null){
 
     <!--====== NAVBAR TOP =======================-->
 
-    <br><br><br>
+    <br>
 
 
     <!-- ====================================== START CARD LIST VIEW ======================================-->
     <div class="container container-background">
-        <div class="row">
+        <div class="row card-padding-top">
             <?php
 
             $uid = $_SESSION['uid'];
@@ -219,9 +219,9 @@ if($_SESSION['fullname'] == null){
                             <img class=\" card-size\" src='$classavatar' alt=''>
                             <div class=\"card-body\">
                                 <br>
-                                <a href=\"classroom_stream.php?id=$classid\">
+                                <a class='card-text-decoration' href=\"classroom_stream.php?id=$classid\">
                                     <p class='card-title truncate'>$classname</p>
-                                    <p class='card-title truncate'>$classteacherName</p>
+                                    <p class='card-creator'>$classteacherName</p>
                                 </a>
                             </div>
                         </div>
@@ -244,8 +244,8 @@ if($_SESSION['fullname'] == null){
                             <img class=\"card-img-top card-size\" src='$classavatar' alt=''>
                             <div class=\"card-body\">
                                 <br>
-                                <a href=\"classroom_stream.php?id=$classid\">
-                                    <h4 class=\"card-title truncate \">$classname</h4>
+                                <a class='card-text-decoration' href=\"classroom_stream.php?id=$classid\">
+                                    <h4 class=\"card-title truncate card-text-decoration\">$classname</h4>
                                     <h5 class=\"card-creator\">$classteacherName</h5>
                                 </a>
                             </div>
