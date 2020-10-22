@@ -1,6 +1,7 @@
 /* ===================================== CSS CARD ===================================== */
 
 .card-text-decoration:hover{
+    transition: 0.5s ease-in-out;
     text-decoration: none;
     color: white;
     text-shadow: 2px 2px 4px rgb(0, 217, 255);
@@ -11,7 +12,7 @@
 }
 
 .card-size {
-    width: 340px;
+    width: 360px;
     height: 250px;
     border-radius: 10px 10px 10px 10px;
 }
@@ -21,13 +22,20 @@
     padding: 2px;
     border-radius: 12px;
     box-shadow: 8px 8px 8px rgb(0, 0, 0);
-    background-color: black;
+    background-color: #000000;
 }
 
 .card:hover .card-body {
     box-shadow: 0 0 20px rgb(0, 0, 0);
     transition: 0.5s ease-in-out;
     bottom: 5px;
+    background-color: rgba(0, 0, 0, 0.4);
+
+}
+
+.card:hover{
+    transition: 0.5s ease-in-out;
+    box-shadow: 0 0 20px rgb(0, 0, 0);
 }
 
 .card-body{

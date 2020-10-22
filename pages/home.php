@@ -10,7 +10,6 @@ if($_SESSION['fullname'] == null){
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -157,7 +156,7 @@ if($_SESSION['fullname'] == null){
                         </a>
                         <div class="dropdown-menu dropdown-menu-right p-3" aria-labelledby="navbarDropdown">
                             <?php
-                            echo "<div class=\"circle m-l-r-auto\"><a href=\"#\" class=\"initials text-align-profile\" >".$generateName."</a></div><br>";
+                            echo "<div class=\"circle m-l-r-auto\"><a href=\"users_infomation.php?id=".$_SESSION['uid']."\" class=\"initials text-align-profile\" >".$generateName."</a></div><br>";
                             echo "<div class=\"text-center\"><a href=\"#\" class=\"text-align-profile\" >".$_SESSION['fullname']."</a></div>";
                             ?>
                             <?php
@@ -178,6 +177,8 @@ if($_SESSION['fullname'] == null){
 
     <br>
 
+    <!--=================================================================================================================-->
+    <!--=================================================================================================================-->
 
     <!-- ====================================== START CARD LIST VIEW ======================================-->
     <div class="container container-background">
@@ -186,76 +187,21 @@ if($_SESSION['fullname'] == null){
 
             $uid = $_SESSION['uid'];
 
-            // Query for showing class through Session ID
-            $queryUID = "SELECT * FROM class,users WHERE  class.teacher_id = users.user_id AND class.teacher_id = '$uid'";
+            // ===============================================================================================================
+            // ================================== IF LOGIN AS ADMIN, SHOW ALL CLASSROOM ======================================
 
-            // Query for showing all the class for administrator
-            $queryClassAdmin = "SELECT * FROM class,users WHERE class.teacher_id = users.user_id";
+            include ('function/queryAdminClassroom.php');
 
-            // Query for showing class creator
-            $queryCreator = "SELECT * FROM users, class WHERE users.user_id = class.teacher_id AND class.teacher_id = '$uid' ";
+            // ===============================================================================================================
+            // =========================== IF LOGIN AS STUDENT, SHOW CLASSROOM STUDENT JOIN ==================================
 
-            $resultUID = mysqli_query($db,$queryUID);
-            $resultCreator = mysqli_query($db,$queryCreator);
-            $resultClassAdmin = mysqli_query($db,$queryClassAdmin);
+            include ('function/queryStudentClassroom.php');
 
+            // ===============================================================================================================
+            // =========================== IF LOGIN AS TEACHER, SHOW CLASSROOM TEACHER JOIN ==================================
 
-            if (mysqli_num_rows($resultUID) > 0) {
-                // output data of each row
-                while ($row = mysqli_fetch_assoc($resultUID)) {
-                    // =================================================================================================================
-                    // ========================================== IF SESSION LOGIN IS TEACHER ==========================================
-                    // =================================================================================================================
-                    if($_SESSION['role'] == 'tea'){
-                        while($rowCreator = mysqli_fetch_assoc($resultCreator)) {
-                            $classid = $rowCreator['class_id'];
-                            $classteacherName= $rowCreator['fullName'];
-                            $classavatar = $rowCreator['classAvatar'];
-                            $classname = $rowCreator['className'];
-                            $_POST['classname'] = $classname;
-                            echo "<div class=\"col-3 margin_bottom_card\" draggable='true'>
-                    <div class=\"m-3\">
-                        <div class=\"card\">
-                            <img class=\" card-size\" src='$classavatar' alt=''>
-                            <div class=\"card-body\">
-                                <br>
-                                <a class='card-text-decoration' href=\"classroom_stream.php?id=$classid\">
-                                    <p class='card-title truncate'>$classname</p>
-                                    <p class='card-creator'>$classteacherName</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>";
-                        }
-                        // ===============================================================================================================
-                        // ========================================== IF SESSION LOGIN IS ADMIN ==========================================
-                        // ===============================================================================================================
-                    }elseif ($_SESSION['role'] == 'adm'){
-                        while($rowClassAdmin= mysqli_fetch_assoc($resultClassAdmin)) {
-                            $classid = $rowClassAdmin['class_id'];
-                            $classteacherName = $rowClassAdmin['fullName'];
-                            $classavatar = $rowClassAdmin['classAvatar'];
-                            $classname = $rowClassAdmin['className'];
-                            $classsubject = $rowClassAdmin['subject'];
-                            echo "<div class=\"col-3 margin_bottom_card\" draggable='true'>
-                    <div class=\"m-3\">
-                        <div class=\"card\">
-                            <img class=\"card-img-top card-size\" src='$classavatar' alt=''>
-                            <div class=\"card-body\">
-                                <br>
-                                <a class='card-text-decoration' href=\"classroom_stream.php?id=$classid\">
-                                    <h4 class=\"card-title truncate card-text-decoration\">$classname</h4>
-                                    <h5 class=\"card-creator\">$classteacherName</h5>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>";
-                        }
-                    }
-                }
-            }
+            include ('function/queryTeacherClassroom.php');
+
 
             ?>
 

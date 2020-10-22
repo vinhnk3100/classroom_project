@@ -2,6 +2,7 @@
 if($_SESSION['fullname'] == null){
     header("Location: /myownclassroom");
 }
+
 require("Initials.php");
 require ('actions/database.php');
 
@@ -120,11 +121,15 @@ $rows = mysqli_fetch_assoc($result);
 
                 <!-- Role -->
                 <div class="wrap-input100">
+
                     <?php
                     if($rows['role'] == "tea"){
                         if(isset($_SESSION['role'])){
                             if($_SESSION['role'] == "adm"){
-                                echo "<input class=\"input100\" type=\"text\" name='role-edit' value='Teacher'>";
+                                echo "<select name=\"role-edit\" class=\"input100\">
+                        <option value=\"Teacher\">Teacher</option>
+                        <option value=\"Student\">Student</option>
+                    </select>";
                             }else{
                                 echo "<input class=\"input100\" type=\"text\"  readonly value='Teacher'>";
                             }
@@ -132,9 +137,18 @@ $rows = mysqli_fetch_assoc($result);
                     }elseif($rows['role'] == "stu"){
                         if(isset($_SESSION['role'])){
                             if($_SESSION['role'] == "adm"){
-                                echo "<input class=\"input100\" type=\"text\" name='role-edit' value='Student'>";
+                                echo "<select name=\"role-edit\" class=\"input100\">
+                        <option value=\"Teacher\">Teacher</option>
+                        <option value=\"Student\">Student</option>
+                    </select>";
                             }else{
                                 echo "<input class=\"input100\" type=\"text\"  readonly value='Student'>";
+                            }
+                        }
+                    }elseif($rows['role'] == "adm"){
+                        if(isset($_SESSION['role'])){
+                            if($_SESSION['role'] == "adm"){
+                                echo "<input class=\"input100\" type=\"text\"  readonly value='Admin'>";
                             }
                         }
                     }
@@ -145,7 +159,6 @@ $rows = mysqli_fetch_assoc($result);
 							<i class="fa fa-calendar" aria-hidden="true"></i>
 						</span>
                 </div>
-                <div>Role : Teacher, Student</div>
                 <br>
 
                 <!--=================================================================================================================-->

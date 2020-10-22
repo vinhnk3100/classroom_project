@@ -2,8 +2,6 @@
 session_start();
 if($_SESSION['fullname'] == null){
     header("Location: /myownclassroom");
-}elseif ($_SESSION['role'] != "adm" and $_SESSION['role'] != "tea"){
-    header("Location: /myownclassroom/pages/home.php");
 }
 
 //===================================== Connect to Database =====================================
@@ -38,6 +36,7 @@ require("Initials.php");
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/classroom-stream.css">
     <link rel="stylesheet" type="text/css" href="./css/util.css">
     <link rel="stylesheet" type="text/css" href="./css/modal-form.css">
 
@@ -112,14 +111,14 @@ require("Initials.php");
     <div class="nav_bar_2">
         <div class="nav_bar_2_item">
             <?php
-            echo "<a class=\"nav_bar_2_text_a\" id=\"navtext\" onclick=\"myFunction()\" href=\"classroom_stream.php?id=$classid\" target=\"_self\"> Stream
+            echo "<a class=\"nav_bar_2_text_a\" href=\"classroom_stream.php?id=$classid\" target=\"_self\"> Stream
             </a>";
             ?>
 
         </div>
         <div class="nav_bar_2_item">
             <?php
-            echo "<a class=\"nav_bar_2_text_b\" id=\"navtext\" onclick=\"myFunction()\" href=\"classroom_everyone.php?id=$classid\" target=\"_self\"> Everyone
+            echo "<a class=\"nav_bar_2_text_b\" href=\"classroom_everyone.php?id=$classid\" target=\"_self\"> Everyone
             </a>";
             ?>
         </div>
@@ -131,7 +130,7 @@ require("Initials.php");
     <!--======Classroom UI=====-->
     <div class="classuis">
         <div class="classui">
-            <button type="button" class="collapsible "  >
+            <button type="button" class="collapsible" onclick="collapsibleClassroom()" >
 
                 <!--=================================================================================================================-->
                 <!--=================================================================================================================-->
@@ -214,32 +213,14 @@ require("Initials.php");
                 </div>
             </div>
         </div>
+    </div>
         <!-- END MODAL FOR INSERT BACKGROUND CLASS IMAGE -->
 
         <!--=================================================================================================================-->
         <!--=================================================================================================================-->
 
-    </div>
-    </div>
-    </div>
 
-    <!-- Collapsible -->  
-    <script>
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
 
-    for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-        content.style.display = "none";
-        } else {
-        content.style.display = "block";
-        }
-    });
-    }
-</script>  
 
     <!--====== LIST OF USERS ========================================-->
 
@@ -251,7 +232,6 @@ require("Initials.php");
 
 <footer>
     <script src="./js/main.js"></script>
-    <script src="./js/myFunction.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>

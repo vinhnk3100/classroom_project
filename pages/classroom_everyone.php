@@ -2,24 +2,18 @@
 session_start();
 if($_SESSION['fullname'] == null){
     header("Location: /myownclassroom");
-}elseif ($_SESSION['role'] != "adm"){
-    header("Location: /myownclassroom/pages/home.php");
 }
 
 //===================================== Connect to Database =====================================
-$db = mysqli_connect("localhost","root","admin1234","classroom_project");
-
-//===================================== Check database connection =====================================
-if ($db -> connect_errno) {
-    echo "Failed to connect to MySQL: " . $db -> connect_error;
-    exit();
-}
+require ("actions/database.php");
 
 $classid = $_GET['id'];
 
-$query = "SELECT * FROM users, class WHERE class.class_id = '$classid'";
+$query = "SELECT fullName,role FROM users, class WHERE users.user_id = class.teacher_id AND class.class_id = '$classid'";
 $teacher = mysqli_query($db,$query);
-$student = mysqli_query($db,$query);
+
+$queryStudent = "SELECT fullName,role FROM users, users_class, class WHERE users.user_id = users_class.user_id AND class.class_id = '$classid'";
+$student = mysqli_query($db,$queryStudent);
 $result = mysqli_query($db,$query);
 
 require("Initials.php");
@@ -34,6 +28,7 @@ require("Initials.php");
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/classroom-stream.css">
     <link rel="stylesheet" type="text/css" href="./css/util.css">
     <link rel="stylesheet" type="text/css" href="./css/modal-form.css">
 </head>
@@ -114,25 +109,10 @@ require("Initials.php");
         <!--=================================================================================================================-->
         <!--=================================================================================================================-->
 
+
     <!--====== NAVBAR TOP =======================-->
 
     <div class="center tbb">
-        <table class="tablexpen">
-            <div class="divline">
-                <h2 class="colorlist giaovien">
-                    Admin
-                </h2>
-            </div>
-            <tbody>
-            <tr>
-                <td>
-                    <div>
-                        <br><br><br>
-                    </div>
-                </td>
-            </tr>
-            </tbody>
-        </table>
 
         <div class="divline">
             <h2 class="colorlist giaovien">
@@ -145,17 +125,12 @@ require("Initials.php");
                 <td>
                     <div>
                         <?php
-                        if (mysqli_num_rows($teacher) > 0) {
                             // output data of each row
                             while ($row = mysqli_fetch_assoc($teacher)) {
                                 if($row['role'] == "tea"){
-                                    echo "<a href=\"users_infomation.php?id=".$row['user_id']."\" class=\"btn btn-outline-success my-2 my-sm- color-orange\" name=\"profile-button\">Profile</a>";
                                     echo "<span><img class=\"imgcc\" area-hidden=\"true\" src=\"https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/s32-c-fbw=1/photo.jpg\">"."<span class=\"tp tf\">".$row['fullName']."</span>"."</span>".""."<br>";
                                 }
                             }
-                        }else{
-
-                        }
                         ?><br><br><br>
 
                     </div>
@@ -175,17 +150,12 @@ require("Initials.php");
                 <td>
                     <div>
                         <?php
-                        if (mysqli_num_rows($student) > 0) {
                             // output data of each row
                             while ($row = mysqli_fetch_assoc($student)) {
                                 if($row['role'] == "stu"){
-                                    echo "<a href=\"users_infomation.php?id=".$row['user_id']."\" class=\"btn btn-outline-success my-2 my-sm- color-orange\" name=\"profile-button\">Profile</a>";
-                                    echo "<span><img class=\"imgcc\" area-hidden=\"true\" src=\"https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/s32-c-fbw=1/photo.jpg\">"."<span class=\"tp tf\">"."<a class='tf' href='#'>".$row['fullName']."</a>"."</span>"."</span>".""."<br>";
+                                    echo "<span><img class=\"imgcc\" area-hidden=\"true\" src=\"https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/s32-c-fbw=1/photo.jpg\">"."<span class=\"tp tf\">".$row['fullName']."</span>"."</span>".""."<br>";
                                 }
                             }
-                        }else{
-
-                        }
                         ?><br><br><br>
                     </div>
                 </td>
