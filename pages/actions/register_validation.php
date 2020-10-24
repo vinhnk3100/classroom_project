@@ -1,9 +1,8 @@
 <?php
 session_start();
 
-// =================================================================================================================
-// =================================================================================================================
-// connect to database
+
+//connect to database
 require ('database.php');
 
 //REGISTER USER 
@@ -36,28 +35,29 @@ if (isset($_POST['register-btn-submit'])){
         }
 
         if($falseCheck){
-        //$passwordEnc = md5($password); //Encrypted password
+        $stmt = $db->prepare("INSERT INTO users (user_id,email,passWord, fullName, dateOfBirth, phoneNum)
+        VALUES(?, ?, ?, ?, ?, ?)");
         $user_id = uniqid('user');
         $pass_hash = password_hash($password, PASSWORD_DEFAULT);
 
-        $insertQuery = "INSERT INTO users (user_id,email,passWord, fullName, dateOfBirth, phoneNum)
-                    VALUES('$user_id','$email','$pass_hash','$fullName','$DOB','$phone')";
-    
+        $stmt->bind_param("sssssi", $user_id,$email,$pass_hash,$fullName,$DOB,$phone);
 
+    
+     
         //check if database error
-        if ($db->query($insertQuery) === TRUE) {
+        if (($stmt->execute()) === TRUE) {
           $_SESSION["dbAddedSuccess"]= true;
           header("Location: ../login_form.php");
             
-          } else {
-            echo "Error: " . $insertQuery . "<br>" . $db-> error;
+          } else {   
+            echo $stmt->error;  
           }
-        } else {
-          header("Location: ../register.php");
-        }
-
+          $stmt->close();
+          $db->close();
+          //return to register.php if exist falsecheck error
+        } else header("Location: ../register.php");
       
-} else echo ("fAIL");
+} 
   
 
 ?>
