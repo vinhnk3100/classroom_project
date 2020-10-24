@@ -12,7 +12,7 @@ $classid = $_GET['id'];
 $query = "SELECT fullName,role FROM users, class WHERE users.user_id = class.teacher_id AND class.class_id = '$classid'";
 $teacher = mysqli_query($db,$query);
 
-$queryStudent = "SELECT fullName,role FROM users, users_class, class WHERE users.user_id = users_class.user_id AND class.class_id = '$classid'";
+$queryStudent = "SELECT fullName,role FROM users, users_class WHERE users.user_id = users_class.user_id AND users_class.class_id = '$classid'";
 $student = mysqli_query($db,$queryStudent);
 $result = mysqli_query($db,$query);
 
