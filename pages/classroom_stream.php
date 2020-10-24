@@ -136,7 +136,7 @@ require("Initials.php");
                 <!--=================================================================================================================-->
 
                 <!--======Classroom IMAGE BACKGROUND=====-->
-                <img class="classuib" src="./css/backgroundImages<?php echo $rowsClass["classAvatar"]; ?>" alt="">
+                <img class="classuib" src="./css/backgroundImages/<?php echo $rowsClass["classAvatar"]; ?>" alt="">
                     <div class="classuibt">
                         <div class="classuib2">
                             <div class="custom_image_text">
@@ -198,7 +198,7 @@ require("Initials.php");
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <form id="insert-image-form" action="./actions/store_class_image.php"  method="post" runat="server" enctype="multipart/form-data">
+                        <form id="insert-image-form" action="./actions/store_class_image.php?id=<?php echo $rowsClass['class_id']; ?>"  method="post" runat="server" enctype="multipart/form-data">
                             <label>Upload :</label>
                             <div class="form-group">
                                 <input onclick="getImage()" type="file" class="form-control" id="images-class-background" name="classImg" required="required">
