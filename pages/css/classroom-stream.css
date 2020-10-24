@@ -58,6 +58,7 @@ div.divline
 .tf
 {
     transition: 0.2s ease-in-out;
+    text-shadow: 2px 4px 4px black;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 24px;
     font-weight: bold;
@@ -77,6 +78,16 @@ div.divline
     width: 50px;
 }
 /* ===================================== Table content ===================================== */
+.tablexpen{
+    position: relative;
+    width: 100%;
+}
+
+.table_btn_right{
+    position: absolute;
+    right: 0;
+}
+
 tbody {
     display: table-row-group;
     vertical-align: middle;
@@ -549,4 +560,10 @@ input[type=submit]
 
 .nav_bar_2_text_b:hover{
     text-decoration: none;
+}
+
+/* ============================ BUTTON ================================= */
+.action_btn_modal{
+    width: 20% !important;
+    display: inline-block !important;
 }

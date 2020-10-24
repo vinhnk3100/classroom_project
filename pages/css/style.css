@@ -45,6 +45,12 @@ body{
     background: -webkit-linear-gradient(top, rgb(62, 62, 62), rgba(0, 0, 0, 0.44),rgb(62, 62, 62));
 }
 
+.white_text{
+    background-color: #d2d2d2;
+    margin-right: 12px;
+    box-shadow: 3px 4px 8px black;
+}
+
 
 /* ===================================== Login alert ===================================== */
 .alertLogin {
@@ -209,12 +215,18 @@ progress[value="100"]::-webkit-progress-value {
 
 
 .color-orange{
+    background-image: linear-gradient(to top, rgb(255, 178, 128),#ffffff,rgb(255, 178, 128));
+    font-size: 18px;
     border: 1px solid #ac5f00;
     color: #ff9900;
+    box-shadow: 4px 4px 10px black;
+    margin-right: 20px;
 }
 
 .color-orange:hover{
+    background-image: linear-gradient(to right, #e87800, #ac5f00);
     border: 1px solid #ac5f00;
     background-color: #e87800;
+    box-shadow: 4px 4px 10px #ff9168;
     color: white;
 }

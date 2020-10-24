@@ -20,8 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4f90356-e38e-4199-8c9f-76cceeffb7e1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/pages/actions/modal_action_manage_users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/myownclassroom.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/myownclassroom.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/classroom_everyone.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/classroom_everyone.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/css/classroom-stream.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/css/classroom-stream.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/function/queryAdminClassroom.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/function/queryAdminClassroom.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/js/login_main.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/js/login_main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/manage.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/manage.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +50,17 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="" />
+    <bower.json value="" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="PhpServers">
     <servers>
@@ -64,7 +83,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pages/css/images" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -157,7 +176,7 @@
       <workItem from="1603335306204" duration="578000" />
       <workItem from="1603350851361" duration="2222000" />
       <workItem from="1603364236333" duration="2090000" />
-      <workItem from="1603515161851" duration="612000" />
+      <workItem from="1603515161851" duration="8511000" />
     </task>
     <servers />
   </component>
@@ -197,6 +216,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1600753279953" />
+    <state x="498" y="192" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper" timestamp="1603523700077">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="498" y="192" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper/0.0.1536.824@0.0.1536.824" timestamp="1603523700077" />
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603258844174">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -261,19 +284,19 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="462" y="135" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1602665593215" />
-    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1603365646245">
+    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1603519861302">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824/1920.0.864.1496@0.0.1536.824" timestamp="1601960008444" />
-    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1603365646245" />
-    <state x="277" y="57" key="SettingsEditor" timestamp="1600134577238">
+    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1603519861302" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1603523735437">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1600134577238" />
-    <state x="578" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603278335006">
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1603523735437" />
+    <state x="578" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603517780181">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="578" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1603278335006" />
+    <state x="578" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1603517780181" />
     <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1603351094310">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

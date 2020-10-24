@@ -37,8 +37,8 @@ if(isset($_SESSION['fullname'])){
                 </ul>
 
             </div>
-            <div class="text-center margin-dropdown"><a href="./pages/login_form.php" class="btn btn-outline-success my-2 my-sm-0" >Login</a></div>
-            <div class="text-center margin-dropdown"><a href="./pages/register.php" class="btn btn-outline-success my-2 my-sm-0" >Sign up</a></div>
+            <div class="text-center margin-dropdown"><a href="./pages/login_form.php" class="btn btn-outline-success my-2 my-sm-0 white_text" >Login</a></div>
+            <div class="text-center margin-dropdown"><a href="./pages/register.php" class="btn btn-outline-success my-2 my-sm-0 white_text" >Sign up</a></div>
         </nav>
     </div>
 

@@ -6,7 +6,7 @@ require ('./actions/database.php');
 // =================================================================================================================
 
 // Query for showing all the class for administrator
-$queryClassAdmin = "SELECT * FROM class,users WHERE users.role = 'adm'";
+$queryClassAdmin = "SELECT fullName, className, classAvatar, subject, class_id FROM class,users WHERE class.teacher_id = users.user_id";
 $resultClassAdmin = mysqli_query($db,$queryClassAdmin);
 
 // ===============================================================================================================

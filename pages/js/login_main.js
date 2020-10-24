@@ -1,8 +1,10 @@
 
-(function ($) {
+
+$(document).ready(function ($) {
     "use strict";
 
-    
+
+
     /*==================================================================
     [ Validate ]*/
     var input = $('.validate-input .input100');
@@ -23,7 +25,7 @@
 
     $('.validate-form .input100').each(function(){
         $(this).focus(function(){
-           hideValidate(this);
+            hideValidate(this);
         });
     });
 
@@ -50,7 +52,8 @@
         var thisAlert = $(input).parent();
         $(thisAlert).removeClass('alert-validate');
     }
-    
-    
+
+
 
 });
+
