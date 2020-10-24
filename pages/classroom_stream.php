@@ -136,7 +136,7 @@ require("Initials.php");
                 <!--=================================================================================================================-->
 
                 <!--======Classroom IMAGE BACKGROUND=====-->
-                <img class="classuib" src="<?php echo $rowsClass["classAvatar"]; ?>" alt="">
+                <img class="classuib" src="./css/backgroundImages<?php echo $rowsClass["classAvatar"]; ?>" alt="">
                     <div class="classuibt">
                         <div class="classuib2">
                             <div class="custom_image_text">
@@ -198,14 +198,14 @@ require("Initials.php");
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <form id="insert-image-form" action="" method="post" runat="server">
+                        <form id="insert-image-form" action="./actions/store_class_image.php"  method="post" runat="server" enctype="multipart/form-data">
                             <label>Upload :</label>
                             <div class="form-group">
-                                <input onclick="getImage()" type="file" class="form-control" id="images-class-background" required="required">
+                                <input onclick="getImage()" type="file" class="form-control" id="images-class-background" name="classImg" required="required">
                                 <img id="image-class-preview" />
                             </div>
                             <div class="form-group">
-                                <input type="submit" class="btn btn-primary btn-block btn-lg" value="Upload">
+                                <input type="submit" class="btn btn-primary btn-block btn-lg" name = "btn_upload_class_image" value="Upload">
                             </div>
                         </form>
 
@@ -213,7 +213,6 @@ require("Initials.php");
                 </div>
             </div>
         </div>
-    </div>
         <!-- END MODAL FOR INSERT BACKGROUND CLASS IMAGE -->
 
         <!--=================================================================================================================-->
