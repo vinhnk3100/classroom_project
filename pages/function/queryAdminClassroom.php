@@ -23,7 +23,7 @@ if ($_SESSION['role'] == 'adm'){
         echo "<div class=\"col-3 margin_bottom_card\" draggable='true'>
                     <div class=\"m-3\">
                         <div class=\"card\">
-                            <img class=\"card-img-top card-size\" src='./css/backgroundImages/$classavatar' alt=''>
+                            <img class=\"card-size\" src='./css/backgroundImages/$classavatar' alt=''>
                             <div class=\"card-body\">
                                 <br>
                                 <a class='card-text-decoration' href=\"classroom_stream.php?id=$classid\">

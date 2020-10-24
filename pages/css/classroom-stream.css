@@ -131,6 +131,7 @@ td
     box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.63);
     border-radius: 6px;
 }
+
 /* ===================================== UI properties ===================================== */
 .classui
 {
@@ -140,45 +141,22 @@ td
     box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149);
 }
 /*  ===================================== Box properties ===================================== */
+
+/* ===================================== Image properties ===================================== */
 .classuib
 {
     height: 15rem;
     width: 100%;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
     border-radius: 0.5rem;
 }
-/* ===================================== Image properties ===================================== */
-.classuibi
-{
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    background-size: cover;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
-.classuibb
-{
-    display: block;
-    height: 100%;
-    left: 0;
-    opacity: .8;
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
+
 /*  ===================================== Subject in class stream properties ===================================== */
 .classuibt
 {
     position: absolute;
     top: 0px;
     left: 25px;
-    height: 15rem;
     width: 95%;
     text-align: left;
 }
@@ -234,9 +212,20 @@ td
 }
 .classuib4
 {
+    transition: 0.5s ease-in-out;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: none;
     background-color: #fff;
     padding: 1.5rem;
 }
+
+#display_class{
+    display: none;
+}
+
 .classuib4-1
 {
     letter-spacing: .01428571em;
@@ -356,6 +345,14 @@ div
     display: block;
 }
 /*  ===================================== Text-area in COMMENTS =====================================  */
+.btn_classstream{
+    position: absolute;
+    right: 50%;
+    bottom: 0;
+    left: 50%;
+    background-color: white;
+}
+
 div.enter_button
 {
     display:inline-block;
@@ -397,18 +394,24 @@ div.enter_button
     background-position: center;
 ;
 }
-button.collapsible
-{
-    padding: 0 0 0 0;
-    border: none;
-}
+
 .collapsible {
+    transition: 0.5s ease-in-out;
     cursor: pointer;
     height:fit-content;
     width: 100%;
     text-align: left;
     position: relative;
 }
+
+.collapsible .classuib4  {
+    position: relative;
+    transition: all 0.5s;
+    background-color: white;
+}
+
+
+
 input[type=submit]
 {
     width: 50%;

@@ -2,9 +2,5 @@
 <project version="4">
   <component name="JavaScriptLibraryMappings">
     <includedPredefinedLibrary name="HTTP Response Handler" />
-<<<<<<< HEAD
-    <excludedPredefinedLibrary name="HTML" />
-=======
->>>>>>> class_create_bckgrImage
   </component>
 </project>

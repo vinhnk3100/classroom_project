@@ -1,5 +1,9 @@
 /* Logo top style */
 /* Body background color */
+html {
+    overflow-y: scroll;
+}
+
 body{
     background-image: url(images/wood-background-realistic_107791-102.png);
 }

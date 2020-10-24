@@ -130,7 +130,7 @@ require("Initials.php");
     <!--======Classroom UI=====-->
     <div class="classuis">
         <div class="classui">
-            <button type="button" class="collapsible" onclick="collapsibleClassroom()" >
+            <div class="collapsible">
 
                 <!--=================================================================================================================-->
                 <!--=================================================================================================================-->
@@ -153,18 +153,23 @@ require("Initials.php");
                             echo "<div class=\"classuib3\">
                                     <em class=\"classuib3-1\">Class code : $classid</em>
                                 </div>";
+                        echo "
+                        <button onclick='activeClassInfo()' class='btn btn-outline-success my-2 my-sm-0 white_text btn_classstream'><i class='fa fa-arrow-circle-down'></i></button>
+                        ";
                         ?>
                     </div>
 
-            </button>
-            <div class="classuib4">
-                <div class="classuib4-1">
-                    <em>Subject</em> <?php echo $rowsClass["subject"]?>
-                </div>
-                <div class="classuib4-1">
-                    <em>Room</em> <?php echo $rowsClass["classRoom"];?>
+                <div class="classuib4" id="display_class">
+                    <div class="classuib4-1">
+                        <em>Subject</em> <?php echo $rowsClass["subject"]?>
+                    </div>
+                    <div class="classuib4-1">
+                        <em>Room</em> <?php echo $rowsClass["classRoom"];?>
+                    </div>
                 </div>
             </div>
+
+
 
         </div>
 
