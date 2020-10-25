@@ -133,3 +133,10 @@ function activeClassInfo(){
 
 }
 
+function getUserID(name){
+    const getName = document.getElementById("getName")
+
+    getName.style.color = "red";
+    getName.innerHTML = name;
+}
+

@@ -1,6 +1,8 @@
 <?php session_start();
 if($_SESSION['fullname'] == null){
     header("Location: /myownclassroom");
+}else if($_SESSION['role'] != 'adm'){
+    header("Location: /myownclassroom");
 }
 
 require("Initials.php");
@@ -138,8 +140,8 @@ $rows = mysqli_fetch_assoc($result);
                         if(isset($_SESSION['role'])){
                             if($_SESSION['role'] == "adm"){
                                 echo "<select name=\"role-edit\" class=\"input100\">
-                        <option value=\"Teacher\">Teacher</option>
                         <option value=\"Student\">Student</option>
+                        <option value=\"Teacher\">Teacher</option>
                     </select>";
                             }else{
                                 echo "<input class=\"input100\" type=\"text\"  readonly value='Student'>";
@@ -161,6 +163,14 @@ $rows = mysqli_fetch_assoc($result);
                 </div>
                 <br>
 
+                <!--=================================================================================================================-->
+                <!--=============================================== DELETE BUTTON ===================================================-->
+                <button class="login100-form-btn" name="delete-btn-submit" type="submit" >
+                    Delete User
+                </button>
+
+
+                <br>
                 <!--=================================================================================================================-->
                 <!--=============================================== SAVE BUTTON =====================================================-->
 

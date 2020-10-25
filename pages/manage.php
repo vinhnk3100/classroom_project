@@ -36,37 +36,6 @@ require("Initials.php");
 <body>
 <main>
 
-    <!-- Modal for JOIN CLASSROOM  -->
-    <div id="modal_profiles" class="modal fade modal_users">
-        <div class="modal-dialog modal-join-classroom">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">ACTION MODAL</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <form action=" " method="post">
-                        <label>User name : <?php
-                            echo $rows['fullName'];
-                            ?></label>
-                        <div class="form-group">
-                        </div>
-                        <div class="form-group text-center">
-                            <input type="submit" class="btn btn-primary btn-block action_btn_modal" value="Join">
-                            <input type="submit" class="btn btn-primary btn-block action_btn_modal" value="Join">
-                            <input type="submit" class="btn btn-primary btn-block action_btn_modal" value="Join">
-                        </div>
-
-                    </form>
-
-                </div>
-                <div class="modal-footer">
-                    <p>Ask your teacher for the class code and enter it here.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- END Modal for JOIN CLASSROOM  -->
 
     <div>
         <!--====== NAVBAR TOP =======================-->
@@ -126,6 +95,7 @@ require("Initials.php");
     </div>
 
 
+
     <!--====== NAVBAR TOP =======================-->
 
     <!--=================================================================================================================-->
@@ -164,6 +134,7 @@ require("Initials.php");
                             // output data of each row
                             while ($row = mysqli_fetch_assoc($admin)) {
                                 if($row['role'] == "adm"){
+                                    $uid = $row['user_id'];
                                     echo "<span><img class=\"imgcc\" area-hidden=\"true\" src=\"https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/s32-c-fbw=1/photo.jpg\">"."<span class=\"tp tf\">".$row['fullName']."</span>"."</span>"."<br>";
                                 }
                             }
@@ -190,14 +161,14 @@ require("Initials.php");
                             // output data of each row
                             while ($row = mysqli_fetch_assoc($teacher)) {
                                 if($row['role'] == "tea"){
-                                    $uid = $row['user_id'];
-                                    echo "<a href=\"#modal_profiles\" data-id='$uid' data-toggle=\"modal\" class=\"modal_users btn btn-outline-success my-2 my-sm- color-orange table_btn_right\" name=\"profile-button\" id='profile_users'>Profile</a>";
+                                    $teaUID = $row['user_id'];
+                                    $teaName = $row['fullName'];
+                                    echo '<div><a href="users_infomation.php?id='.$teaUID.'" class="modal_users btn btn-outline-success my-2 my-sm- color-orange table_btn_right" name="profile-button" id=\'profile_users\'>Profile</a></div>';
                                     echo "<span><img class=\"imgcc\" area-hidden=\"true\" src=\"https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/s32-c-fbw=1/photo.jpg\">"."<span class=\"tp tf\">".$row['fullName']."</span>"."</span>".""."<br>";
                                 }
                             }
                         }
                         ?><br><br><br>
-
                     </div>
                 </td>
                 <td>
@@ -224,7 +195,9 @@ require("Initials.php");
                             // output data of each row
                             while ($row = mysqli_fetch_assoc($student)) {
                                 if($row['role'] == "stu"){
-                                    echo "<a href=\"users_infomation.php?id=".$row['user_id']."\" class=\"btn btn-outline-success my-2 my-sm- color-orange table_btn_right\" name=\"profile-button\">Profile</a>";
+                                    $stuName = $row['fullName'];
+                                    $stuUID = $row['user_id'];
+                                    echo '<div><a href="users_infomation.php?id='.$stuUID.'" class="modal_users btn btn-outline-success my-2 my-sm- color-orange table_btn_right" name="profile-button" id=\'profile_users\'>Profile</a></div>';
                                     echo "<span><img class=\"imgcc\" area-hidden=\"true\" src=\"https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/s32-c-fbw=1/photo.jpg\">"."<span class=\"tp tf\">"."<a class='tf' href='#'>".$row['fullName']."</a>"."</span>"."</span>".""."<br>";
                                 }
                             }
@@ -243,6 +216,7 @@ require("Initials.php");
     <!--=================================================================================================================-->
 
     <br><br><br>
+
 
 
 
