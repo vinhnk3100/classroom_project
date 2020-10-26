@@ -20,14 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4f90356-e38e-4199-8c9f-76cceeffb7e1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/myownclassroom.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/myownclassroom.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/actions/modal_action_manage_users.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/actions/role_validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/actions/role_validation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/manage.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/manage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/users_infomation.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/users_infomation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/function/queryStudentClassroom.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/function/queryStudentClassroom.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/function/queryTeacherClassroom.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/function/queryTeacherClassroom.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,6 +176,7 @@
       <workItem from="1603364236333" duration="2090000" />
       <workItem from="1603515161851" duration="8511000" />
       <workItem from="1603594057880" duration="10154000" />
+      <workItem from="1603705866100" duration="295000" />
     </task>
     <servers />
   </component>
