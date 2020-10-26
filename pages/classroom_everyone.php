@@ -12,7 +12,7 @@ $classid = $_GET['id'];
 $query = "SELECT fullName,role FROM users, class WHERE users.user_id = class.teacher_id AND class.class_id = '$classid'";
 $teacher = mysqli_query($db,$query);
 
-$queryStudent = "SELECT fullName,role FROM users, users_class WHERE users.user_id = users_class.user_id AND users_class.class_id = '$classid'";
+$queryStudent = "SELECT fullName,role,users_class.user_id FROM users, users_class WHERE users.user_id = users_class.user_id AND users_class.class_id = '$classid'";
 $student = mysqli_query($db,$queryStudent);
 $result = mysqli_query($db,$query);
 
@@ -112,6 +112,9 @@ require("Initials.php");
 
     <!--====== NAVBAR TOP =======================-->
 
+        <!--=========================================================================================================-->
+        <!--============================================== TEACHER ==================================================-->
+
     <div class="center tbb">
 
         <div class="divline">
@@ -139,6 +142,9 @@ require("Initials.php");
             </tbody>
         </table>
 
+        <!--=========================================================================================================-->
+        <!--============================================== STUDENT ==================================================-->
+
         <div class="divline">
             <h2 class="colorlist giaovien">
                 Student
@@ -153,10 +159,27 @@ require("Initials.php");
                             // output data of each row
                             while ($row = mysqli_fetch_assoc($student)) {
                                 if($row['role'] == "stu"){
-                                    echo "<span><img class=\"imgcc\" area-hidden=\"true\" src=\"https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/s32-c-fbw=1/photo.jpg\">"."<span class=\"tp tf\">".$row['fullName']."</span>"."</span>".""."<br>";
+                                    $stuName = $row['fullName'];
+                                    $stuUID = $row['user_id'];
+                                    $url = 'actions/remove_student.php?id='.$stuUID.'&class_id='.$classid.'';
+                                    //<!--=========================================================================================================-->
+                                    //<!--========================= ACTION ON STUDENT BY TEACHER ==================================================-->
+                                    if($_SESSION['role'] == "tea"){
+                                        echo "<ul class=\"navbar-nav margin-dropdown\">
+                            <li class=\"nav-item dropdown\">
+                                <a class=\"nav-link modal_users btn btn-outline-success my-2 my-sm- color-orange table_btn_right\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"><i class=\"fa fa-cog\" aria-hidden=\"true\"></i></a>
+                                <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"navbarDropdown\">
+                                    <div class=\"text-center margin-dropdown\"><a href=\"$url\" class=\"color-red btn btn-outline-success my-2 my-sm-0\" >Remove</a></div>
+                                </div>
+                            </li>
+                        </ul>";
+                                    }
+                                    echo "<span><img class=\"imgcc\" area-hidden=\"true\" src=\"https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/s32-c-fbw=1/photo.jpg\">"."<span class=\"tp tf\"'>".$row['fullName']."</span>"."</span>".""."<br>";
                                 }
                             }
-                        ?><br><br><br>
+                        ?>
+
+                        <br><br><br>
                     </div>
                 </td>
             </tr>

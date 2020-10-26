@@ -26,20 +26,4 @@
         }
     }
 
-    if(isset($_POST['delete-btn-submit'])){
-        $uid = mysqli_real_escape_string($db, $_POST['uid']);
-        
-        $query = "SELECT * FROM users WHERE user_id = '$uid'";
-        $result = mysqli_query($db,$query);
-        $rows = mysqli_fetch_assoc($result);
-
-
-        if(mysqli_num_rows($result) == 1){
-            mysqli_query($db,"ALTER TABLE users_class DROP FOREIGN KEY IF EXISTS FK_userIDTeacher;
-                        DELETE FROM users WHERE user_id = '$uid'");
-            header("Location: /myownclassroom/pages/manage.php");
-        }
-
-    }
-
 ?>

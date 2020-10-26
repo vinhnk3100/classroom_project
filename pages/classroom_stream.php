@@ -143,15 +143,16 @@ require("Initials.php");
                                 <em><a href="#modal-insert-image" data-toggle="modal"><i class="fa fa-camera style-fa"></i></a></em>
                             </div>
                         </div>
-                        <h1 class="classuib1">
+                        <h1 class="classuib1 shaded_background">
                             <?php echo $rowsClass["className"]?>
+
                         </h1>
                         <div class="classuib2">
-                            <?php echo $rowsClass["fullName"]?>
+                            <div class="shaded_background"><?php echo $rowsClass["fullName"]?></div>
                         </div>
                         <?php
                             echo "<div class=\"classuib3\">
-                                    <em class=\"classuib3-1\">Class code : $classid</em>
+                                    <em class=\"classuib3-1 shaded_background\">Class code : $classid</em>
                                 </div>";
                         echo "
                         <button onclick='activeClassInfo()' class='btn btn-outline-success my-2 my-sm-0 white_text btn_classstream'><i class='fa fa-arrow-circle-down'></i></button>

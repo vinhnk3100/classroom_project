@@ -181,7 +181,7 @@ if($_SESSION['fullname'] == null){
     <!--=================================================================================================================-->
 
     <!-- ====================================== START CARD LIST VIEW ======================================-->
-    <div class="container container-background">
+    <div class="container">
         <div class="row card-padding-top">
             <?php
 

@@ -1,7 +1,4 @@
 /* Classroom Background */
-main{
-    background-image: url("images/wood-background-realistic_107791-102.png");
-}
 
 /* ===================================== List of member ===================================== */
 div.center
@@ -151,6 +148,14 @@ td
     border-radius: 0.5rem;
 }
 
+.shaded_background{
+    padding: 5px;
+    display: inline-block;
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, 0.71);
+    box-shadow: 2px 2px 10px black;
+}
+
 /*  ===================================== Subject in class stream properties ===================================== */
 .classuibt
 {
@@ -162,6 +167,8 @@ td
 }
 .classuib1
 {
+    position: absolute;
+    top: 20px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2.25rem;
     font-weight: 500;
@@ -170,10 +177,11 @@ td
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    display: block;
+    display: inline-block;
 }
 .classuib2
 {
+    margin-top: 40px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.375rem;
     font-weight: 400;
@@ -186,7 +194,10 @@ td
 }
 .classuib3
 {
-    background-color: rgba(255, 255, 255, 0.46);
+    position: absolute;
+    top: 150px;
+    right: 0;
+    bottom: 0;
     padding: 20px;
     margin-top: 34px;
     display: inline-flex;
@@ -200,13 +211,13 @@ td
     text-shadow: 2px 2px 5px black;
 }
 .custom_image_text{
-    float: right;
     padding-right: 20px;
     letter-spacing: .01428571em;
     font-size: 32px;
 }
 .classuib3-1
 {
+
     color: #ffffff;
     margin-right: 0.5rem;
 }
@@ -347,8 +358,8 @@ div
 /*  ===================================== Text-area in COMMENTS =====================================  */
 .btn_classstream{
     position: absolute;
+    top: 200px;
     right: 50%;
-    bottom: 0;
     left: 50%;
     background-color: white;
 }
