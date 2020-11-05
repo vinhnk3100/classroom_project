@@ -168,8 +168,8 @@ require("Initials.php");
                                         echo "<ul class=\"navbar-nav margin-dropdown\">
                             <li class=\"nav-item dropdown\">
                                 <a class=\"nav-link modal_users btn btn-outline-success my-2 my-sm- color-orange table_btn_right\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"><i class=\"fa fa-cog\" aria-hidden=\"true\"></i></a>
-                                <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"navbarDropdown\">
-                                    <div class=\"text-center margin-dropdown\"><a href=\"$url\" class=\"color-red btn btn-outline-success my-2 my-sm-0\" >Remove</a></div>
+                                <div class=\"dropdown-menu dropdown-style\" aria-labelledby=\"navbarDropdown\">
+                                    <div class=\"text-center margin-dropdown\"><a href=\"$url\" class=\"color-red-btn btn btn-outline-success my-2 my-sm-0\" >Remove</a></div>
                                 </div>
                             </li>
                         </ul>";

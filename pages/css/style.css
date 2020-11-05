@@ -106,8 +106,6 @@ body{
 
 .container {
     max-width: unset;
-    padding-left: 80px;
-    padding-right: 80px;
     margin-top: -30px;
 }
 
@@ -158,6 +156,14 @@ progress[value="100"]::-webkit-progress-value {
 }
 
 /* ===================================== BUTTON CLASS ===================================== */
+.action_btn{
+    position: absolute;
+    left: 20px;
+}
+
+.action_btn_cog{
+    width: 40px;
+}
 
     /* Input */
 .wrap-input100-setsize {
@@ -202,14 +208,26 @@ progress[value="100"]::-webkit-progress-value {
     float: right;
 }
 
-.color-red{
-    border: 1px solid #ac0000;
-    color: red;
+/*============================================ COLOR FOR BUTTON ======================================================*/
+.btn-width-style{
+    width: 50%;
+    margin: 20px;
 }
 
-.color-red:hover{
-    border: 1px solid #ac0000;
-    background-color: #e80000;
+.color-green-btn{
+    padding: 5px;
+    background-image: linear-gradient(to top, rgb(151, 255, 128), #c1ffb4, rgb(151, 255, 128));
+    font-size: 18px;
+    border: 1px solid #11ac00;
+    color: #165c00;
+    box-shadow: 4px 4px 10px black;
+}
+
+.color-green-btn:hover{
+    background-image: linear-gradient(to right, #23e800, #25ac00);
+    border: 1px solid #2eac00;
+    background-color: #2be800;
+    box-shadow: 4px 4px 10px #7fff68;
     color: white;
 }
 
@@ -232,7 +250,7 @@ progress[value="100"]::-webkit-progress-value {
     color: white;
 }
 
-.color-red{
+.color-red-btn{
     padding: 5px;
     background-image: linear-gradient(to top, rgb(255, 128, 128),#ffffff, rgb(255, 128, 128));
     font-size: 18px;
@@ -241,7 +259,7 @@ progress[value="100"]::-webkit-progress-value {
     box-shadow: 4px 4px 10px black;
 }
 
-.color-red:hover{
+.color-red-btn:hover{
     background-image: linear-gradient(to right, #e80000, #ac0000);
     border: 1px solid #ac0000;
     background-color: #e80000;
