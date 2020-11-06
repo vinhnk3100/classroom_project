@@ -21,6 +21,9 @@
     font-weight: 400; }
 
 /*======================================================================*/
+.modal-open {
+    padding-right: 0px !important;
+}
 
 .modal-join-classroom {
     color: #636363;
@@ -88,4 +91,8 @@
 }
 .modal-join-classroom .modal-footer a {
     color: #999;
+}
+
+.modal-open{
+    overflow: unset;
 }

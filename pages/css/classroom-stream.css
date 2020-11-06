@@ -115,6 +115,7 @@ td
 /* ===================================== Class interface ===================================== */
 .classuis
 {
+    background-color: rgba(0, 0, 0, 0.53);
     margin: 0 auto;
     margin-top: 30px;
     display: -webkit-box;
@@ -125,7 +126,7 @@ td
     width: -webkit-calc(100% - 2*1.5rem);
     width: calc(100% - 2*1.5rem);
     max-width: 62.5rem;
-    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.63);
+    box-shadow: 0 0 10px 4px rgba(255, 255, 255, 0.37);
     border-radius: 6px;
 }
 
@@ -157,7 +158,16 @@ td
 }
 
 /*  ===================================== Subject in class stream properties ===================================== */
-.classuibt
+.btn_classstream{
+    padding: 0 2px;
+    position: absolute;
+    top: 200px;
+    right: 50%;
+    left: 50%;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.class-content
 {
     position: absolute;
     top: 0px;
@@ -165,7 +175,7 @@ td
     width: 95%;
     text-align: left;
 }
-.classuib1
+.class-top-title
 {
     position: absolute;
     top: 20px;
@@ -179,11 +189,11 @@ td
     white-space: nowrap;
     display: inline-block;
 }
-.classuib2
+.class-title
 {
     margin-top: 40px;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.375rem;
+    font-size: 24px;
     font-weight: 400;
     line-height: 1.75rem;
     color: #fff;
@@ -192,7 +202,7 @@ td
     white-space: nowrap;
     display: block;
 }
-.classuib3
+.class-code
 {
     position: absolute;
     top: 150px;
@@ -215,39 +225,34 @@ td
     letter-spacing: .01428571em;
     font-size: 32px;
 }
-.classuib3-1
+.class-code-text
 {
 
     color: #ffffff;
     margin-right: 0.5rem;
 }
-.classuib4
+.class-information
 {
     transition: 0.5s ease-in-out;
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    bottom: 0px;
     right: 0;
     left: 0;
-    display: none;
     background-color: #fff;
-    padding: 1.5rem;
 }
 
-#display_class{
-    display: none;
-}
 
-.classuib4-1
+.class-information-text
 {
     letter-spacing: .01428571em;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
     line-height: 1.25rem;
     color: #3c4043;
+    font-size: 20px;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    display: block;
 }
 em
 {
@@ -302,18 +307,16 @@ div
     cursor: pointer;
 }
 /*  ===================================== COMMENTS =====================================  */
-.classuib5
+.comment-area
 {
     background-color: #fff;
     border: .0625rem solid #dadce0;
-    border-radius: 0.5rem;
     overflow: hidden;
     margin: 1rem;
-}
-.classuib5-1
-{
     padding: 0.5rem 0;
+    border-radius: 6px;
 }
+
 .classuib5-2
 {
     padding: 0.5rem 0;
@@ -356,13 +359,7 @@ div
     display: block;
 }
 /*  ===================================== Text-area in COMMENTS =====================================  */
-.btn_classstream{
-    position: absolute;
-    top: 200px;
-    right: 50%;
-    left: 50%;
-    background-color: white;
-}
+
 
 div.enter_button
 {
@@ -409,16 +406,17 @@ div.enter_button
 .collapsible {
     transition: 0.5s ease-in-out;
     cursor: pointer;
-    height:fit-content;
+    height: fit-content;
     width: 100%;
     text-align: left;
     position: relative;
 }
 
-.collapsible .classuib4  {
-    position: relative;
+.collapsible .class-information  {
     transition: all 0.5s;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
+    height: 87px;
+    padding: 24px;
 }
 
 
@@ -447,13 +445,20 @@ input[type=submit]
     resize: none;
     padding-left: 0.5rem;
 }
+
+#comment_textarea:focus
+{
+    transition: 0.5s ease-in-out;
+    background-color: #dedede;
+}
+
 .myButton {
     box-shadow:inset 0px 1px 0px 0px #dcecfb;
     background:linear-gradient( bottom, #bddbfa 5%, #80b5ea 100%);
     background-color:#bddbfa;
     border-radius:6px;
     border:1px solid #84bbf3;
-    display:inline-block;
+    display: inline-block;
     cursor:pointer;
     color:#ffffff;
     font-family:Arial;
@@ -470,15 +475,11 @@ input[type=submit]
     text-decoration:none;
     background-color:#80b5ea;
 }
-.myButton:active {
-    position:relative;
-    top:1px;
-}
 .nav_bar_2
 {
-    background-image: url("images/wood-background-realistic_107791-102.png");
-    background-color: rgba(255, 255, 255, 0.12);
-    box-shadow: 2px 6px 8px rgb(0, 0, 0);
+    background-image: url("images/background6.jpg");
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 6px 8px rgba(255, 255, 255, 0.36);
     display: flex;
     -webkit-justify-content: center;
     justify-content: center;
@@ -580,6 +581,10 @@ input[type=submit]
 .action_btn_modal{
     width: 20% !important;
     display: inline-block !important;
+}
+
+.delete-class-btn{
+    color: red;
 }
 
 /* ============================= DROPDOWN MENU ========================= */

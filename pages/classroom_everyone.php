@@ -46,19 +46,45 @@ require("Initials.php");
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
+                    <li class="nav-item dropdown">
+                        <a class="text-nav-bar" href="./home.php">Home <span class="sr-only">(current)</span></a>
+                        <a class="text-nav-bar dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Classroom
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <?php
+                            // =================================================== ROLE ACTION ===============================================
+                            if (isset($_SESSION['role'])){
+                                if($_SESSION['role'] == 'adm'){
+                                    echo "<a href=\"./classroom_stream.php?id=$classid\" class=\"delete-class-btn dropdown-item \">Delete Classroom</a>";
+                                }elseif ($_SESSION['role'] == 'tea'){
+                                    echo "<a href=\"\" class=\"dropdown-item btn btn-default btn-rounded trigger-btn\" data-toggle=\"modal\">Delete Classroom</a>";
+                                }
+                            }?>
+                        </div>
                     </li>
-                    <?php
-                    // Check if admin, teacher, student
-                    if (isset($_SESSION['role'])){
-                        if($_SESSION['role'] == 'adm'){
-                            echo "<a href=\"manage.php\" class=\"nav-link\" id=\"navbarDropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                        Manage
-                    </a>";
-                        }
-                    }?>
                 </ul>
+                <!--=================================================================================================================-->
+                <!--=================================================================================================================-->
+
+
+                <!-- Modal FOR CREATE CLASSROOM -->
+                <div id="modal-delete-classroom" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Create classroom</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <!--./actions/class_create.php-->
+                                <form action="./actions/class_create.php" method="post">
+                                        <input type= "submit" class="btn btn-primary btn-block btn-lg" name = "btn_create_class" id="btn_create_class" value="Create">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <!--=================================================================================================================-->
                 <!--=================================================================================================================-->

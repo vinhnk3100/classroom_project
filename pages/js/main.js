@@ -1,6 +1,7 @@
+/*PREVENT PRE-ANIMATING OF ELEMENTS */
+window.onload=document.body.classList.remove("preload");
 
-
-// Generating Avatar random colorize
+// Generating Avatar random colorize circle
 const colors = ['#00AA55', '#009FD4', '#B381B3', '#939393', '#E3BC00', '#D47500', '#DC2A2A'];
 
 function numberFromText(text) {
@@ -19,23 +20,16 @@ avatars.forEach(circle => {
     circle.style.backgroundColor = colors[numberFromText(text) % colors.length]; // => "#DC2A2A"
 });
 
-//PASSWORD
-var password = document.getElementById("password-register");
-var confirmPassword = document.getElementById("confirm-password-register");
+// =================================================================================================
+// =================================================================================================
+
+// =============================================== PASSWORD
+const password = document.getElementById("password-register");
+const confirmPassword = document.getElementById("confirm-password-register");
 
 password.addEventListener('keyup', function() {
 
-       var pwd = password.value
-//     var pwdc = confirmPassword.value;
-//
-//     if(pwd != pwdc){
-//         document.getElementById("passwordChangeMsg").innerHTML = "Password must be the same !";
-//         document.getElementById("submit-button").style.display = "none";
-//         return false;
-//     }else if (pwd == pwdc){
-//         document.getElementById("passwordChangeMsg").innerHTML = "";
-//         document.getElementById("submit-button").style.display = "block";
-//     }
+    const pwd = password.value;
 
     // Reset if password length is zero
     if (pwd.length === 0) {
@@ -45,7 +39,7 @@ password.addEventListener('keyup', function() {
     }
 
     // Check progress
-    var prog = [/[$@$!%*#?&]/, /[A-Z]/, /[0-9]/, /[a-z]/]
+    let prog = [/[$@$!%*#?&]/, /[A-Z]/, /[0-9]/, /[a-z]/]
         .reduce((memo, test) => memo + test.test(pwd), 0);
 
     // Length must be at least 8 chars
@@ -54,8 +48,8 @@ password.addEventListener('keyup', function() {
     }
 
     // Display it
-    var progress = "";
-    var strength = "";
+    let progress = "";
+    let strength = "";
     switch (prog) {
         case 0:
         case 1:
@@ -80,21 +74,10 @@ password.addEventListener('keyup', function() {
     document.getElementById("progress").value = progress;
 
 });
+// =================================================================================================
+// =================================================================================================
 
-//confirmPassword.addEventListener('keyup', function () {
-//     var pw = password.value;
-//     var cpw = confirmPassword.value;
-//
-//     if(pw != cpw){
-//         document.getElementById("passwordChangeMsg").innerHTML = "Password must be the same !";
-//         document.getElementById("submit-button").style.display = "none";
-//         return false;
-//     }else if (pw == cpw){
-//         document.getElementById("passwordChangeMsg").innerHTML = "";
-//         document.getElementById("submit-button").style.display = "block";
-//     }
-// })
-
+// ================== Function for validate password in recovery-password
 function validate() {
     const password = document.getElementById("password-register").value;
     const confirmPassword = document.getElementById("confirm-password-register").value;
@@ -105,8 +88,10 @@ function validate() {
         document.forms["form-password-recovery"].submit();
     }
 }
+// =================================================================================================
+// =================================================================================================
 
-// This will show image preview in modal classroomUI
+// This will show image preview in modal classroomUI when adding new background
 function getImage() {
     const image_insert = document.getElementById("images-class-background");
     const image_preview = document.getElementById("image-class-preview");
@@ -119,24 +104,24 @@ function getImage() {
         reader.readAsDataURL(this.files[0]);
     }
 }
+// =================================================================================================
+// =================================================================================================
 
+// =================================================================================================
+// =================================================================================================
 
-function activeClassInfo(){
-    const classInfo = document.getElementById("display_class")
-    var height = classInfo.clientHeight;
+// Showing element information in class-stream
 
-    if(classInfo.style.display == "block"){
-        classInfo.style.display = "none"
-    }else {
-        classInfo.style.display = "block"
+function showClassInforms() {
+    const element_content = document.getElementsByClassName('class-information')[0];
+
+    if(element_content.style.visibility == 'hidden'){
+        element_content.style.visibility = 'visible';
+        element_content.style.height = 87 + 'px';
+        element_content.style.padding = '24px';
+    }else{
+        element_content.style.visibility = 'hidden';
+        element_content.style.height = '0px';
+        element_content.style.padding = '0px';
     }
-
 }
-
-function getUserID(name){
-    const getName = document.getElementById("getName")
-
-    getName.style.color = "red";
-    getName.innerHTML = name;
-}
-

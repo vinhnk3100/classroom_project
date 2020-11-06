@@ -1,6 +1,6 @@
 <?php
 
-+//connect database
+//connect database
 require ('database.php');
 session_start();
 

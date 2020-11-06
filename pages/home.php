@@ -36,11 +36,9 @@ if($_SESSION['fullname'] == null){
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="text-nav-bar" href="./home.php">Home <span class="sr-only">(current)</span></a>
+                        <a class="text-nav-bar dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Classroom
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -51,7 +49,7 @@ if($_SESSION['fullname'] == null){
                                     echo "<a href=\"#modal-create-classroom\" class=\"dropdown-item btn btn-default btn-rounded trigger-btn\" data-toggle=\"modal\">Create classroom</a>";
                                     echo "<a href=\"#modal-join-classroom\" class=\"dropdown-item btn btn-default btn-rounded trigger-btn\" data-toggle=\"modal\">Join classroom</a>";
                                     echo "<div class=\"dropdown-divider\"></div>
-                                        <a class=\"dropdown-item\" href=\"manage.php\">Manage</a>";
+                                        <a class=\"dropdown-item\" href=\"manage.php\">Manage users</a>";
                                 }elseif ($_SESSION['role'] == 'tea'){
                                     echo "<a href=\"#modal-create-classroom\" class=\"dropdown-item btn btn-default btn-rounded trigger-btn\" data-toggle=\"modal\">Create classroom</a>";
                                 }elseif ($_SESSION['role'] == 'stu'){
@@ -60,15 +58,6 @@ if($_SESSION['fullname'] == null){
                             }?>
                         </div>
                     </li>
-                    <?php
-                    // Check if admin, teacher, student
-                    if (isset($_SESSION['role'])){
-                        if($_SESSION['role'] == 'adm'){
-                            echo "<a href=\"manage.php\" class=\"nav-link\" id=\"navbarDropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                        Manage
-                    </a>";
-                        }
-                    }?>
                 </ul>
                 <!-- Modal for CREATE CLASSROOM  -->
 
@@ -77,7 +66,7 @@ if($_SESSION['fullname'] == null){
 
                 <!-- Modal FOR CREATE CLASSROOM -->
                 <div id="modal-create-classroom" class="modal fade">
-                    <div class="modal-dialog modal-login">
+                    <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h4 class="modal-title">Create classroom</h4>
@@ -154,7 +143,7 @@ if($_SESSION['fullname'] == null){
                             echo "<div class='circle'><div class='initials'>$generateName</div></div>"
                             ?>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right p-3" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu dropdown-menu-right p-3 dropdown-profile" aria-labelledby="navbarDropdown">
                             <?php
                             echo "<div class=\"circle m-l-r-auto\"><a href=\"users_infomation.php?id=".$_SESSION['uid']."\" class=\"initials text-align-profile\" >".$generateName."</a></div><br>";
                             echo "<div class=\"text-center\"><a href=\"#\" class=\"text-align-profile\" >".$_SESSION['fullname']."</a></div>";

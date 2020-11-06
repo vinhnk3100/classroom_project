@@ -22,18 +22,11 @@ if($_SESSION['role'] == 'tea'){
         $_POST['classname'] = $classname;
 
         echo "<div class=\"col-3 margin_bottom_card\" draggable='true'>
-                    <div class=\"m-3\">
+                    <div class=\"m-3 mx-auto\">
                         <div class=\"card\">
                             <img class=\" card-size\" src='./css/backgroundImages/$classavatar' alt=''>
                             <!-- =========================== DROPDOWN ACTION ======================================= -->
                             <ul class=\"navbar-nav margin-dropdown action_btn\">
-                            <li class=\"nav-item dropdown\">
-                                <a class=\"nav-link btn btn-outline-success my-2 action_btn_cog table_btn_right\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"><i class=\"fa fa-cog\" aria-hidden=\"true\"></i></a>
-                                <div class=\"dropdown-menu dropdown-style\" aria-labelledby=\"navbarDropdown\">
-                                <div class=\"text-center margin-dropdown\"><a href=\"#\"  data-toggle=\"modal\" class=\"color-green-btn btn btn-outline-success my-2 my-sm-0 btn-width-style\" >Edit</a></div>
-                                    <div class=\"text-center margin-dropdown\"><a href=\"#modal-delete-classroom\" data-toggle=\"modal\" class=\"color-red-btn btn btn-outline-success my-2 my-sm-0 btn-width-style\" >Remove</a></div>
-                                </div>
-                            </li>
                         </ul>
                             <div class=\"card-body\">
                                 <br>
@@ -43,14 +36,6 @@ if($_SESSION['role'] == 'tea'){
                                 </a>
                                 
                                 <div id=\"modal-delete-classroom\" class=\"modal fade\">
-    <div class=\"modal-dialog modal-join-classroom\">
-        <div class=\"modal-content\">
-            <div class=\"modal-header\">
-                <h4 class=\"modal-title alertLogin\">Are you sure you want to delete this classroom ?</h4>
-            </div>
-            
-        </div>
-    </div>
 </div>
                             </div>
                         </div>

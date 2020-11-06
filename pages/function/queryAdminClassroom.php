@@ -21,7 +21,7 @@ if ($_SESSION['role'] == 'adm'){
         $classname = $rowClassAdmin['className'];
         $classsubject = $rowClassAdmin['subject'];
         echo "<div class=\"col-3 margin_bottom_card\" draggable='true'>
-                    <div class=\"m-3\">
+                    <div class=\"m-3 mx-auto\">
                         <div class=\"card\">
                             <img class=\"card-size\" src='./css/backgroundImages/$classavatar' alt=''>
                             <div class=\"card-body\">

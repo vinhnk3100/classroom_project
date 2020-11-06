@@ -49,13 +49,13 @@ require("Initials.php");
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
+                        <a class="text-nav-bar" href="./home.php">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <?php
                     // Check if admin, teacher, student
                     if (isset($_SESSION['role'])){
                         if($_SESSION['role'] == 'adm'){
-                            echo "<a href=\"manage.php\" class=\"nav-link\" id=\"navbarDropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                            echo "<a href=\"manage.php\" class=\"text-nav-bar p-l-10\" id=\"navbarDropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">
                         Manage
                     </a>";
                         }

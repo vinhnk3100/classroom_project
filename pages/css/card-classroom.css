@@ -12,36 +12,39 @@
 }
 
 .card-size {
-    width: 360px;
+    width: auto;
     height: 250px;
     border-radius: 10px 10px 10px 10px;
 }
 
 .card{
+    transition: 0.5s ease-in-out;
+    width: 360px;
     overflow: hidden;
     padding: 2px;
     border-radius: 12px;
-    box-shadow: 8px 8px 8px rgb(0, 0, 0);
-    background-color: #000000;
+    box-shadow: 8px 8px 8px rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.21);
 }
 
 .card:hover .card-body {
-    box-shadow: 0 0 20px rgb(0, 0, 0);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
     transition: 0.5s ease-in-out;
     bottom: 5px;
     background-color: rgba(0, 0, 0, 0.4);
-
 }
 
 .card:hover{
     transition: 0.5s ease-in-out;
-    box-shadow: 0 0 20px rgb(0, 0, 0);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+    background-color: rgb(0, 217, 255);
 }
 
 .card-body{
     transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
     position: absolute;
-    bottom: -30px;
+    bottom: -32px;
     display: inline-block;
     background-color: rgba(0, 0, 0, 0.07);
     width: 100%;

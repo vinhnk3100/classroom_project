@@ -20,13 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4f90356-e38e-4199-8c9f-76cceeffb7e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/actions/remove_class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/actions/class_create.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/actions/class_create.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/classroom_everyone.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/classroom_everyone.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/classroom_stream.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/classroom_stream.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/css/card-classroom.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/css/card-classroom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/css/classroom-stream.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/css/classroom-stream.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/css/modal-form.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/css/modal-form.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/function/queryAdminClassroom.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/function/queryAdminClassroom.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/function/queryStudentClassroom.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/function/queryStudentClassroom.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/function/queryTeacherClassroom.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/function/queryTeacherClassroom.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/manage.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/manage.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +195,10 @@
       <workItem from="1603940442713" duration="384000" />
       <workItem from="1603978283652" duration="6223000" />
       <workItem from="1604030120886" duration="2857000" />
-      <workItem from="1604555785640" duration="961000" />
+      <workItem from="1604555785640" duration="3901000" />
+      <workItem from="1604560317162" duration="111000" />
+      <workItem from="1604566903846" duration="3346000" />
+      <workItem from="1604652136224" duration="11842000" />
     </task>
     <servers />
   </component>
@@ -314,10 +324,10 @@
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824/1920.0.864.1496@0.0.1536.824" timestamp="1601955352461" />
     <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1603603770914" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1602942291443">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1604653379534">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.0.864.1496@0.0.1536.824" timestamp="1601958666844" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1602942291443" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1604653379534" />
   </component>
 </project>

@@ -1,11 +1,11 @@
 /* Logo top style */
 /* Body background color */
-html {
-    overflow-y: scroll;
+html{
+    overflow-y: auto;
 }
 
 body{
-    background-image: url(images/wood-background-realistic_107791-102.png);
+    background-image: url(images/background6.jpg);
 }
 
 /* ===================================== fa style ===================================== */
@@ -43,18 +43,14 @@ body{
 /* ===================================== Font top ===================================== */
 .nav-link{
     font-weight: bold;
-    font-size: 18px;
+    font-size: 20px;
     font-family: Calibri;
 }
 
-.navbar{
-    background: -webkit-linear-gradient(top, rgb(62, 62, 62), rgba(0, 0, 0, 0.44),rgb(62, 62, 62));
-}
 
-.white_text{
-    background-color: #d2d2d2;
-    margin-right: 12px;
-    box-shadow: 3px 4px 8px black;
+
+.navbar{
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.79), rgba(0, 0, 0, 0.89), rgb(0, 0, 0));
 }
 
 
@@ -69,6 +65,11 @@ body{
 
 
 /* ===================================== Avatar profile ===================================== */
+.dropdown-profile{
+    box-shadow: 0px 0px 20px rgba(0, 255, 243, 0.58);
+
+}
+
 .avatar-profile {
     vertical-align: middle;
     width: 50px;
@@ -79,7 +80,7 @@ body{
 
 .avatar-profile:hover{
     transition: 0.2s ease-in-out;
-    box-shadow: 0px 0px 20px #00901e;
+    box-shadow: 0px 0px 20px #00fff3;
 }
 
 .circle{
@@ -99,7 +100,7 @@ body{
 .text-align-profile:hover {
     transition: 0.2s ease-in-out;
     text-decoration: none;
-    color: #368b00;
+    color: #00ffdf;
 }
 
 /* ===================================== CONTAINER BODY ===================================== */
@@ -209,6 +210,7 @@ progress[value="100"]::-webkit-progress-value {
 }
 
 /*============================================ COLOR FOR BUTTON ======================================================*/
+
 .btn-width-style{
     width: 50%;
     margin: 20px;
@@ -266,3 +268,25 @@ progress[value="100"]::-webkit-progress-value {
     box-shadow: 4px 4px 10px #ff6868;
     color: white;
 }
+
+.text-nav-bar{
+    word-spacing: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.5s ease-in-out;
+    font-family: Calibri;
+}
+
+.text-nav-bar:hover {
+    transition: 0.5s ease-in-out;
+    text-decoration: none;
+    color: #00ffff;
+}
+
+.dropdown-toggle{
+    word-spacing: -5px;
+}
+
+
+

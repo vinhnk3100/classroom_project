@@ -55,18 +55,23 @@ require("Initials.php");
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
+                    <li class="nav-item dropdown">
+                        <a class="text-nav-bar" href="./home.php">Home <span class="sr-only">(current)</span></a>
+                        <a class="text-nav-bar dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Classroom
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <?php
+                            // =================================================== ROLE ACTION ===============================================
+                            if (isset($_SESSION['role'])){
+                                if($_SESSION['role'] == 'adm'){
+                                    echo "<a href=\"./classroom_stream.php?id=$classid\" class=\"delete-class-btn dropdown-item \">Delete Classroom</a>";
+                                }elseif ($_SESSION['role'] == 'tea'){
+                                    echo "<a href=\"\" class=\"dropdown-item btn btn-default btn-rounded trigger-btn\" data-toggle=\"modal\">Delete Classroom</a>";
+                                }
+                            }?>
+                        </div>
                     </li>
-                    <?php
-                    // Check if admin, teacher, student
-                    if (isset($_SESSION['role'])){
-                        if($_SESSION['role'] == 'adm'){
-                            echo "<a href=\"manage.php\" class=\"nav-link\" id=\"navbarDropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                        Manage
-                    </a>";
-                        }
-                    }?>
                 </ul>
 
                 <!--=================================================================================================================-->
@@ -137,60 +142,46 @@ require("Initials.php");
 
                 <!--======Classroom IMAGE BACKGROUND=====-->
                 <img class="classuib" src="./css/backgroundImages/<?php echo $rowsClass["classAvatar"]; ?>" alt="">
-                    <div class="classuibt">
-                        <div class="classuib2">
-                            <div class="custom_image_text">
-                                <em><a href="#modal-insert-image" data-toggle="modal"><i class="fa fa-camera style-fa"></i></a></em>
-                            </div>
+                <div class="class-content">
+                    <div class="class-title">
+                        <div>
+                            <em><a href="#modal-insert-image" data-toggle="modal"><i class="fa fa-cog" aria-hidden="true"></i></a></em>
                         </div>
-                        <h1 class="classuib1 shaded_background">
-                            <?php echo $rowsClass["className"]?>
-
-                        </h1>
-                        <div class="classuib2">
-                            <div class="shaded_background"><?php echo $rowsClass["fullName"]?></div>
+                        <div class="custom_image_text">
+                            <em><a href="#modal-insert-image" data-toggle="modal"><i class="fa fa-camera style-fa"></i></a></em>
                         </div>
-                        <?php
-                            echo "<div class=\"classuib3\">
-                                    <em class=\"classuib3-1 shaded_background\">Class code : $classid</em>
+                    </div>
+                    <h1 class="class-top-title shaded_background">
+                        <?php echo $rowsClass["className"]?>
+                    </h1>
+                    <div class="class-title">
+                        <div class="shaded_background"><?php echo $rowsClass["fullName"]?></div>
+                    </div>
+                    <?php
+                    echo "<div class=\"class-code\">
+                                    <em class=\"class-code-text shaded_background\">Class code : $classid</em>
                                 </div>";
-                        echo "
-                        <button onclick='activeClassInfo()' class='btn btn-outline-success my-2 my-sm-0 white_text btn_classstream'><i class='fa fa-arrow-circle-down'></i></button>
-                        ";
-                        ?>
-                    </div>
+                    echo "
+                        <button onclick='showClassInforms()' class='btn btn-outline-success btn_classstream'><i class='fa fa-arrow-circle-down'></i></button>";
+                    ?>
+                </div>
 
-                <div class="classuib4" id="display_class">
-                    <div class="classuib4-1">
-                        <em>Subject</em> <?php echo $rowsClass["subject"]?>
+                <!-- SHOWING CLASS INFORMATION -->
+
+                <div class="class-information">
+                    <div class="class-information-text">
+                        <em>Subject :</em> <?php echo $rowsClass["subject"]?>
                     </div>
-                    <div class="classuib4-1">
-                        <em>Room</em> <?php echo $rowsClass["classRoom"];?>
+                    <div class="class-information-text">
+                        <em>Room :</em> <?php echo $rowsClass["classRoom"];?>
                     </div>
                 </div>
             </div>
-
-
-
+            <!--=================================================================================================================-->
+            <!--=================================================================================================================-->
         </div>
 
-        <div class="classuib5">
-            <div class="classuib5-1">
-                <div class="classuib5-1a">
-                    <div class="avatar-icon">
-                        <a href="#" target="_blank">
-                            <img class="imgcd" src="./css/images/avatar/t1.png" alt="Flag">
-                        </a>
-                    </div>
-                    <div class="enter_button">
-                        <textarea id="comment_textarea" name="comment" placeholder="Enter comment here..." ></textarea>
-                        <a href="#" class="myButton">
-                            Post
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+
 
         <!--=================================================================================================================-->
         <!--=================================================================================================================-->
@@ -223,11 +214,27 @@ require("Initials.php");
 
         <!--=================================================================================================================-->
         <!--=================================================================================================================-->
-
-
-
-
+    </div>
     <!--====== LIST OF USERS ========================================-->
+    <div class="classuis">
+        <div class="comment-area">
+            <div class="classuib5-1a">
+                <div class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <?php
+                    $initials = new Initials();
+                    $generateName = $initials->generate($_SESSION['fullname']);
+                    echo "<div class='circle'><div class='initials'>$generateName</div></div>"
+                    ?>
+                </div>
+                <div class="enter_button">
+                    <textarea id="comment_textarea" name="comment"  placeholder="Enter comment here..." ></textarea>
+                    <a href="#" class="myButton">
+                        Post
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <br><br><br>
 
