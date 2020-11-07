@@ -3,8 +3,6 @@ function post_valdate(){
     const postButton = document.getElementById("btn_post");
 
     if(postContent != ''){
-        postButton.disabled =true;
-    } else{
-        document.forms['postInt'].submit();
-    }
+        postButton.disabled =false;
+    } 
  }
