@@ -208,8 +208,8 @@ progress[value="100"]::-webkit-progress-value {
 .manage-btn{
     float: right;
 }
-
-/*============================================ COLOR FOR BUTTON ======================================================*/
+/* ================================================================================================================== */
+/* ======================================== COLOR FOR BUTTON, BUTTON STYLE ========================================== */
 
 .btn-width-style{
     width: 50%;
@@ -288,5 +288,53 @@ progress[value="100"]::-webkit-progress-value {
     word-spacing: -5px;
 }
 
+.round-btn-cyan{
+    transition: 0.5s ease-in-out;
+    background-color: #ffffff;
+    color: #12d7bf;
+    padding: 6px 10px;
+    border-radius: 50%;
+}
+
+.round-btn-cyan:hover{
+    box-shadow: 0 0 10px cyan;
+    transition: 0.5s ease-in-out;
+    background-color: #00e0ca;
+    color: #ffffff;
+}
+
+.class-delete-btn-yes{
+    position: absolute;
+    width: 40% !important;
+    height: 27% !important;
+    margin: unset !important;
+    padding: unset !important;
+    border: 2px solid black !important;
+    transition: 0.2s ease-in-out;
+    color: white;
+    background-color: #46bf00;
+}
+
+.class-delete-btn-yes:hover{
+    transition: 0.2s ease-in-out;
+    color: #46bf00;
+    background-color: white;
+}
+
+.class-delete-btn-no{
+    position: relative;
+    left: 60%;
+    border-radius: 4px;
+    width: 40% !important;
+    transition: 0.2s ease-in-out;
+    color: white;
+    background-color: red;
+}
+
+.class-delete-btn-no:hover{
+    transition: 0.2s ease-in-out;
+    color: red;
+    background-color: white;
+}
 
 
