@@ -169,10 +169,11 @@ require("Initials.php");
                     </div>
                 </div>
             </div>
-
-
-
         </div>
+
+
+
+        <!-- COMMENT SECTION -->
 
         <div class="classuib5">
             <div class="classuib5-1">
@@ -183,10 +184,11 @@ require("Initials.php");
                         </a>
                     </div>
                     <div class="enter_button">
-                        <textarea id="comment_textarea" name="comment" placeholder="Enter comment here..." ></textarea>
-                        <a href="#" class="myButton">
-                            Post
-                        </a>
+                        <form id='postInt' name='postInt' method = 'post' action="./actions/post_create.php">
+                        <textarea id="comment_textarea" name="comment_area" placeholder="Enter comment here..." ></textarea>
+                        <input type="hidden" name="btn_post" >
+                        <input type="button" class="btn_post" id="btn_post" onclick="post_validate()" value="Post">
+                        </form>
                     </div>
                 </div>
             </div>
@@ -242,6 +244,7 @@ require("Initials.php");
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src=".js/post_valdate.js"></script>
 
 </footer>
 </body>
