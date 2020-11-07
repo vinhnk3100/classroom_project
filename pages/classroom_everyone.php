@@ -182,7 +182,7 @@ require("Initials.php");
                 <td>
                     <div>
                         <?php
-                            // output data of each row
+                            // ============================ OUTPUT STUDENT DATA ROW ==============================
                             while ($row = mysqli_fetch_assoc($student)) {
                                 if($row['role'] == "stu"){
                                     $stuName = $row['fullName'];

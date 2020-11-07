@@ -21,19 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c4f90356-e38e-4199-8c9f-76cceeffb7e1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/actions/class_create.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/actions/class_create.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/classroom_everyone.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/classroom_everyone.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/classroom_stream.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/classroom_stream.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/css/card-classroom.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/css/card-classroom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/css/classroom-stream.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/css/classroom-stream.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/css/modal-form.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/css/modal-form.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/function/queryAdminClassroom.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/function/queryAdminClassroom.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/function/queryStudentClassroom.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/function/queryStudentClassroom.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/function/queryTeacherClassroom.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/function/queryTeacherClassroom.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/manage.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/manage.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,6 +187,7 @@
       <workItem from="1604560317162" duration="111000" />
       <workItem from="1604566903846" duration="3346000" />
       <workItem from="1604652136224" duration="11842000" />
+      <workItem from="1604729683933" duration="60000" />
     </task>
     <servers />
   </component>
