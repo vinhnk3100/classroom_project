@@ -80,14 +80,14 @@
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                             </div>
                             <div class="modal-body">
-                                <form action=" " method="post">
+                                <form action="./actions/join_classroom.php" method="post">
                                     <label>Enter classroom code : </label>
                                     <div class="form-group">
                                         <i class="fa fa-book"></i>
                                         <input type="text" class="form-control" name="classroom-code" placeholder="Classroom Code" required="required">
                                     </div>
                                     <div class="form-group">
-                                        <input type="submit" class="btn btn-primary btn-block btn-lg" value="Join">
+                                        <input type="submit" name="btn_join_class" class="btn btn-primary btn-block btn-lg" value="Join">
                                     </div>
                                 </form>
 
