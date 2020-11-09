@@ -20,17 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4f90356-e38e-4199-8c9f-76cceeffb7e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/actions/add_student.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/actions/edit_classroom.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/function/prevent_cross.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/actions/return_password.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/actions/return_password.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/actions/role_validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/actions/role_validation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/classroom_everyone.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/classroom_everyone.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/css/classroom-stream.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/css/classroom-stream.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/function/nav-bar-action-home.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/function/nav-bar-action-home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/function/nav-bar-actions-class.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/function/nav-bar-actions-class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/css/card-classroom.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/css/card-classroom.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +189,7 @@
       <workItem from="1604652136224" duration="11842000" />
       <workItem from="1604729683933" duration="4919000" />
       <workItem from="1604828362643" duration="4721000" />
-      <workItem from="1604893466441" duration="2840000" />
+      <workItem from="1604893466441" duration="3695000" />
     </task>
     <servers />
   </component>
