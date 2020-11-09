@@ -20,14 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4f90356-e38e-4199-8c9f-76cceeffb7e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/function/nav-bar-action-home.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/function/nav-bar-actions-class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/actions/add_student.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/actions/edit_classroom.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/function/prevent_cross.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/actions/remove_class.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/actions/remove_class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/actions/remove_student.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/actions/remove_student.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/actions/return_password.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/actions/return_password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/actions/role_validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/actions/role_validation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/classroom_everyone.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/classroom_everyone.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/classroom_stream.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/classroom_stream.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/css/classroom-stream.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/css/classroom-stream.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/function/nav-bar-action-home.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/function/nav-bar-action-home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/function/nav-bar-actions-class.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/function/nav-bar-actions-class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -195,6 +197,8 @@
       <workItem from="1604566903846" duration="3346000" />
       <workItem from="1604652136224" duration="11842000" />
       <workItem from="1604729683933" duration="4919000" />
+      <workItem from="1604828362643" duration="4721000" />
+      <workItem from="1604893466441" duration="2840000" />
     </task>
     <servers />
   </component>
@@ -302,11 +306,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="462" y="135" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1602665593215" />
-    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1604734623139">
+    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1604832351732">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824/1920.0.864.1496@0.0.1536.824" timestamp="1601960008444" />
-    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1604734623139" />
+    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1604832351732" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1603523735437">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -315,15 +319,15 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="578" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1603600455295" />
-    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1603603770914">
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1604830800850">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824/1920.0.864.1496@0.0.1536.824" timestamp="1601955352461" />
-    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1603603770914" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1604731713538">
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1604830800850" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1604829229389">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.0.864.1496@0.0.1536.824" timestamp="1601958666844" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1604731713538" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1604829229389" />
   </component>
 </project>

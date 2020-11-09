@@ -20,8 +20,10 @@
                         // =================================================== ROLE ACTION ===============================================
                         if (isset($_SESSION['role'])){
                             if($_SESSION['role'] == 'adm'){
+                                echo "<a href=\"#modal-edit-classroom\" data-toggle='modal' class=\"edit-class-btn dropdown-item \">Edit Classroom</a>";
                                 echo "<a href=\"#modal-delete-classroom\" data-toggle='modal' class=\"delete-class-btn dropdown-item \">Delete Classroom</a>";
                             }elseif ($_SESSION['role'] == 'tea'){
+                                echo "<a href=\"#modal-edit-classroom\" data-toggle='modal' class=\"edit-class-btn dropdown-item \">Edit Classroom</a>";
                                 echo "<a href=\"#modal-delete-classroom\" data-toggle='modal' class=\"delete-class-btn dropdown-item \">Delete Classroom</a>";
                             }
                         }?>
@@ -57,6 +59,72 @@
 
             <!--=================================================================================================================-->
             <!--=================================================================================================================-->
+
+            <!-- Modal FOR CREATE CLASSROOM -->
+            <div id="modal-edit-classroom" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Edit classroom</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <!--./actions/class_create.php-->
+                            <form action="./actions/edit_classroom.php?id=<?php echo $classid?>" method="post">
+                                <div class="form-group">
+                                    <label for="edit_classname">Classroom Name</label>
+                                    <input type="text" class="form-control" name="edit_classname" id="" value="<?php echo $rowsClass['className']?>" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="edit_class_subject">Subject</label>
+                                    <input type="text" class="form-control" name="edit_class_subject" id="" value="<?php echo $rowsClass['subject']?>" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="edit_class_room">Class room</label>
+                                    <input type="text" class="form-control" name="edit_class_room" id="" value="<?php echo $rowsClass['classRoom']?>" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <!-- <input type="hidden" name="btn_create_class"> -->
+                                    <!-- <button class="btn btn-primary btn-block btn-lg">Create</button>-->
+                                    <input type= "submit" class="btn btn-primary btn-block btn-lg" name = "btn_edit_class" id="btn_edit_class" value="Confirm Update">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal for CREATE CLASSROOM  -->
+
+            <!--=================================================================================================================-->
+            <!--=================================================================================================================-->
+
+            <!-- Modal FOR INVITE CLASSROOM -->
+            <div id="modal-invite-classroom" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Invite Student to Join Classroom</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="false">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div></div>
+                            <br>
+                            <form action="./actions/add_student.php?id=<?php echo $classid?>" method="post">
+                                <div class="form-group">
+                                    <label for="student_email_invite">Student email</label>
+                                    <input type="email" class="form-control" name="student_email_invite" id="" placeholder="Enter student email" required="required">
+                                </div>
+                                <input type= "submit" class="btn color-green-btn" name = "btn_invite_class" id="btn_invite_class" value="Invite">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--=================================================================================================================-->
+            <!--=================================================================================================================-->
+
 
             <!-- BUTTON LOGOUT - AVATAR ACCOUNT INFORMATION -->
 

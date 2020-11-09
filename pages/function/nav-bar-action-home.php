@@ -18,8 +18,8 @@
                             // Check if admin, teacher, student
                             if (isset($_SESSION['role'])){
                                 if($_SESSION['role'] == 'adm'){
-                                    echo "<a href=\"#modal-create-classroom\" class=\"dropdown-item btn btn-default btn-rounded trigger-btn\" data-toggle=\"modal\">Create classroom</a>";
-                                    echo "<a href=\"#modal-join-classroom\" class=\"dropdown-item btn btn-default btn-rounded trigger-btn\" data-toggle=\"modal\">Join classroom</a>";
+                                    echo "<a href=\"#modal-create-classroom\" class=\"edit-class-btn dropdown-item btn btn-default btn-rounded trigger-btn\" data-toggle=\"modal\">Create classroom</a>";
+                                    echo "<a href=\"#modal-join-classroom\" class=\"edit-class-btn dropdown-item btn btn-default btn-rounded trigger-btn\" data-toggle=\"modal\">Join classroom</a>";
                                     echo "<div class=\"dropdown-divider\"></div>
                                         <a class=\"dropdown-item\" href=\"manage.php\">Manage users</a>";
                                 }elseif ($_SESSION['role'] == 'tea'){
@@ -31,7 +31,6 @@
                         </div>
                     </li>
                 </ul>
-                <!-- Modal for CREATE CLASSROOM  -->
 
                 <!--=================================================================================================================-->
                 <!--=================================================================================================================-->

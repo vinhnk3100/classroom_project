@@ -494,11 +494,11 @@ input[type=submit]
 }
 .nav_bar_2_text_a
 {
-    background-color: rgba(0, 0, 0, 0.38);
+    background-color: rgba(255, 255, 255, 0.15);
     border-radius: 6px;
     display: flex;
     position: relative;
-    color: #ffffff;
+    color: #00e1ff;
     height: 4rem;
     padding: 1rem 2rem 1rem 2rem;
     text-decoration: none;
@@ -517,7 +517,6 @@ input[type=submit]
 
 .nav_bar_2_item:hover{
     text-decoration: none;
-    color: red;
 }
 
 .nav_bar_2_text_a::after
@@ -575,6 +574,7 @@ input[type=submit]
 
 .nav_bar_2_text_b:hover{
     text-decoration: none;
+    color: deepskyblue;
 }
 
 /* ============================ BUTTON ================================= */
@@ -584,7 +584,26 @@ input[type=submit]
 }
 
 .delete-class-btn{
-    color: red;
+    color: #ff0000;
+}
+
+.delete-class-btn:hover{
+    transition: 0.2s ease-in-out;
+    background-color: #616161;
+    color: #ff0000;
+    text-shadow: 2px 2px 5px #800000;
+}
+
+.edit-class-btn{
+    transition: 0.2s ease-in-out;
+    color: green;
+}
+
+.edit-class-btn:hover{
+    transition: 0.2s ease-in-out;
+    background-color: #616161;
+    color: #0fba00;
+    text-shadow: 2px 2px 5px green;
 }
 
 /* ============================= DROPDOWN MENU ========================= */

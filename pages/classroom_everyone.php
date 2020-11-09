@@ -100,6 +100,15 @@ require("Initials.php");
         <div class="divline">
             <h2 class="colorlist giaovien">
                 Student
+
+                <!-- ======= ADD STUDENTS ========= -->
+                <?php
+                    if($_SESSION['role'] == "adm" || $_SESSION['role'] == "tea"){
+                        echo "<a href=\"#modal-invite-classroom\" data-toggle='modal' class=\"round-btn-cyan\"><i class=\"fa fa-plus\" aria-hidden=\"true\"></i></a>";
+                    }
+                ?>
+                <!-- ============================== -->
+
             </h2>
         </div>
         <table class="tablexpen">
