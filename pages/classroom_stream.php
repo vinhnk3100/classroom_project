@@ -184,15 +184,19 @@ require("Initials.php");
                         </a>
                     </div>
                     <div class="enter_button">
-                        <form id='postInt' name='postInt' method = 'post' action="./actions/post_create.php">
+                        <form id='postInt' name='postInt' method ="post" action="./actions/post_handle.php?id=<?php echo $rowsClass['class_id']; ?>">
                         <textarea id="comment_textarea" name="comment_area" placeholder="Enter comment here..." onchange="post_validate()"></textarea>
                         <input type="hidden" name="btn_post"  >
-                        <input type="button" class="btn_post" id="btn_post" value="Post" disabled>
+                       <!-- <input type="button" class="btn_post" id="btn_post" value="Post" disabled> -->
+                       <button class="btn_post">Post</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
+
+
+        <div></div>
 
         <!--=================================================================================================================-->
         <!--=================================================================================================================-->

@@ -375,7 +375,14 @@ div.enter_button
     cursor: pointer;
     width: 200%;
 }
+.btn_post{
+    position: absolute;
+    background-color: #4CAF50;
+    cursor: pointer;
+    left: 92%;
+    top: 45%;
 
+}
 
 
 .classpan

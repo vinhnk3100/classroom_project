@@ -54,7 +54,7 @@
                     <small >
                         <?php 
                             if(isset($_SESSION["existErrorFullName"])){
-                                echo "<small class=\"alertLogin\">Username is already exist</small>";
+                                echo "<small class=\"alertLogin\">Username is already exist !</small>";
                                 unset($_SESSION["existErrorFullName"]);
                             } 
                     ?>
@@ -83,7 +83,7 @@
                     <small >
                         <?php 
                             if(isset($_SESSION["existErrorEmail"])){
-                                echo "<small class=\"alertLogin\">Email is already exist</small>";
+                                echo "<small class=\"alertLogin\">Email is already exist !</small>";
                             
                                 unset($_SESSION["existErrorEmail"]);
                             } 
