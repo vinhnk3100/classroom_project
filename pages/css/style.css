@@ -84,6 +84,10 @@ body{
     margin-right: 50px;
 }
 
+.circle-avt-comments{
+    margin-right: unset;
+}
+
 .circle_avt_class_everyone{
     margin-bottom: 2rem;
     margin-right: unset;

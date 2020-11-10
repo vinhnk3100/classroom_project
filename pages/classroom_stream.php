@@ -159,26 +159,33 @@ require("Initials.php");
     </div>
 
     <!--====== COMMENT ========================================-->
-    <div class="classuis">
+    <div class="classuis hide_comment_area">
         <div class="comment-area">
-            <div class="classuib5-1a">
-                <div class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <?php
-                    $initials = new Initials();
-                    $generateName = $initials->generate($_SESSION['fullname']);
-                    echo "<div class='circle'><div class='initials'>$generateName</div></div>"
-                    ?>
-                </div>
-                <div class="enter_button">
-                    <textarea id="comment_textarea" name="comment"  placeholder="Enter comment here..." ></textarea>
-                    <a href="#" class="myButton">
-                        Post
-                    </a>
-                </div>
+            <div class="nav-link" aria-haspopup="true" aria-expanded="false">
+                <?php
+                $initials = new Initials();
+                $generateName = $initials->generate($_SESSION['fullname']);
+                echo "<div class='circle circle-avt-comments'><div class='initials'>$generateName</div></div>"
+                ?>
             </div>
+            <label class="comment-label" onclick="showClassComment()">
+                Say something to share with you class...
+            </label>
         </div>
+
     </div>
 
+    <div class="classuis comment_show">
+        <div class="comment-content">
+            <form action="#" method="post">
+                <textarea placeholder="Say something to share with your class...." id="comments_textarea" name="comments_textarea" oninput='this.style.height = "";this.style.height = this.scrollHeight + 3 +  "px"' cols="138"></textarea>
+                <input id="post_btn_comment" value="Post" type="submit">
+            </form>
+            <input id="file_btn_comment" type="file" name="file_btn_comment" multiple="multiple">
+            <input id="cancel_btn_comment" value="Cancel" type="submit">
+            <div id="filename">A</div>
+        </div>
+    </div>
     <br><br><br>
 
 

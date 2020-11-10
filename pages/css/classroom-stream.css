@@ -112,7 +112,6 @@ td
 /* ===================================== Class interface ===================================== */
 .classuis
 {
-    background-color: rgba(0, 0, 0, 0.53);
     margin: 0 auto;
     margin-top: 30px;
     display: -webkit-box;
@@ -122,8 +121,8 @@ td
     flex-direction: column;
     width: -webkit-calc(100% - 2*1.5rem);
     width: calc(100% - 2*1.5rem);
-    max-width: 75rem;
-    box-shadow: 0 0 12px 2px rgb(0, 0, 0);
+    max-width: 70rem;
+    box-shadow: 0 0 12px 2px rgb(153, 153, 153);
     border-radius: 6px;
 }
 
@@ -306,12 +305,97 @@ div
 /*  ===================================== COMMENTS =====================================  */
 .comment-area
 {
-    background-color: #fff;
-    border: .0625rem solid #dadce0;
+    height: 5rem;
+    background-color: #efefef;
     overflow: hidden;
-    margin: 1rem;
-    padding: 0.5rem 0;
     border-radius: 6px;
+    padding-right: 0.5rem;
+    white-space: nowrap;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.comment_show{
+    display: none;
+}
+
+.hide_comment_area{
+    display: block;
+}
+
+.comment-label{
+    cursor: pointer;
+    position: relative;
+    top: 0.3rem;
+    font-size: 20px;
+    color: #717171;
+}
+
+.comment-content textarea{
+    border-radius: 6px 6px 0px 0px;
+    padding: 1rem;
+    overflow: auto;
+    transition: 0.2s ease-in-out;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid black;
+    width: calc(100% - 80px);
+    top: 2rem;
+    height: 8rem;
+    position: relative;
+    left: 3rem;
+    resize: none;
+    margin-bottom: 2rem;
+}
+
+#cancel_btn_comment{
+    background-color: white;
+    color: black;
+    margin-top: 2rem;
+    font-size: 24px;
+    border-radius: 6px;
+    width: 6rem;
+    position: relative;
+    float: right;
+    right: 12rem;
+    margin-bottom: 2rem;
+}
+
+#cancel_btn_comment:hover{
+    background-color: #cbcbcb;
+}
+
+#post_btn_comment{
+    background-color: #c7c7c7;
+    margin-top: 2rem;
+    font-size: 24px;
+    border-radius: 6px;
+    width: 6rem;
+    position: relative;
+    float: right;
+    right: 8rem;
+    margin-bottom: 2rem;
+}
+
+#file_btn_comment{
+    border-radius: 6px;
+    font-size: 24px;
+    position: relative;
+    margin-top: 2rem;
+    left: 4rem;
+    margin-bottom: 2rem;
+}
+
+.comment-content:focus-within textarea{
+    border-bottom: 2px solid #008202;
+    transition: 0.2s ease-in-out;
+    outline: none;
+    background-color: #d9d9d9;
+}
+
+.comment-label:hover{
+    color: rgb(15, 137, 36);
 }
 
 .classuib5-2
@@ -319,16 +403,7 @@ div
     padding: 0.5rem 0;
     cursor: pointer;
 }
-.classuib5-1a
-{
-    height: 6rem;
-    padding-right: 0.5rem;
-    white-space: nowrap;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 6px;
-}
+
 .avatar-icon
 {
     background-color: #5befff;

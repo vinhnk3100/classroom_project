@@ -125,3 +125,33 @@ function showClassInforms() {
         element_content.style.padding = '0px';
     }
 }
+
+// =================================================================================================
+// =================================================================================================
+
+// Showing file in the comment textarea
+
+document.getElementById('upload').onchange = uploadOnChange;
+
+function uploadOnChange() {
+    var filename = this.value;
+    var lastIndex = filename.lastIndexOf("\\");
+    if (lastIndex >= 0) {
+        filename = filename.substring(lastIndex + 1);
+    }
+    document.getElementById('filename').innerHTML = filename;
+}
+
+// Showing class comment
+
+function showClassComment() {
+    const commentVisible = document.getElementsByClassName("comment_show")[0];
+    const commentArea = document.getElementsByClassName("comment-area")[0];
+    if(commentVisible.style.display == "block"){
+        commentVisible.style.display = "none";
+        commentArea.style.display = "block";
+    }else{
+        commentVisible.style.display = "block";
+        commentArea.style.display = "none";
+    }
+}
