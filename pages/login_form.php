@@ -25,7 +25,7 @@ session_start();
 
             <form class="login100-form validate-form" method="post" action="./actions/login_validation.php">
 					<span class="login100-form-title">
-						Classroom Login
+						Classroom
 					</span>
 
                 <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">

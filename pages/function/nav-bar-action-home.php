@@ -80,7 +80,7 @@
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                             </div>
                             <div class="modal-body">
-                                <form action="./actions/join_classroom.php" method="post">
+                                <form action="./actions/request_join_classroom.php" method="post">
                                     <label>Enter classroom code : </label>
                                     <div class="form-group">
                                         <i class="fa fa-book"></i>

@@ -62,7 +62,6 @@ if($_SESSION['fullname'] == null){
 
 
             ?>
-
         </div>
 
         <?php // SHOW ERROR IF PASSWORD IS INCORRECT
@@ -70,6 +69,14 @@ if($_SESSION['fullname'] == null){
             if($_SESSION['errorsPassword'] == 1){
                 echo "<div class='alertLogin'>Wrong username or password</div>".$_SESSION['result'];
                 session_unset();
+            }
+        }
+
+        if(isset($_SESSION['valid_classroom'])){
+            if($_SESSION['valid_classroom'] != 1){
+                $message = "Class id does not exist !";
+                echo "<script type='text/javascript'>alert('$message');</script>";
+                unset($_SESSION['valid_classroom']);
             }
         }
         ?>

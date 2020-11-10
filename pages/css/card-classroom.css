@@ -4,7 +4,7 @@
     transition: 0.5s ease-in-out;
     text-decoration: none;
     color: white;
-    text-shadow: 2px 2px 4px rgb(0, 217, 255);
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
 }
 
 .card-padding-top{
@@ -23,12 +23,13 @@
     overflow: hidden;
     padding: 2px;
     border-radius: 12px;
-    box-shadow: 8px 8px 8px rgba(255, 255, 255, 0.15);
+    border: 2px solid black;
+    box-shadow: 8px 8px 12px rgb(0, 0, 0);
     background-color: rgba(255, 255, 255, 0.21);
 }
 
 .card:hover .card-body {
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     transition: 0.5s ease-in-out;
     bottom: 1px;
     background-color: rgba(0, 0, 0, 0.4);
@@ -36,8 +37,8 @@
 
 .card:hover{
     transition: 0.5s ease-in-out;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
-    background-color: rgb(0, 217, 255);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    background-color: rgb(0, 0, 0);
 }
 
 .card-body{

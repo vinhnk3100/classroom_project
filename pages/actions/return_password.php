@@ -22,7 +22,6 @@
         $randomCode = uniqid('pwd');
         if(mysqli_num_rows($result) == 1){
             session_start();
-            $_SESSION['useremail'] = $useremail;
             $_SESSION['forgot_password_msg'] = 0;
             $result = mail($useremail,"Return password","<a href='http://localhost/myownclassroom/pages/password_recovery.php'>Click here to recover your password</a> Code : $randomCode",$headers);
             $_SESSION['generatePwdCode'] = $randomCode;
