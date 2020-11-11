@@ -387,6 +387,17 @@ div
     margin-bottom: 2rem;
 }
 
+#display_file_comment{
+    display: none;
+    border: 2px solid black;
+    padding: 1rem;
+    margin-top: 5rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    bottom: 3rem;
+    position: relative;
+}
+
 .comment-content:focus-within textarea{
     border-bottom: 2px solid #008202;
     transition: 0.2s ease-in-out;

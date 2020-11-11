@@ -22,8 +22,8 @@
     <list default="true" id="c4f90356-e38e-4199-8c9f-76cceeffb7e1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/classroom_stream.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/classroom_stream.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/css/card-classroom.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/css/card-classroom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/css/classroom-stream.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/css/classroom-stream.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -196,6 +196,7 @@
       <workItem from="1604921901326" duration="5502000" />
       <workItem from="1604994891705" duration="9219000" />
       <workItem from="1605017550949" duration="10704000" />
+      <workItem from="1605073734753" duration="3310000" />
     </task>
     <servers />
   </component>
@@ -316,11 +317,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="578" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1603600455295" />
-    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1605022772229">
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1605076034122">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824/1920.0.864.1496@0.0.1536.824" timestamp="1601955352461" />
-    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1605022772229" />
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1605076034122" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1604829229389">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

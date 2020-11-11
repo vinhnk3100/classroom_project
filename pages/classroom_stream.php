@@ -181,9 +181,22 @@ require("Initials.php");
                 <textarea placeholder="Say something to share with your class...." id="comments_textarea" name="comments_textarea" oninput='this.style.height = "";this.style.height = this.scrollHeight + 3 +  "px"' cols="138"></textarea>
                 <input id="post_btn_comment" value="Post" type="submit">
             </form>
-            <input id="file_btn_comment" type="file" name="file_btn_comment" multiple="multiple">
-            <input id="cancel_btn_comment" value="Cancel" type="submit">
-            <div id="filename">A</div>
+            <input id="file_btn_comment" type="file" name="file_btn_comment" multiple="multiple" onchange="uploadOnChange()">
+            <input id="cancel_btn_comment" value="Cancel" type="submit" onclick="showClassComment()">
+            <div id="display_file_comment"></div>
+        </div>
+    </div>
+
+    <div class="classuis">
+        <div class="comment-content">
+            <div class="nav-link" aria-haspopup="true" aria-expanded="false">
+                <?php
+                $initials = new Initials();
+                $generateName = $initials->generate($_SESSION['fullname']);
+                echo "<div class='circle circle-avt-comments'><div class='initials'>$generateName</div></div>"
+                ?>
+            </div>
+
         </div>
     </div>
     <br><br><br>

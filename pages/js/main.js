@@ -131,15 +131,15 @@ function showClassInforms() {
 
 // Showing file in the comment textarea
 
-document.getElementById('upload').onchange = uploadOnChange;
-
 function uploadOnChange() {
-    var filename = this.value;
-    var lastIndex = filename.lastIndexOf("\\");
-    if (lastIndex >= 0) {
-        filename = filename.substring(lastIndex + 1);
+    var input = document.getElementById('file_btn_comment');
+    var output = document.getElementById('display_file_comment');
+    output.innerHTML = '<ul> Selected File :';
+    for (var i = 0; i < input.files.length; ++i) {
+        output.innerHTML += '<li>' + input.files.item(i).name + '</li>';
     }
-    document.getElementById('filename').innerHTML = filename;
+    output.innerHTML += '</ul>';
+    output.style.display = 'block';
 }
 
 // Showing class comment
@@ -147,7 +147,14 @@ function uploadOnChange() {
 function showClassComment() {
     const commentVisible = document.getElementsByClassName("comment_show")[0];
     const commentArea = document.getElementsByClassName("comment-area")[0];
+    const commentLabel = document.getElementsByClassName("comment-label")[0];
+    commentLabel.innerHTML = "Say something to share with you class...";
+
     if(commentVisible.style.display == "block"){
+        console.log("A");
+        commentLabel.style.display = "block";
+        commentLabel.style.top = "-3.1rem";
+        commentLabel.style.left = "5.8rem";
         commentVisible.style.display = "none";
         commentArea.style.display = "block";
     }else{
@@ -155,3 +162,5 @@ function showClassComment() {
         commentArea.style.display = "none";
     }
 }
+
+
