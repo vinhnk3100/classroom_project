@@ -195,6 +195,7 @@ require("Initials.php");
     <div class="classuis">
         <div class="post">
             <!--====== POST CREATOR ========================================-->
+                <!-- Nay bao gom ho ten, avatar cua nguoi post bai viet -->
             <div class="nav-link p-l-26" aria-haspopup="true" aria-expanded="false">
                 <?php
                 $initials = new Initials();
@@ -205,6 +206,7 @@ require("Initials.php");
             </div>
 
             <!--====== POST CONTENTS ========================================-->
+                <!-- Chứa nội dung, file của người đăng bài viết -->
             <div class="post_content">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
                 standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
@@ -215,14 +217,18 @@ require("Initials.php");
             <hr>
 
             <!--====== POST COMMENTS ========================================-->
+                <!-- Chứa họ tên, avatar, nội dung comment ( không up file được ) của người comment bài post trên -->
             <div class="post_expand_comments">Click to see more comments....</div>
             <div class="post_comments">
                 <div class="nav-link" aria-haspopup="true" aria-expanded="false">
                     <?php
                     $initials = new Initials();
                     $generateName = $initials->generate($_SESSION['fullname']);
+                    // Họ tên và ảnh ở đây
                     echo "<div class='post_user_name'>Nguyen Van A</div>";
                     echo "<div class='circle circle-avt-comments avt_in_post'><div class='initials name_in_post'>$generateName</div></div>";
+
+                        // Nội dung comment ở đây !
                     echo "<div class='post_comments_users'>Lorem Ipsum is psum ipsum ipsum isimply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</div>";
                     ?>
                 </div>
@@ -232,7 +238,7 @@ require("Initials.php");
             <hr>
 
             <!--====== CREATE POST COMMENTS ========================================-->
-
+                <!-- Chứa input comment của người đang log hiện tại -->
             <div class="nav-link p-l-26" aria-haspopup="true" aria-expanded="false">
                 <?php
                 $initials = new Initials();

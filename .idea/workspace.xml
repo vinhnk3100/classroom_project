@@ -21,11 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c4f90356-e38e-4199-8c9f-76cceeffb7e1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/actions/accept_request_join_class.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/actions/accept_request_join_class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/actions/accept_request_link.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/actions/accept_request_link.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/actions/remove_student.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/actions/remove_student.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/actions/request_join_classroom.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/actions/request_join_classroom.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/classroom_stream.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/classroom_stream.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,6 +196,7 @@
       <workItem from="1605073734753" duration="3699000" />
       <workItem from="1605103550758" duration="6887000" />
       <workItem from="1605160435811" duration="277000" />
+      <workItem from="1605169673080" duration="177000" />
     </task>
     <servers />
   </component>
