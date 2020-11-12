@@ -12,7 +12,7 @@ if(isset($_POST['btn_upload_class_image'])){
 
     //Insert query
     $stmt = $db->prepare("UPDATE class SET classAvatar = ? WHERE class_id =?");
-    $classid = $_GET['id'];
+    $classid = $_GET['class_id'];
     $stmt->bind_param("ss", $fileName,$classid);
     
 
@@ -22,7 +22,7 @@ if(isset($_POST['btn_upload_class_image'])){
         // Move the uploaded image into folder 
         if (move_uploaded_file($tempName,$folder)){
             
-            header("Location: ../classroom_stream.php?id=$classid");
+            header("Location: ../classroom_stream.php?class_id=$classid");
         } else {
             die ("Failed to move image to".$folder);
         }

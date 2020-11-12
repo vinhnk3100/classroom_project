@@ -14,7 +14,7 @@ if($_SESSION['fullname'] == null){
 // ============================================== ACTION REMOVE CLASS ==================================================
 
 
-$classid = $_GET['id'];
+$classid = $_GET['class_id'];
 require ('database.php');
 
     $query = "DELETE FROM class WHERE class_id = '$classid'";

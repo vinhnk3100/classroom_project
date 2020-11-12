@@ -26,7 +26,7 @@ if ($_SESSION['role'] == 'adm'){
                             <img class=\"card-size\" src='./css/backgroundImages/$classavatar' alt=''>
                             <div class=\"card-body\">
                                 <br>
-                                <a class='card-text-decoration' href=\"classroom_stream.php?id=$classid\">
+                                <a class='card-text-decoration' href=\"classroom_stream.php?class_id=$classid\">
                                     <h4 class=\"card-title truncate card-text-decoration\">$classname</h4>
                                     <h5 class=\"card-creator\">Teacher: $classteacherName</h5>
                                 </a>

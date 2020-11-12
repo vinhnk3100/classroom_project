@@ -22,7 +22,7 @@ require ('database.php');
 
     mysqli_query($db,$query);
 
-    header("Location: /myownclassroom/pages/classroom_everyone.php?id=$classid");
+    header("Location: /myownclassroom/pages/classroom_everyone.php?class_id=$classid");
 ?>
 
 

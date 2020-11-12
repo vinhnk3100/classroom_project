@@ -4,7 +4,7 @@
 // =====================================================================================================================
 // Change classroom name, room, subject
 
-$classid = $_GET['id'];
+$classid = $_GET['class_id'];
 
 require ("database.php");
 session_start();
@@ -28,7 +28,7 @@ if (isset($_POST['btn_edit_class'])){
 
     // Check if that classroom is exist or not
     if(is_null($className) || is_null($classSubject) || is_null($classRoom)){
-        header("Location: ../classroom_stream.php");
+        header("Location: ../home.php");
     }else{
         if(isset($result)){
             mysqli_query($db,"UPDATE class set className = '$className', subject = '$classSubject', classRoom = '$classRoom' WHERE class_id = '$classid'");

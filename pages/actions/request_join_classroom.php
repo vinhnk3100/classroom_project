@@ -6,26 +6,26 @@
 
 session_start();
 require ('database.php');
-    // This action send link to email to get to access into page password_recovery.php
+    // This action send link to email from student to teacher
     $user_email = $_SESSION['useremail'];
     $headers = 'From: '.$user_email. "\r\n" .
         'MIME-Version: 1.0' . "\r\n" .
         'Content-Type: text/html; charset=utf-8';
 
-    //connect database
-    
-
+    // If the button join is clicked
     if  (isset($_POST['btn_join_class'])){
         // ====== receive values from the form
         $class_id  = mysqli_real_escape_string($db, $_POST["classroom-code"]);
         $userID = $_SESSION['uid'];
 
+        // Get the class id from class
+        $query = "SELECT class_id FROM class WHERE class_id = '$class_id  '";
+        $result= mysqli_query($db, $query);
+
+        // Get the database row of each email,... from users and class table
         $teacher_email = "SELECT email, fullName, className, user_id, class_id FROM users, class  
             WHERE user_id in(SELECT teacher_id from class WHERE class_id='$class_id')";
         $result_teacher_email = mysqli_query($db, $teacher_email);
-
-        $query = "SELECT class_id FROM class WHERE class_id = '$class_id  '";
-        $result= mysqli_query($db, $query);
 
         // ====== Check if class_id from form is exist in database
         if(mysqli_num_rows($result) == 1)
@@ -56,7 +56,7 @@ require ('database.php');
             }
         }else{
             $_SESSION['valid_classroom'] = 0;
-            header("Location: ../register.php");
+            header("Location: ../home.php");
         }
     }
 ?>

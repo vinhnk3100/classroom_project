@@ -46,7 +46,7 @@
                             <!--./actions/class_create.php-->
                             <div>Are you sure you want to delete <strong class="alertLogin"><?php echo $rowsClass["className"]?></strong> ?</div>
                             <br>
-                            <form action="./actions/remove_class.php?id=<?php echo $classid?>" method="post">
+                            <form action="./actions/remove_class.php?class_id=<?php echo $classid?>" method="post">
                                 <input type= "submit" class="class-delete-btn-yes" name = "btn_create_class" id="btn_create_class" value="Yes">
                             </form>
 
@@ -70,7 +70,7 @@
                         </div>
                         <div class="modal-body">
                             <!--./actions/class_create.php-->
-                            <form action="./actions/edit_classroom.php?id=<?php echo $classid?>" method="post">
+                            <form action="./actions/edit_classroom.php?class_id=<?php echo $classid?>" method="post">
                                 <div class="form-group">
                                     <label for="edit_classname">Classroom Name</label>
                                     <input type="text" class="form-control" name="edit_classname" id="" value="<?php echo $rowsClass['className']?>" required="required">
@@ -110,7 +110,7 @@
                         <div class="modal-body">
                             <div></div>
                             <br>
-                            <form action="./actions/add_student.php?id=<?php echo $classid?>" method="post">
+                            <form action="./actions/add_student_request.php?class_id=<?php echo $classid?>" method="post">
                                 <div class="form-group">
                                     <label for="student_email_invite">Student email</label>
                                     <input type="email" class="form-control" name="student_email_invite" id="" placeholder="Enter student email" required="required">

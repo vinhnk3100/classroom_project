@@ -7,7 +7,7 @@ if($_SESSION['fullname'] == null){
 //===================================== Connect to Database =====================================
 require ("actions/database.php");
 
-$classid = $_GET['id'];
+$classid = $_GET['class_id'];
 
 $queryClass = "SELECT * FROM class, users WHERE class.class_id = '$classid' AND users.user_id = class.teacher_id" ;
 $resultClass = mysqli_query($db,$queryClass);
@@ -44,14 +44,14 @@ require("Initials.php");
     <div class="nav_bar_2">
         <div class="nav_bar_2_item">
             <?php
-            echo "<a class=\"nav_bar_2_text_b\" id=\"navtext\" onclick=\"myFunction()\" href=\"classroom_stream.php?id=$classid\" target=\"_self\"> Stream
+            echo "<a class=\"nav_bar_2_text_b\" id=\"navtext\" onclick=\"myFunction()\" href=\"classroom_stream.php?class_id=$classid\" target=\"_self\"> Stream
             </a>";
             ?>
 
         </div>
         <div class="nav_bar_2_item">
             <?php
-            echo "<a class=\"nav_bar_2_text_a\" id=\"navtext\" onclick=\"myFunction()\" href=\"http://localhost/myownclassroom/pages/classroom_everyone.php?id=$classid\" target=\"_self\"> Everyone
+            echo "<a class=\"nav_bar_2_text_a\" id=\"navtext\" onclick=\"myFunction()\" href=\"http://localhost/myownclassroom/pages/classroom_everyone.php?class_id=$classid\" target=\"_self\"> Everyone
             </a>";
             ?>
 
@@ -153,6 +153,15 @@ require("Initials.php");
 
     <br><br><br>
 
+    <?php
+        if(isset($_SESSION['valid_email'])){
+            if($_SESSION['valid_email'] != 1){
+                $message = "Email does not exist !";
+                echo "<script type='text/javascript'>alert('$message');</script>";
+                unset($_SESSION['valid_email']);
+            }
+        }
+    ?>
 
 
 </main>

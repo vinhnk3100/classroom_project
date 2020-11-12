@@ -6,7 +6,7 @@ if($_SESSION['fullname'] == null){
 
 //===================================== Connect to Database =====================================
 require ('actions/database.php');
-$classid = $_GET['id'];
+$classid = $_GET['class_id'];
 
 // Query for showing class infomation, name, teacher
 $queryClass = "SELECT * FROM class, users WHERE class.class_id = '$classid' AND users.user_id = class.teacher_id" ;
@@ -59,14 +59,14 @@ require("Initials.php");
     <div class="nav_bar_2">
         <div class="nav_bar_2_item">
             <?php
-            echo "<a class=\"nav_bar_2_text_a\" href=\"classroom_stream.php?id=$classid\" target=\"_self\"> Stream
+            echo "<a class=\"nav_bar_2_text_a\" href=\"classroom_stream.php?class_id=$classid\" target=\"_self\"> Stream
             </a>";
             ?>
 
         </div>
         <div class="nav_bar_2_item">
             <?php
-            echo "<a class=\"nav_bar_2_text_b\" href=\"classroom_everyone.php?id=$classid\" target=\"_self\"> Everyone
+            echo "<a class=\"nav_bar_2_text_b\" href=\"classroom_everyone.php?class_id=$classid\" target=\"_self\"> Everyone
             </a>";
             ?>
         </div>
@@ -138,7 +138,7 @@ require("Initials.php");
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <form id="insert-image-form" action="./actions/store_class_image.php?id=<?php echo $rowsClass['class_id']; ?>"  method="post" runat="server" enctype="multipart/form-data">
+                        <form id="insert-image-form" action="./actions/store_class_image.php?class_id=<?php echo $rowsClass['class_id']; ?>"  method="post" runat="server" enctype="multipart/form-data">
                             <label>Upload :</label>
                             <div class="form-group">
                                 <input onclick="getImage()" type="file" class="form-control" id="images-class-background" name="classImg" required="required">
