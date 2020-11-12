@@ -98,7 +98,8 @@ if (isset($_SESSION['valid'])){
                             echo "<div class='alertLogin'>Password must be same !</div>";
                         }elseif ($_SESSION['recoveryMsg'] == 3){
                             echo "<div class='alertLogin'>Wrong code generate !</div>";
-                        }
+
+                        }unset($_SESSION['recoveryMsg']);
                     }
                     ?>
             </form>

@@ -106,6 +106,8 @@ require("Initials.php");
     <!-- ===================================== DATABASE QUERY ===================================== -->
     <?php
     require ('actions/database.php');
+    // Get the initials class
+    $initials = new Initials();
 
     $query = "SELECT * FROM users";
     $queryStudent = "SELECT * FROM users WHERE role = 'stu'";
@@ -156,6 +158,7 @@ require("Initials.php");
             <tr>
                 <td>
                     <div>
+
                         <?php
                         if (mysqli_num_rows($teacher) > 0) {
                             // output data of each row
@@ -163,8 +166,13 @@ require("Initials.php");
                                 if($row['role'] == "tea"){
                                     $teaUID = $row['user_id'];
                                     $teaName = $row['fullName'];
-                                    echo '<div><a href="users_infomation.php?id='.$teaUID.'" class="modal_users btn btn-outline-success my-2 my-sm- color-orange table_btn_right" name="profile-button" id=\'profile_users\'>Profile</a></div>';
-                                    echo "<span><img class=\"imgcc\" area-hidden=\"true\" src=\"https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/s32-c-fbw=1/photo.jpg\">"."<span class=\"tp tf\">".$row['fullName']."</span>"."</span>".""."<br>";
+
+
+                                    $generateName = $initials->generate($teaName);
+                                    $img = "<div class='circle circle_avt_class_everyone'><div class='initials'>$generateName</div></div>";
+
+                                    echo '<div><a href="users_infomation.php?id='.$teaUID.'" class="modal_users my-2 round-btn-cyan table_btn_right" name="profile-button" id=\'profile_users\'>Profile</a></div>';
+                                    echo "<span>$img"."<span class=\"tp tf\">".$row['fullName']."</span>"."</span>".""."<br>";
                                 }
                             }
                         }
@@ -197,8 +205,12 @@ require("Initials.php");
                                 if($row['role'] == "stu"){
                                     $stuName = $row['fullName'];
                                     $stuUID = $row['user_id'];
-                                    echo '<div><a href="users_infomation.php?id='.$stuUID.'" class="modal_users btn btn-outline-success my-2 my-sm- color-orange table_btn_right" name="profile-button" id=\'profile_users\'>Profile</a></div>';
-                                    echo "<span><img class=\"imgcc\" area-hidden=\"true\" src=\"https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/s32-c-fbw=1/photo.jpg\">"."<span class=\"tp tf\">"."<a class='tf' href='#'>".$row['fullName']."</a>"."</span>"."</span>".""."<br>";
+
+                                    $generateName = $initials->generate($stuName);
+                                    $img = "<div class='circle circle_avt_class_everyone'><div class='initials'>$generateName</div></div>";
+
+                                    echo '<div><a href="users_infomation.php?id='.$stuUID.'" class="modal_users my-2 round-btn-cyan table_btn_right" name="profile-button" id=\'profile_users\'>Profile</a></div>';
+                                    echo "<span class=\"imgcc\">$img"."<span class=\"tp tf\">".$row['fullName']."</span>"."</span>".""."<br>";
                                 }
                             }
                         }

@@ -5,7 +5,7 @@ html{
 }
 
 body{
-    background-image: url(images/background6.jpg);
+    background-color: white;
 }
 
 /* ===================================== fa style ===================================== */
@@ -50,7 +50,8 @@ body{
 
 
 .navbar{
-    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.79), rgba(0, 0, 0, 0.89), rgb(0, 0, 0));
+    background: -webkit-linear-gradient(top, rgba(215, 215, 215, 0.79), rgba(255, 255, 255, 0.89), rgb(224, 224, 224));
+    box-shadow: 0 0 2px 1px #8b8b8b;
 }
 
 
@@ -65,10 +66,6 @@ body{
 
 
 /* ===================================== Avatar profile ===================================== */
-.dropdown-profile{
-    box-shadow: 0px 0px 20px rgba(0, 255, 243, 0.58);
-
-}
 
 .avatar-profile {
     vertical-align: middle;
@@ -85,6 +82,13 @@ body{
 
 .circle{
     margin-right: 50px;
+}
+
+.circle_avt_class_everyone{
+    margin-bottom: 2rem;
+    margin-right: unset;
+    display: inline-block;
+    position: relative;
 }
 
 .text-align-profile {
@@ -175,35 +179,6 @@ progress[value="100"]::-webkit-progress-value {
     margin-bottom: 20px;
 }
 
-.back-btn {
-    font-family: Montserrat-Bold;
-    font-size: 22px;
-    line-height: 1.5;
-    color: #fff;
-    text-transform: uppercase;
-
-    width: 100%;
-    height: 50px;
-    border-radius: 25px;
-    background: rgb(255, 135, 0);
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 25px;
-
-    -webkit-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    transition: all 0.4s;
-}
-
-.back-btn:hover {
-    background: rgb(208, 116, 0);
-}
 
 .manage-btn{
     float: right;
@@ -271,17 +246,17 @@ progress[value="100"]::-webkit-progress-value {
 
 .text-nav-bar{
     word-spacing: 10px;
-    color: white;
+    color: #000000;
     font-weight: bold;
-    font-size: 20px;
-    transition: 0.5s ease-in-out;
+    font-size: 22px;
+    transition: 0.2s ease-in-out;
     font-family: Calibri;
 }
 
 .text-nav-bar:hover {
-    transition: 0.5s ease-in-out;
+    transition: 0.2s ease-in-out;
     text-decoration: none;
-    color: #00ffff;
+    color: #7f7f7f;
 }
 
 .dropdown-toggle{
@@ -290,17 +265,17 @@ progress[value="100"]::-webkit-progress-value {
 
 .round-btn-cyan{
     transition: 0.5s ease-in-out;
-    background-color: #ffffff;
-    color: #12d7bf;
+    background-color: #eeeeee;
+    color: #8d8d8d;
     padding: 6px 10px;
     border-radius: 50%;
 }
 
 .round-btn-cyan:hover{
-    box-shadow: 0 0 10px cyan;
+    box-shadow: 0 0 10px #000000;
     transition: 0.5s ease-in-out;
-    background-color: #00e0ca;
-    color: #ffffff;
+    background-color: #fdfdfd;
+    color: #8d8d8d;
 }
 
 .class-delete-btn-yes{

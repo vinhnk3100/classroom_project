@@ -18,6 +18,7 @@ session_start();
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/register_effect.css">
     <link rel="stylesheet" type="text/css" href="./css/login_main.css">
     <link rel="stylesheet" type="text/css" href="./css/util.css">
 
@@ -36,7 +37,7 @@ session_start();
             <!--=================================================================================================================-->
 
             <!-- PASSWORD FORM -->
-            <form class="login100-form validate-form" method="post" action="/myownclassroom/pages/actions/return_password.php" onsubmit="return password">
+            <form class="login100-form validate-form" method="post" action="./actions/return_password.php" onsubmit="return password">
 					<span class="login100-form-title">
 						Forgot Password
 					</span>
