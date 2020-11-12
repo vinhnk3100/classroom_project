@@ -441,6 +441,96 @@ div
 {
     display: block;
 }
+
+/*  ===================================== POST COMMENTS =====================================  */
+
+.avt_in_post{
+    width: 3rem;
+    height: 3rem;
+}
+
+.name_in_post{
+    font-size: 22px;
+}
+
+.input_comments{
+    font-weight: initial;
+    padding: 0 2rem 0.5rem 1rem;
+    transition: 0.2s ease-in-out;
+    border: solid #aaaaaa;
+    position: relative;
+    bottom: 2.6rem;
+    left: 4rem;
+    width: 82%;
+    border-radius: 16px;
+}
+
+.input_comments:focus-within{
+    padding: 0 2rem 0.5rem 1rem;
+    transition: 0.2s ease-in-out;
+    outline: unset;
+    border: solid #067900;
+}
+
+.post{
+    padding: 0 0 0 0;
+}
+
+.post_user_name{
+    position: relative;
+    left: 4.5rem;
+    top: 2rem;
+}
+
+.post_content{
+    position: relative;
+    padding: 1rem 2rem 2rem 3rem;
+}
+
+.post_comments{
+    padding: 0rem 4rem 2rem 4rem;
+}
+
+.post_expand_comments{
+
+    font-weight: bold;
+    position: relative;
+    left: 4rem;
+    top: 1rem;
+}
+
+.post_comments_users{
+    position: relative;
+    top: -1rem;
+    left: 4.5rem;
+    margin-right: 2rem;
+    font-weight: initial;
+    max-width: 100%;
+}
+
+.post_comments_btn{
+    border: solid white;
+    transition: 0.2s ease-in-out;
+    background-color: white;
+    top: -5rem;
+    left: 84%;
+    position: relative;
+    border-radius: 50rem;
+}
+
+.post_comments_btn:hover{
+    outline: none;
+    transition: 0.2s ease-in-out;
+    background-color: #e8e8e8;
+}
+
+.form_post_comments{
+    position: relative;
+    margin-bottom: -3rem;
+}
+/*  ===================================== END POST COMMENTS =====================================  */
+
+
 /*  ===================================== Text-area in COMMENTS =====================================  */
 
 
