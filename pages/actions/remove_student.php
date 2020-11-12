@@ -18,7 +18,7 @@ $uid = $_GET['id'];
 $classid = $_GET['class_id'];
 require ('database.php');
 
-    $query = "DELETE FROM users_class WHERE user_id = '$uid'";
+    $query = "DELETE FROM users_class WHERE user_id = '$uid' AND class_id = '$classid'";
 
     mysqli_query($db,$query);
 

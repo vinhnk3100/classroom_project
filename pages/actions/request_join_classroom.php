@@ -18,8 +18,9 @@ require ('database.php');
     if  (isset($_POST['btn_join_class'])){
         // ====== receive values from the form
         $class_id  = mysqli_real_escape_string($db, $_POST["classroom-code"]);
+        $userID = $_SESSION['uid'];
 
-        $teacher_email = "SELECT email, fullName, className, user_id FROM users, class  
+        $teacher_email = "SELECT email, fullName, className, user_id, class_id FROM users, class  
             WHERE user_id in(SELECT teacher_id from class WHERE class_id='$class_id')";
         $result_teacher_email = mysqli_query($db, $teacher_email);
 
@@ -32,10 +33,9 @@ require ('database.php');
             // ====== Get the teacher email
             if($rowTeacher= mysqli_fetch_assoc($result_teacher_email)){
                 $classname = $rowTeacher['className'];
-                $userID = $rowTeacher['user_id'];
                 $teacherEmail = $rowTeacher['email'];
                 $message = "
-                    <form action=\"http://localhost/myownclassroom/pages/actions/accept_request_join_class.php?id=$userId\" method=\"post\">
+                    <form action=\"http://localhost/myownclassroom/pages/actions/accept_request_join_class.php?id=$userID&class_id=$class_id\" method=\"post\">
                         <div style='font-size: 24px;margin-left: 1rem'>$user_email request to join your <strong style='color: red'>$classname</strong>.</div>
                             <input  type= \"submit\" 
                                     style='color: white;
@@ -56,7 +56,7 @@ require ('database.php');
             }
         }else{
             $_SESSION['valid_classroom'] = 0;
-            header("Location: ../home.php");
+            header("Location: ../register.php");
         }
     }
 ?>
