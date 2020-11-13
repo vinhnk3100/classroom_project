@@ -37,7 +37,8 @@ require ('database.php');
                 $message = "
                     <form action=\"http://localhost/myownclassroom/pages/actions/accept_request_join_class.php?id=$userID&class_id=$class_id\" method=\"post\">
                         <div style='font-size: 24px;margin-left: 1rem'>$user_email request to join your <strong style='color: red'>$classname</strong>.</div>
-                            <input  type= \"submit\" 
+                            <input
+                            type= \"submit\" 
                                     style='color: white;
                                             margin-left: 30rem; 
                                             background-color: green;
@@ -47,7 +48,7 @@ require ('database.php');
                                             border: 2px solid #000000;'
                                     name = \"btn_create_class\" 
                                     id=\"btn_create_class\" 
-                                    value=\"Accept\">
+                                    value='Accept'>
                     </form>
                 ";
                 // ====== Sendmail function

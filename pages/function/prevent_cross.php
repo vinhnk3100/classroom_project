@@ -4,7 +4,9 @@
 
 if($_SESSION['fullname'] == null){
     header("Location: /myownclassroom");
-}elseif ($_SESSION['role'] != "adm" && $_SESSION['role'] != "tea"){
+}elseif ($_SESSION['role'] != "adm"){
+    header("Location: /myownclassroom");
+}elseif ($_SESSION['role'] != "tea"){
     header("Location: /myownclassroom");
 }
 

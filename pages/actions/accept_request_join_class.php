@@ -9,12 +9,8 @@ require ("database.php");
 session_start();
 
 
-//=========================================== PREVENTING CROSS-SITE ATTACK =============================================
-if($_SESSION['fullname'] == null){
-    header("Location: /myownclassroom");
-}elseif ($_SESSION['role'] != "adm" && $_SESSION['role'] != "tea"){
-    header("Location: /myownclassroom");
-}
+//=========================================== PREVENTING STUDENT CROSSING INVITE ATTACK =============================================
+require ("../function/prevent_cross.php");
 
 // =====================================================================================================================
 
@@ -32,12 +28,12 @@ if(isset($studentID) && !empty($studentID)){
 
     if($match > 0){
         // No match -> invalid url or account has already been activated.
-        header("Location: ../home.php");
+        $_SESSION['valid_studentID'] = 0;
     }else{
         // Dont have user_id then insert
         $insert_student = "INSERT INTO users_class VALUES ('$classID','$studentID')";
         mysqli_query($db,$insert_student);
-        header("Location: ../home.php");
+        $_SESSION['valid_studentID'] = 1;
     }
 }
 

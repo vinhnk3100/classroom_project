@@ -20,23 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4f90356-e38e-4199-8c9f-76cceeffb7e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/actions/accept_invite_join_class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/actions/add_student_request.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/actions/accept_request_join_class.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/actions/accept_request_join_class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/actions/add_student.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/actions/edit_classroom.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/actions/edit_classroom.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/actions/remove_class.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/actions/remove_class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/actions/remove_student.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/actions/remove_student.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/actions/request_join_classroom.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/actions/request_join_classroom.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/actions/store_class_image.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/actions/store_class_image.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/classroom_everyone.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/classroom_everyone.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/classroom_stream.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/classroom_stream.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/function/nav-bar-actions-class.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/function/nav-bar-actions-class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/function/prevent_cross.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/function/prevent_cross.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/function/queryAdminClassroom.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/function/queryAdminClassroom.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/function/queryStudentClassroom.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/function/queryStudentClassroom.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/function/queryTeacherClassroom.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/function/queryTeacherClassroom.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,6 +201,7 @@
       <workItem from="1605160435811" duration="277000" />
       <workItem from="1605169673080" duration="3212000" />
       <workItem from="1605180496387" duration="10064000" />
+      <workItem from="1605242845750" duration="3967000" />
     </task>
     <servers />
   </component>

@@ -78,6 +78,16 @@ if($_SESSION['fullname'] == null){
                 echo "<script type='text/javascript'>alert('$message');</script>";
                 unset($_SESSION['valid_classroom']);
             }
+        }elseif (isset($_SESSION['valid_studentID'])){
+            if($_SESSION['valid_studentID'] != 1){
+                $message = "The Student ID is invalid Or already existed in class !";
+                echo "<script type='text/javascript'>alert('$message');</script>";
+                unset($_SESSION['valid_studentID']);
+            }else{
+                $message = "Accept Student join class success !";
+                echo "<script type='text/javascript'>alert('$message');</script>";
+                unset($_SESSION['valid_studentID']);
+            }
         }
         ?>
     </div>
