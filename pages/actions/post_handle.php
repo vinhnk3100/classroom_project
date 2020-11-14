@@ -1,18 +1,17 @@
 <?php
     require('database.php');
     session_start();
-    date_default_timezone_set("Asia/Ho_Chi_Minh");
+
 
     if(isset($_POST['btn_post'])){
             $postContent = mysqli_real_escape_string($db, $_POST["comment_area"]);
             
     
             //Insert query
-            $stmt = $db->prepare("INSERT INTO post(user_id, content, dateT_current) VALUES(?,?,?)");
+            $stmt = $db->prepare("INSERT INTO post(user_id, content) VALUES(?,?)");
             $userID = $_SESSION['uid'];
             $classid = $_GET['id'];
-            $dateTime=date('d/m/Y h:i:s ', time());
-            $stmt->bind_param("sss",$userID ,$postContent,$dateTime);
+            $stmt->bind_param("ss",$userID ,$postContent);
 
             //check if database error
             if  (($stmt->execute()) === TRUE){
@@ -26,7 +25,7 @@
                 $db->close();
     }
 
-    if(isset($_POST['btn_delete'])){
+  /*  if(isset($_POST['btn_delete'])){
         
             //Delete query
             $deletePost = "DELETE FROM post WHERE post_id = document.getElementById("")"
@@ -39,5 +38,5 @@
             $updatePost = $db->prepare("UPDATE post SET content = ?, dateT_update = ? WHERE post_id = ?");
             $dateTUpdate = date('d/m/Y h:i:s ', time());
             $updatePost->bind_param("sss", $contentUpdate,$dateTUpdate,$);
-    }
+    }*/
 ?>
