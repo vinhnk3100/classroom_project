@@ -175,12 +175,12 @@ require("Initials.php");
         </div>
 
     </div>
-
+    <!--Create Post Form-->
     <div class="classuis comment_show">
         <div class="comment-content">
-            <form action="#" method="post">
+            <form action="./actions/post_handle.php?class_id=<?php echo $rowsClass['class_id']; ?>" method="post">
                 <textarea placeholder="Say something to share with your class...." id="comments_textarea" name="comments_textarea" oninput='this.style.height = "";this.style.height = this.scrollHeight + 3 +  "px"' cols="138"></textarea>
-                <input id="post_btn_comment" value="Post" type="submit">
+                <input id="post_btn_create" name="post_btn_create" value="Post" type="submit">
             </form>
             <input id="file_btn_comment" type="file" name="file_btn_comment" multiple="multiple" onchange="uploadOnChange()">
             <input id="cancel_btn_comment" value="Cancel" type="submit" onclick="showClassComment()">
@@ -194,31 +194,46 @@ require("Initials.php");
     <!--====== POST ========================================-->
     <div class="classuis">
         <div class="post">
-            <!--====== POST CREATOR ========================================-->
-                <!-- Nay bao gom ho ten, avatar cua nguoi post bai viet -->
-            <div class="nav-link p-l-26" aria-haspopup="true" aria-expanded="false">
-                <?php
-                $initials = new Initials();
-                $generateName = $initials->generate($_SESSION['fullname']);
-                echo "<div class='post_user_name'>Nguyen Van A</div>";
-                echo "<div class='circle circle-avt-comments'><div class='initials'>$generateName</div></div>"
-                ?>
-            </div>
+            <?php 
+                    // SQL get post query 
+                    $queryPost = "SELECT * FROM post WHERE class_id='$classid' ";
+                    $post_exec = mysqli_query($db,$queryPost);
+                    $post_result = mysqli_fetch_assoc($post_exec);
 
-            <!--====== POST CONTENTS ========================================-->
-                <!-- Chứa nội dung, file của người đăng bài viết -->
-            <div class="post_content">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-                standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
-                type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-                essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            </div>
+                    // SQL get user query
+                    $queryUser = "SELECT fullName FROM users,post WHERE users.user_id = post.user_id AND post.user_id='$userID' ";
+                    $user_exec = mysqli_query($db,$queryUser);
+                    $user_result = mysqli_fetch_assoc($user_exec);
+                ?>
+            <?php
+            while($post_result){
+                echo " <div class=\"post_main\" id=\"echo <?php $post_result['post_id'] ?>\">
+                <!--====== POST CREATOR ========================================-->
+                    <!-- Nay bao gom ho ten, avatar cua nguoi post bai viet -->
+                <div class=\"nav-link p-l-26\" aria-haspopup='true' aria-expanded='false'>
+                    <?php
+                    $initials = new Initials();
+                    $generateName = $initials->generate($_SESSION['fullname']);
+                    echo \"<div class='post_user_name'><?php echo $user_result ?></div>\";
+                    echo \"<div class='circle circle-avt-comments'><div class='initials'>$generateName</div></div>\"
+                    ?>
+                </div>
+
+                <!--====== POST CONTENTS ========================================-->
+                    <!-- Chứa nội dung, file của người đăng bài viết -->
+                <div class=\"post_content\" >
+                
+                </div>
+            </div>";
+            }
+            ?>
+           
             <hr>
 
             <!--====== POST COMMENTS ========================================-->
                 <!-- Chứa họ tên, avatar, nội dung comment ( không up file được ) của người comment bài post trên -->
-            <div class="post_expand_comments">Click to see more comments....</div>
+            <div class="post_expand_comments">Click to see more comments....
+            </div>
             <div class="post_comments">
                 <div class="nav-link" aria-haspopup="true" aria-expanded="false">
                     <?php
