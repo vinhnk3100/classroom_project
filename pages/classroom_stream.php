@@ -181,9 +181,9 @@ require("Initials.php");
             <form action="#" method="post">
                 <textarea placeholder="Say something to share with your class...." id="comments_textarea" name="comments_textarea" oninput='this.style.height = "";this.style.height = this.scrollHeight + 3 +  "px"' cols="138"></textarea>
                 <input id="post_btn_comment" value="Post" type="submit">
+                <input id="file_btn_comment" type="file" name="file_btn_comment" multiple="multiple" onchange="uploadOnChange()">
+                <input id="cancel_btn_comment" value="Cancel" type="reset" onclick="showClassComment()">
             </form>
-            <input id="file_btn_comment" type="file" name="file_btn_comment" multiple="multiple" onchange="uploadOnChange()">
-            <input id="cancel_btn_comment" value="Cancel" type="submit" onclick="showClassComment()">
             <div id="display_file_comment"></div>
         </div>
     </div>
@@ -218,7 +218,7 @@ require("Initials.php");
 
             <!--====== POST COMMENTS ========================================-->
                 <!-- Chứa họ tên, avatar, nội dung comment ( không up file được ) của người comment bài post trên -->
-            <div class="post_expand_comments">Click to see more comments....</div>
+            <div class="post_expand_comments"><input id="expand_comments" type="button" value="Click to see more comments...." ></div>
             <div class="post_comments">
                 <div class="nav-link" aria-haspopup="true" aria-expanded="false">
                     <?php

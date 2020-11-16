@@ -28,11 +28,23 @@
     background-color: rgba(255, 255, 255, 0.21);
 }
 
-.card:hover .card-body {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+.card-body{
     transition: 0.5s ease-in-out;
-    bottom: 1px;
-    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    left: 0;
+    bottom: -32px;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.24);
+    width: 100%;
+    padding: unset;
+    padding-left: 20px;
+}
+
+.card:hover .card-body {
+    box-shadow: 0 0 20px rgb(255, 255, 255);
+    transition: 0.5s ease-in-out;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.68);
 }
 
 .card:hover{
@@ -40,19 +52,6 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     background-color: rgb(0, 0, 0);
 }
-
-.card-body{
-    transition: 0.5s ease-in-out;
-    transition: 0.5s ease-in-out;
-    position: absolute;
-    bottom: -32px;
-    display: inline-block;
-    background-color: rgba(0, 0, 0, 0.07);
-    width: 100%;
-    padding: unset;
-    padding-left: 20px;
-}
-
 
 .card-creator{
     color: #ffffff;

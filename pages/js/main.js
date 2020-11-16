@@ -140,6 +140,11 @@ function uploadOnChange() {
     }
     output.innerHTML += '</ul>';
     output.style.display = 'block';
+    var cancelBtn = document.getElementById('cancel_btn_comment');
+
+    cancelBtn.addEventListener('click', function () {
+        output.style.display = 'none';
+    })
 }
 
 // Showing class comment
@@ -151,7 +156,6 @@ function showClassComment() {
     commentLabel.innerHTML = "Say something to share with you class...";
 
     if(commentVisible.style.display == "block"){
-        console.log("A");
         commentLabel.style.display = "block";
         commentLabel.style.top = "-3.1rem";
         commentLabel.style.left = "5.8rem";

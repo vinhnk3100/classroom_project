@@ -139,6 +139,8 @@ td
 /* ===================================== Image properties ===================================== */
 .classuib
 {
+    object-fit: cover;
+    object-position: center;
     height: 15rem;
     width: 100%;
     background-repeat: no-repeat;
@@ -350,6 +352,8 @@ div
 }
 
 #cancel_btn_comment{
+    border: 2px solid white;
+    transition: 0.5s ease-in-out;
     background-color: white;
     color: black;
     margin-top: 2rem;
@@ -357,12 +361,12 @@ div
     border-radius: 6px;
     width: 6rem;
     position: relative;
-    float: right;
-    right: 12rem;
+    left: 2rem;
     margin-bottom: 2rem;
 }
 
 #cancel_btn_comment:hover{
+    transition: 0.5s ease-in-out;
     background-color: #cbcbcb;
 }
 
@@ -373,8 +377,7 @@ div
     border-radius: 6px;
     width: 6rem;
     position: relative;
-    float: right;
-    right: 8rem;
+    left: 46rem;
     margin-bottom: 2rem;
 }
 
@@ -497,6 +500,16 @@ div
     position: relative;
     left: 4rem;
     top: 1rem;
+}
+
+#expand_comments{
+    outline: none;
+    background-color: white;
+    border: 2px solid white;
+}
+
+#expand_comments:hover{
+    color: green;
 }
 
 .post_comments_users{
