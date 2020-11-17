@@ -193,40 +193,40 @@ require("Initials.php");
 
     <!--====== POST ========================================-->
     <div class="classuis">
-        <div class="post">
-            <?php 
-                    // SQL get post query 
-                    $queryPost = "SELECT * FROM post WHERE class_id='$classid' ";
-                    $post_exec = mysqli_query($db,$queryPost);
-                    $post_result = mysqli_fetch_assoc($post_exec);
-
+        <?php 
+                // SQL get post query 
+                $queryPost = "SELECT * FROM post WHERE class_id='$classid' ";
+                $post_exec = mysqli_query($db,$queryPost);
+                        
+                while($post_result = mysqli_fetch_assoc($post_exec)){
+            ?>
+        <div class="post" id="<?php echo $post_result['post_id'] ?>">
+                <div class="nav-link p-l-26\" aria-haspopup='true' aria-expanded='false'>
+                    <?php
                     // SQL get user query
-                    $queryUser = "SELECT fullName FROM users,post WHERE users.user_id = post.user_id AND post.user_id='$userID' ";
+                    $postID = $post_result['post_id'];
+                    $queryUser = "SELECT fullName FROM users,post WHERE users.user_id = post.user_id AND post_id=$postID  ";
                     $user_exec = mysqli_query($db,$queryUser);
                     $user_result = mysqli_fetch_assoc($user_exec);
-                ?>
-            <?php
-            while($post_result){
-                echo " <div class=\"post_main\" id=\"echo <?php $post_result['post_id'] ?>\">
-                <!--====== POST CREATOR ========================================-->
-                    <!-- Nay bao gom ho ten, avatar cua nguoi post bai viet -->
-                <div class=\"nav-link p-l-26\" aria-haspopup='true' aria-expanded='false'>
-                    <?php
+
                     $initials = new Initials();
                     $generateName = $initials->generate($_SESSION['fullname']);
-                    echo \"<div class='post_user_name'><?php echo $user_result ?></div>\";
-                    echo \"<div class='circle circle-avt-comments'><div class='initials'>$generateName</div></div>\"
+                    ?>
+                    <div class='post_user_name'> <?php echo $user_result['fullName'] ?> </div>
+                    <div class='circle circle-avt-comments'><div class='initials'><?php echo $generateName ?></div>
+                    </div>
+                </div>
+
+                <div class="post_date"><?php echo $post_result['dateT_current']  ?></div>  
+
+    
+                <div class="post_content">
+                    <?php  
+                        echo $post_result['content'];
                     ?>
                 </div>
 
-                <!--====== POST CONTENTS ========================================-->
-                    <!-- Chứa nội dung, file của người đăng bài viết -->
-                <div class=\"post_content\" >
-                
-                </div>
-            </div>";
-            }
-            ?>
+            
            
             <hr>
 
@@ -269,7 +269,14 @@ require("Initials.php");
             </div>
 
             <!--====== CREAT POST COMMENTS ========================================-->
+
+           
         </div>
+
+
+        <?php
+            }
+            ?>
     </div>
 
     <!--====== END POST ========================================-->
