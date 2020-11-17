@@ -16,8 +16,8 @@ if (isset($_POST['btn_create_class'])){
 
     $stmt = $db->prepare("INSERT INTO class(class_id,className,subject,classRoom,teacher_id)
     VALUES(?, ?, ?, ?, ?)");
-      
-    $class_id = uniqid('cls');
+
+    $class_id = substr(uniqid(),0,8);
     $teacher_id = $_SESSION['uid'];
 
     $stmt->bind_param("sssss",$class_id,$className,$classSubject,$classRoom,$teacher_id);

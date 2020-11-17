@@ -263,6 +263,33 @@ progress[value="100"]::-webkit-progress-value {
     color: #7f7f7f;
 }
 
+.class_search_bar{
+    transition: 0.5s ease-in-out;
+    position: absolute;
+    left: 14rem;
+    top: 0.2rem;
+    border: 1px solid black;
+    border-radius: 6px;
+    font-size: 18px;
+}
+
+.class_search_btn{
+    position: absolute;
+    top: 0.3rem;
+    left: 25rem;
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+}
+
+.class_search_bar:focus-within{
+    outline: none;
+    transition: 0.5s ease-in-out;
+    background-color: #e7e7e7;
+    border: 1px solid black;
+    border-radius: 6px;
+}
+
 .dropdown-toggle{
     word-spacing: -5px;
 }

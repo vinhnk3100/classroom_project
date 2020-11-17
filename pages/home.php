@@ -28,7 +28,6 @@ if($_SESSION['fullname'] == null){
 <main>
         <!--====== NAVBAR TOP =======================-->
     <?php include ("./function/nav-bar-action-home.php")?>
-    </div>
 
 
     <!--====== NAVBAR TOP =======================-->
@@ -59,6 +58,10 @@ if($_SESSION['fullname'] == null){
             // =========================== IF LOGIN AS TEACHER, SHOW CLASSROOM TEACHER JOIN ==================================
 
             include ('function/queryTeacherClassroom.php');
+
+            if(isset($_POST['class_search_btn'])){
+                include ("./pages/actions/class_search.php");
+            }
 
 
             ?>
@@ -91,11 +94,6 @@ if($_SESSION['fullname'] == null){
         }
         ?>
     </div>
-
-
-
-
-
 
     <!-- ====================================== END CARD LIST VIEW ======================================-->
 
