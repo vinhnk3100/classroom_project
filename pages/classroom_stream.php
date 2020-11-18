@@ -199,13 +199,13 @@ require("Initials.php");
                 $post_exec = mysqli_query($db,$queryPost);
                         
                 while($post_result = mysqli_fetch_assoc($post_exec)){
-            ?>
+        ?>
         <div class="post" id="<?php echo $post_result['post_id'] ?>">
                 <div class="nav-link p-l-26\" aria-haspopup='true' aria-expanded='false'>
                     <?php
                     // SQL get user query
                     $postID = $post_result['post_id'];
-                    $queryUser = "SELECT fullName FROM users,post WHERE users.user_id = post.user_id AND post_id=$postID  ";
+                    $queryUser = "SELECT fullName FROM users,post WHERE users.user_id = post.user_id AND post_id=$postID";
                     $user_exec = mysqli_query($db,$queryUser);
                     $user_result = mysqli_fetch_assoc($user_exec);
 
@@ -217,7 +217,8 @@ require("Initials.php");
                     </div>
                 </div>
 
-                <div class="post_date"><?php echo $post_result['dateT_current']  ?></div>  
+                    <!--Post create date -->
+                    <div class="post_date"><?php echo date("j M", strtotime($post_result['dateT_current']))  ?></div>  
 
     
                 <div class="post_content">
