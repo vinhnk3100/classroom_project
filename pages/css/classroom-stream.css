@@ -370,7 +370,9 @@ div
     background-color: #cbcbcb;
 }
 
-#post_btn_comment{
+#post_btn_create{
+    top: 6.5rem;
+    transition: 0.5s ease-in-out;
     background-color: #c7c7c7;
     margin-top: 2rem;
     font-size: 24px;
@@ -379,6 +381,11 @@ div
     position: relative;
     left: 46rem;
     margin-bottom: 2rem;
+}
+
+#post_btn_create:hover{
+    transition: 0.5s ease-in-out;
+    background-color: #078200;
 }
 
 #file_btn_comment{
@@ -805,31 +812,50 @@ input[type=submit]
 }
 
 .dd_menu_btn{
+    transition: 0.2s ease-in-out;
     position: relative;
     background-color: white;
+    border-radius: 10px;
     border: none;
 }
 
 .dd_menu_btn:hover{
-    background-color: #e6efa9;
+    border-radius: 10px;
+    transition: 0.2s ease-in-out;
+    background-color: #56cd19;
+}
+
+.dd_menu_btn:focus{
+    outline: none;
 }
 
 .dd_menu_content{
-    display: none;
-    position: absolute;
-    z-index: 1;
-    right:0;
+    position: relative;
+    box-shadow: 2px 2px 5px black;
+    transition: 0.2s ease-in-out;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 0.5rem;
 }
 
 .dd_menu_content a{
-    padding: 0.5rem;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 0.2rem 2rem 0.2rem 2rem ;
     color: black;
     display: block;
 }
 
 .dd_menu_content a:hover{
-    background-color: #f1f1f1;
+    transition: 0.2s ease-in-out;
+    background-color: #efefef;
 }
 
-.show{display: block;}
+#edit_post_btn:hover{
+    color: #008600;
+}
+
+#delete_post_btn:hover{
+    color: #ff0000;
+}
 

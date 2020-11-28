@@ -204,32 +204,29 @@ require("Initials.php");
 
         <div class="post" >
                 <div class="nav-link p-l-26\" aria-haspopup='true' aria-expanded='false'>
-                <!--Post drop-down menu-->
-                <div class="drop_down_menu">
-                    <button class="dd_menu_btn" onclick="displayPostMenu()"><i class="fas fa-ellipsis-v"></i></button>
-                    <div class="dd_menu_content" id="dd_content" >
-                        <a href="#">Edit</a>
-                        <a href="#">Delete</a>
-                    </div>
-                </div>
                     <?php
                     // SQL get user query
                     $postID = $post_result['post_id'];
-                    $queryUser = "SELECT fullName FROM users,post WHERE users.user_id = post.user_id AND post_id=$postID";
+                    $queryUser = "SELECT fullName FROM users,post WHERE users.user_id = post.user_id AND post_id='$postID'";
                     $user_exec = mysqli_query($db,$queryUser);
                     $user_result = mysqli_fetch_assoc($user_exec);
-
                     $initials = new Initials();
                     $generateName = $initials->generate($_SESSION['fullname']);
+                    /* ===================================== DROPDOWN MENU POST ACTION ===================================== */
+                    echo "<ul class=\"drop_down_menu\">
+                            <a class=\"round-btn-cyan table_btn_right\" href=\"#\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"><i class=\"fas fa-ellipsis-v\"></i></i></a>
+                            <div class=\"dropdown-menu dd_menu_content\" id=\"dd_content\" aria-labelledby=\"navbarDropdown\">
+                                <div class=\"text-center margin-dropdown\"><a id=\"edit_post_btn\" href=\"#\">Edit</a></div>
+                                <div class=\"text-center margin-dropdown\"><a id=\"delete_post_btn\" href=\"actions/post_handle.php\">Delete</a></div>                  
+                            </div>
+                        </ul>";
                     ?>
                     <div class='post_user_name'> <?php echo $user_result['fullName'] ?> 
                     <!--Post create date -->
                     <div class="post_date"><?php echo date("j M", strtotime($post_result['dateT_current']))  ?></div>
                     </div>      
-                    <div class='circle circle-avt-comments'><div class='initials'><?php echo $generateName ?></div>
-                    
-                    </div>
-                    
+<!--                    <div class='circle circle-avt-post'><div class='initials'></div></div>-->
+                    <img class="circle circle-avt-post" src='css/images/avatar/avatar.jpg' alt=''>
                 </div>
                 
                 <div class="post_content">
@@ -251,7 +248,8 @@ require("Initials.php");
                     $generateName = $initials->generate($_SESSION['fullname']);
                     // Họ tên và ảnh ở đây
                     echo "<div class='post_user_name'>Nguyen Van A</div>";
-                    echo "<div class='circle circle-avt-comments avt_in_post'><div class='initials name_in_post'>$generateName</div></div>";
+//                    echo "<div class='circle circle-avt-comments avt_in_post'><div class='initials name_in_post'></div></div>";
+                    echo "<img class=\"circle circle-avt-comments avt_in_post\" src='css/images/avatar/avatar.jpg' alt=''>";
 
                         // Nội dung comment ở đây !
                     echo "<div class='post_comments_users'>Lorem Ipsum is psum ipsum ipsum isimply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</div>";

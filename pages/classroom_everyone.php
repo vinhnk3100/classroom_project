@@ -127,13 +127,13 @@ require("Initials.php");
                                     //<!--========================= ACTION ON STUDENT BY TEACHER ==================================================-->
                                     if($_SESSION['role'] == "tea" || $_SESSION['role'] == "adm" ){
                                         echo "<ul class=\"navbar-nav margin-dropdown\">
-                            <li class=\"nav-item dropdown\">
-                                <a class=\"round-btn-cyan table_btn_right\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"><i class=\"fa fa-plus\" aria-hidden=\"true\"></i></a>
-                                <div class=\"dropdown-menu dropdown-style\" aria-labelledby=\"navbarDropdown\">
-                                    <div class=\"text-center margin-dropdown\"><a href=\"$url\" class=\"color-red-btn btn btn-outline-success my-2 my-sm-0\" >Remove</a></div>
-                                </div>
-                            </li>
-                        </ul>";
+                                                    <li class=\"nav-item dropdown\">
+                                                        <a class=\"round-btn-cyan table_btn_right\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"><i class=\"fa fa-plus\" aria-hidden=\"true\"></i></a>
+                                                        <div class=\"dropdown-menu dropdown-style\" aria-labelledby=\"navbarDropdown\">
+                                                            <div class=\"text-center margin-dropdown\"><a href=\"$url\" class=\"color-red-btn btn btn-outline-success my-2 my-sm-0\" >Remove</a></div>
+                                                        </div>
+                                                    </li>
+                                                </ul>";
                                     }
                                     echo "<span><img class=\"imgcc\" area-hidden=\"true\" src=\"https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/s32-c-fbw=1/photo.jpg\">"."<span class=\"tp tf\"'>".$row['fullName']."</span>"."</span>".""."<br>";
                                 }else{

@@ -95,6 +95,10 @@ body{
     position: relative;
 }
 
+.circle-avt-post{
+    margin-top: -1.8rem;
+}
+
 .text-align-profile {
     transition: 0.2s ease-in-out;
     text-decoration: none;
