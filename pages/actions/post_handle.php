@@ -23,7 +23,7 @@
     }
 
  /*   if(isset($_POST['post_btn_delete'])){
-            $post_id = $_GET['post_id']
+            $post_id = $_GET['post_id'];
             //Delete query
             $stmt_dlt = $db->prepare("DELETE FROM post WHERE post_id = $post_id");
 
@@ -51,6 +51,7 @@
             //check if database error
             if  (($stmt_upd->execute()) === TRUE){
                 $_SESSION["dbAddedSuccess"]= true;
+                $_SESSION["post_updated"]= true;
                 header("Location: ../classroom_stream.php?class_id=$classid");
                 } else {   
                 echo $stmt_upd->error;  

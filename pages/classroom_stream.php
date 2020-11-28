@@ -200,13 +200,11 @@ require("Initials.php");
                 while($post_result = mysqli_fetch_assoc($post_exec)){
         ?>
     <div class="classuis" id="<?php echo $post_result['post_id'] ?>">
- 
-
         <div class="post" >
                 <div class="nav-link p-l-26\" aria-haspopup='true' aria-expanded='false'>
                 <!--Post drop-down menu-->
                 <div class="drop_down_menu">
-                    <button class="dd_menu_btn" onclick="displayPostMenu()"><i class="fas fa-ellipsis-v"></i></button>
+                    <button class="dd_menu_btn" ><i class="fas fa-ellipsis-v"></i></button>
                     <div class="dd_menu_content" id="dd_content" >
                         <a href="#">Edit</a>
                         <a href="#">Delete</a>
@@ -224,7 +222,13 @@ require("Initials.php");
                     ?>
                     <div class='post_user_name'> <?php echo $user_result['fullName'] ?> 
                     <!--Post create date -->
-                    <div class="post_date"><?php echo date("j M", strtotime($post_result['dateT_current']))  ?></div>
+                    <div class="post_date"><?php 
+                    if(isset($_SESSION["post_updated"])){
+                        echo date("j M", strtotime($post_result['dateT_update']));
+                        session_unset();
+                    } else
+                    echo date("j M", strtotime($post_result['dateT_current']));
+                     ?></div>
                     </div>      
                     <div class='circle circle-avt-comments'><div class='initials'><?php echo $generateName ?></div>
                     
@@ -267,15 +271,14 @@ require("Initials.php");
             <div class="nav-link p-l-26" aria-haspopup="true" aria-expanded="false">
                 <?php
                 $initials = new Initials();
-                $generateName = $initials->generate($_SESSION['fullname']);
-                echo "<div class='circle circle-avt-comments avt_in_post'><div class='initials name_in_post'>$generateName</div></div>";
-                echo "
-                <form action='' method='post' class='form_post_comments'>
-                    <div class='input_comments' contenteditable='true' data-text='Say something here....'></div>
-                    <button class='post_comments_btn' type='submit'><i class='fa fa-paper-plane' aria-hidden=\"true\"></i></button>
+                $generateName = $initials->generate($_SESSION['fullname']);?>
+                <div class='circle circle-avt-comments avt_in_post'><div class='initials name_in_post'><?php echo $generateName?></div></div>
+                <form action='./actions/post_comment_handle.php?class_id=<?php echo $rowsClass['class_id']; ?>' method='post' class='form_post_comments'>
+                    <div class='input_comments' name='post_comment' contenteditable='true' data-text='Say something here....'></div>
+                    <button class='post_comments_btn' name='post_comment_btn' type='submit'><i class='fa fa-paper-plane' aria-hidden="true"></i></button>
                 </form>
                 ";
-                ?>
+                
             </div>
 
             <!--====== CREAT POST COMMENTS ========================================-->
