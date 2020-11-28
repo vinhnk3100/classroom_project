@@ -192,16 +192,26 @@ require("Initials.php");
     <!--====== END POST CREATE ========================================-->
 
     <!--====== POST ========================================-->
-    <div class="classuis">
-        <?php 
+    <?php 
                 // SQL get post query 
-                $queryPost = "SELECT * FROM post WHERE class_id='$classid' ";
+                $queryPost = "SELECT * FROM post WHERE class_id='$classid' ORDER BY  post_id desc";
                 $post_exec = mysqli_query($db,$queryPost);
                         
                 while($post_result = mysqli_fetch_assoc($post_exec)){
         ?>
-        <div class="post" id="<?php echo $post_result['post_id'] ?>">
+    <div class="classuis" id="<?php echo $post_result['post_id'] ?>">
+ 
+
+        <div class="post" >
                 <div class="nav-link p-l-26\" aria-haspopup='true' aria-expanded='false'>
+                <!--Post drop-down menu-->
+                <div class="drop_down_menu">
+                    <button class="dd_menu_btn" onclick="displayPostMenu()"><i class="fas fa-ellipsis-v"></i></button>
+                    <div class="dd_menu_content" id="dd_content" >
+                        <a href="#">Edit</a>
+                        <a href="#">Delete</a>
+                    </div>
+                </div>
                     <?php
                     // SQL get user query
                     $postID = $post_result['post_id'];
@@ -212,23 +222,22 @@ require("Initials.php");
                     $initials = new Initials();
                     $generateName = $initials->generate($_SESSION['fullname']);
                     ?>
-                    <div class='post_user_name'> <?php echo $user_result['fullName'] ?> </div>
-                    <div class='circle circle-avt-comments'><div class='initials'><?php echo $generateName ?></div>
-                    </div>
-                </div>
-
+                    <div class='post_user_name'> <?php echo $user_result['fullName'] ?> 
                     <!--Post create date -->
-                    <div class="post_date"><?php echo date("j M", strtotime($post_result['dateT_current']))  ?></div>  
-
-    
+                    <div class="post_date"><?php echo date("j M", strtotime($post_result['dateT_current']))  ?></div>
+                    </div>      
+                    <div class='circle circle-avt-comments'><div class='initials'><?php echo $generateName ?></div>
+                    
+                    </div>
+                    
+                </div>
+                
                 <div class="post_content">
                     <?php  
                         echo $post_result['content'];
                     ?>
                 </div>
-
-            
-           
+      
             <hr>
 
             <!--====== POST COMMENTS ========================================-->
@@ -270,15 +279,15 @@ require("Initials.php");
             </div>
 
             <!--====== CREAT POST COMMENTS ========================================-->
-
            
-        </div>
+        </div><!--END OF CLASS POST -->
 
 
-        <?php
+
+    </div>
+    <?php
             }
             ?>
-    </div>
 
     <!--====== END POST ========================================-->
     <br><br><br>
