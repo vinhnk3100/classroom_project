@@ -481,7 +481,7 @@ div
 
 .post_user_name{
     position: relative;
-    left: 4.5rem;
+    left: 5rem;
     top: 2rem;
 }
 
@@ -797,3 +797,39 @@ input[type=submit]
 .dropdown-style{
     border-radius: 6px;
 }
+
+/* ============================= DROPDOWN POST MENU ========================= */
+.drop_down_menu{
+    float: right;
+    position: relative;
+}
+
+.dd_menu_btn{
+    position: relative;
+    background-color: white;
+    border: none;
+}
+
+.dd_menu_btn:hover{
+    background-color: #e6efa9;
+}
+
+.dd_menu_content{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    right:0;
+}
+
+.dd_menu_content a{
+    padding: 0.5rem;
+    color: black;
+    display: block;
+}
+
+.dd_menu_content a:hover{
+    background-color: #f1f1f1;
+}
+
+.show{display: block;}
+

@@ -175,15 +175,15 @@ require("Initials.php");
         </div>
 
     </div>
-
+    <!--Create Post Form-->
     <div class="classuis comment_show">
         <div class="comment-content">
-            <form action="#" method="post">
+            <form action="./actions/post_handle.php?class_id=<?php echo $rowsClass['class_id']; ?>" method="post">
                 <textarea placeholder="Say something to share with your class...." id="comments_textarea" name="comments_textarea" oninput='this.style.height = "";this.style.height = this.scrollHeight + 3 +  "px"' cols="138"></textarea>
-                <input id="post_btn_comment" value="Post" type="submit">
-                <input id="file_btn_comment" type="file" name="file_btn_comment" multiple="multiple" onchange="uploadOnChange()">
-                <input id="cancel_btn_comment" value="Cancel" type="reset" onclick="showClassComment()">
+                <input id="post_btn_create" name="post_btn_create" value="Post" type="submit">
             </form>
+            <input id="file_btn_comment" type="file" name="file_btn_comment" multiple="multiple" onchange="uploadOnChange()">
+            <input id="cancel_btn_comment" value="Cancel" type="submit" onclick="showClassComment()">
             <div id="display_file_comment"></div>
         </div>
     </div>
@@ -192,33 +192,58 @@ require("Initials.php");
     <!--====== END POST CREATE ========================================-->
 
     <!--====== POST ========================================-->
-    <div class="classuis">
-        <div class="post">
-            <!--====== POST CREATOR ========================================-->
-                <!-- Nay bao gom ho ten, avatar cua nguoi post bai viet -->
-            <div class="nav-link p-l-26" aria-haspopup="true" aria-expanded="false">
-                <?php
-                $initials = new Initials();
-                $generateName = $initials->generate($_SESSION['fullname']);
-                echo "<div class='post_user_name'>Nguyen Van A</div>";
-                echo "<div class='circle circle-avt-comments'><div class='initials'>$generateName</div></div>"
-                ?>
-            </div>
+    <?php 
+                // SQL get post query 
+                $queryPost = "SELECT * FROM post WHERE class_id='$classid' ORDER BY  post_id desc";
+                $post_exec = mysqli_query($db,$queryPost);
+                        
+                while($post_result = mysqli_fetch_assoc($post_exec)){
+        ?>
+    <div class="classuis" id="<?php echo $post_result['post_id'] ?>">
+ 
 
-            <!--====== POST CONTENTS ========================================-->
-                <!-- Chứa nội dung, file của người đăng bài viết -->
-            <div class="post_content">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-                standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
-                type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-                essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            </div>
+        <div class="post" >
+                <div class="nav-link p-l-26\" aria-haspopup='true' aria-expanded='false'>
+                <!--Post drop-down menu-->
+                <div class="drop_down_menu">
+                    <button class="dd_menu_btn" onclick="displayPostMenu()"><i class="fas fa-ellipsis-v"></i></button>
+                    <div class="dd_menu_content" id="dd_content" >
+                        <a href="#">Edit</a>
+                        <a href="#">Delete</a>
+                    </div>
+                </div>
+                    <?php
+                    // SQL get user query
+                    $postID = $post_result['post_id'];
+                    $queryUser = "SELECT fullName FROM users,post WHERE users.user_id = post.user_id AND post_id=$postID";
+                    $user_exec = mysqli_query($db,$queryUser);
+                    $user_result = mysqli_fetch_assoc($user_exec);
+
+                    $initials = new Initials();
+                    $generateName = $initials->generate($_SESSION['fullname']);
+                    ?>
+                    <div class='post_user_name'> <?php echo $user_result['fullName'] ?> 
+                    <!--Post create date -->
+                    <div class="post_date"><?php echo date("j M", strtotime($post_result['dateT_current']))  ?></div>
+                    </div>      
+                    <div class='circle circle-avt-comments'><div class='initials'><?php echo $generateName ?></div>
+                    
+                    </div>
+                    
+                </div>
+                
+                <div class="post_content">
+                    <?php  
+                        echo $post_result['content'];
+                    ?>
+                </div>
+      
             <hr>
 
             <!--====== POST COMMENTS ========================================-->
                 <!-- Chứa họ tên, avatar, nội dung comment ( không up file được ) của người comment bài post trên -->
-            <div class="post_expand_comments"><input id="expand_comments" type="button" value="Click to see more comments...." ></div>
+            <div class="post_expand_comments">Click to see more comments....
+            </div>
             <div class="post_comments">
                 <div class="nav-link" aria-haspopup="true" aria-expanded="false">
                     <?php
@@ -254,8 +279,15 @@ require("Initials.php");
             </div>
 
             <!--====== CREAT POST COMMENTS ========================================-->
-        </div>
+           
+        </div><!--END OF CLASS POST -->
+
+
+
     </div>
+    <?php
+            }
+            ?>
 
     <!--====== END POST ========================================-->
     <br><br><br>

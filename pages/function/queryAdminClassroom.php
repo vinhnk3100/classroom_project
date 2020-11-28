@@ -14,7 +14,7 @@ $resultClassAdmin = mysqli_query($db,$queryClassAdmin);
 // ===============================================================================================================
 
 if ($_SESSION['role'] == 'adm'){
-    while($rowClassAdmin= mysqli_fetch_assoc($resultClassAdmin)) {
+    while($rowClassAdmin= mysqli_fetch_assoc($resultClassAdmin)){
         $classid = $rowClassAdmin['class_id'];
         $classteacherName = $rowClassAdmin['fullName'];
         $classavatar = $rowClassAdmin['classAvatar'];
