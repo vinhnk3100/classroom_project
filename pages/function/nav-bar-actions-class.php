@@ -109,7 +109,6 @@
                         </div>
                         <div class="modal-body">
                             <div></div>
-                            <br>
                             <form action="./actions/add_student_request.php?class_id=<?php echo $classid?>" method="post">
                                 <div class="form-group">
                                     <label for="student_email_invite">Student email</label>

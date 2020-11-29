@@ -200,19 +200,20 @@ progress[value="100"]::-webkit-progress-value {
 }
 
 .color-green-btn{
+    position: relative;
+    left: 7rem;
+    outline: none;
     padding: 5px;
-    background-image: linear-gradient(to top, rgb(151, 255, 128), #c1ffb4, rgb(151, 255, 128));
+    background-image: linear-gradient(to top, rgb(63, 132, 53), #2bd012, rgb(63, 132, 53));
     font-size: 18px;
-    border: 1px solid #11ac00;
     color: #165c00;
     box-shadow: 4px 4px 10px black;
 }
 
 .color-green-btn:hover{
-    background-image: linear-gradient(to right, #23e800, #25ac00);
-    border: 1px solid #2eac00;
-    background-color: #2be800;
-    box-shadow: 4px 4px 10px #7fff68;
+    outline: none;
+    background-image: linear-gradient(to top, #2bd012, rgb(74, 199, 58), #2bd012);
+    box-shadow: 4px 4px 10px #93ff85;
     color: white;
 }
 
@@ -311,6 +312,24 @@ progress[value="100"]::-webkit-progress-value {
     transition: 0.5s ease-in-out;
     background-color: #fdfdfd;
     color: #8d8d8d;
+}
+
+.delete_post_btn{
+    position: absolute;
+    width: 40% !important;
+    height: 18% !important;
+    margin: unset !important;
+    padding: unset !important;
+    border: 2px solid black !important;
+    transition: 0.2s ease-in-out;
+    color: white;
+    background-color: #46bf00;
+}
+
+.delete_post_btn:hover{
+    transition: 0.2s ease-in-out;
+    color: #46bf00;
+    background-color: white;
 }
 
 .class-delete-btn-yes{

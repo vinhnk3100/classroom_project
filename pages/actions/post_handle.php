@@ -2,9 +2,9 @@
     require('database.php');
     session_start();
 
-    $classid = $_GET['class_id'];
 
     if(isset($_POST['post_btn_create'])){
+            $classid = $_GET['class_id'];
             $postContent = mysqli_real_escape_string($db, $_POST["comments_textarea"]);
             //Insert query
             $stmt_crt = $db->prepare("INSERT INTO post(user_id,content,class_id) VALUES(?,?,?)");
@@ -22,10 +22,12 @@
                 $db->close();
     }
 
-    if(isset($_POST['post_btn_delete'])){
+    if(isset($_POST['delete_post_btn'])){
+
+            $classid = $_GET['class_id'];
             $post_id = $_GET['post_id'];
             //Delete query
-            $stmt_dlt = $db->prepare("DELETE FROM post WHERE post_id = $post_id");
+            $stmt_dlt = $db->prepare("DELETE FROM post WHERE post_id = '$post_id'");
 
             //check if database error
             if  (($stmt_dlt->execute()) === TRUE){
@@ -40,6 +42,7 @@
 
 
     if(isset($_POST['post_btn_update'])){
+            $classid = $_GET['class_id'];
             $post_id = $_GET['post_id'];
             //Update query
             $contentUpdate = mysqli_real_escape_string($db, $_POST["comment_update"]);

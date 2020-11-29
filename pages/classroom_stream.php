@@ -6,23 +6,27 @@ if($_SESSION['fullname'] == null){
 
 //===================================== Connect to Database =====================================
 require ('actions/database.php');
+
+// Get ID
 $classid = $_GET['class_id'];
+$uid = $_SESSION['uid'];
 
 // Query for showing class infomation, name, teacher
 $queryClass = "SELECT * FROM class, users WHERE class.class_id = '$classid' AND users.user_id = class.teacher_id" ;
 $resultClass = mysqli_query($db,$queryClass);
 $rowsClass = mysqli_fetch_assoc($resultClass);
 
-
-$uid = $_SESSION['uid'];
-
 // Query for showing class through Session ID
 $queryUID = "SELECT * FROM class,users WHERE  class.teacher_id = users.user_id AND class.teacher_id = '$uid'";
 $resultUID = mysqli_query($db,$queryUID);
 
 $queryCreator = "SELECT * FROM users, class WHERE users.user_id = class.teacher_id AND class.teacher_id = '$uid' ";
-
 $resultCreator = mysqli_query($db,$queryCreator);
+
+// SQL get post query
+$queryPost = "SELECT * FROM post WHERE class_id='$classid'";
+$post_exec = mysqli_query($db,$queryPost);
+
 
 require("Initials.php");
 ?>
@@ -91,7 +95,11 @@ require("Initials.php");
                             <em><a href="#modal-insert-image" data-toggle="modal"><i class="fa fa-cog" aria-hidden="true"></i></a></em>
                         </div>
                         <div class="custom_image_text">
-                            <em><a href="#modal-insert-image" data-toggle="modal"><i class="fa fa-camera style-fa"></i></a></em>
+                            <?php
+                                if($_SESSION['role'] == 'adm' || $_SESSION['role'] == 'tea'){
+                                    echo "<em><a href=\"#modal-insert-image\" data-toggle=\"modal\"><i class=\"fa fa-camera style-fa\"></i></a></em>";
+                                }
+                            ?>
                         </div>
                     </div>
                     <h1 class="class-top-title shaded_background">
@@ -192,16 +200,11 @@ require("Initials.php");
     <!--====== END POST CREATE ========================================-->
 
     <!--====== POST ========================================-->
-    <?php 
-                // SQL get post query 
-                $queryPost = "SELECT * FROM post WHERE class_id='$classid' ORDER BY  post_id desc";
-                $post_exec = mysqli_query($db,$queryPost);
-                        
+    <?php
+    // SQL Select post query
                 while($post_result = mysqli_fetch_assoc($post_exec)){
         ?>
     <div class="classuis" id="<?php echo $post_result['post_id'] ?>">
- 
-
         <div class="post" >
                 <div class="nav-link p-l-26\" aria-haspopup='true' aria-expanded='false'>
                     <?php
@@ -212,16 +215,44 @@ require("Initials.php");
                     $user_result = mysqli_fetch_assoc($user_exec);
                     $initials = new Initials();
                     $generateName = $initials->generate($_SESSION['fullname']);
+
                     /* ===================================== DROPDOWN MENU POST ACTION ===================================== */
                     echo "<ul class=\"drop_down_menu\">
                             <a class=\"round-btn-cyan table_btn_right\" href=\"#\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"><i class=\"fas fa-ellipsis-v\"></i></i></a>
-                            <div class=\"dropdown-menu dd_menu_content\" id=\"dd_content\" aria-labelledby=\"navbarDropdown\">
+                            <div class=\"dropdown-menu dd_menu_content\" id=\"dd_content\">
                                 <div class=\"text-center margin-dropdown\"><a id=\"edit_post_btn\" href=\"#\">Edit</a></div>
-                                <div class=\"text-center margin-dropdown\"><a id=\"delete_post_btn\" href=\"actions/post_handle.php\">Delete</a></div>                  
+                                <div class=\"text-center margin-dropdown\"><a type='button' id=\"delete_post_btn\" data-target='#modal-delete-post$postID' data-toggle='modal' href='#modal-delete-post' name='delete_post_btn' >Delete</a></div>            
                             </div>
                         </ul>";
+
+                    // ================================== Modal FOR DELETE POST PASSING ID ================================== //
+
+                    // ================================== PASS ID THROUGH MODAL ======================================= //
+                    echo "<div id=\"modal-delete-post$postID\" class=\"modal fade\">
+                                <div class=\"modal-dialog\">
+                                    <div class=\"modal-content\">
+                                        <div class=\"modal-header\">
+                                            <h4 class=\"modal-title\">Delete Post</h4>
+                                            <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"false\">&times;</button>
+                                        </div>
+                                        <div class=\"modal-body\">
+                                            <div>Are you sure you want to delete ?</div><br><p>All comments will be deleted !</p>
+                                            <form action=\"./actions/post_handle.php?post_id=$postID&class_id=$classid\" method=\"post\">
+                                                <input name='delete_post_btn' type=\"submit\" class=\"delete_post_btn\" name = \"btn_create_class\" id=\"btn_create_class\" value=\"Yes\">
+                                            </form>
+                            
+                                            <input type= \"button\" class=\"class-delete-btn-no\" data-dismiss=\"modal\" value=\"No\">
+                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <!--=================================================================================================================-->
+                        <!--=================================================================================================================-->";
                     ?>
-                    <div class='post_user_name'> <?php echo $user_result['fullName'] ?> 
+
+                    <div class='post_user_name'> <?php echo $user_result['fullName'] ?>
                     <!--Post create date -->
                     <div class="post_date"><?php echo date("j M", strtotime($post_result['dateT_current']))  ?></div>
                     </div>      
@@ -289,7 +320,6 @@ require("Initials.php");
 
     <!--====== END POST ========================================-->
     <br><br><br>
-
 
 
 </main>
