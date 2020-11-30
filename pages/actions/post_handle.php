@@ -23,6 +23,7 @@
     }
 
     if(isset($_POST['delete_post_btn'])){
+
             $classid = $_GET['class_id'];
             $post_id = $_GET['post_id'];
             //Delete query
@@ -40,14 +41,15 @@
     }
 
 
-    if(isset($_POST['update_post_btn'])){
+    if(isset($_POST['edit_post_btn'])){
             $classid = $_GET['class_id'];
             $post_id = $_GET['post_id'];
             //Update query
-            $contentUpdate = mysqli_real_escape_string($db, $_POST["post_content_update"]);
-            $stmt_upd = $db->prepare("UPDATE post SET content = ?  WHERE post_id = ?");
+            $contentUpdate = mysqli_real_escape_string($db, $_POST["comment_update"]);
+            $stmt_upd = $db->prepare("UPDATE post SET content = ?, dateT_update = ? WHERE post_id = ?");
+            $dateTUpdate = date('d/m/Y h:i:s ', time());
             //another way to set current time: SET dateT_update = now();
-            $stmt_upd->bind_param("ss", $contentUpdate,$post_id);
+            $stmt_upd->bind_param("sss", $contentUpdate,$dateTUpdate,$post_id);
 
             //check if database error
             if  (($stmt_upd->execute()) === TRUE){
