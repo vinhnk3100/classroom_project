@@ -20,18 +20,17 @@ $rowsClass = mysqli_fetch_assoc($resultClass);
 $queryUID = "SELECT * FROM class,users WHERE  class.teacher_id = users.user_id AND class.teacher_id = '$uid'";
 $resultUID = mysqli_query($db,$queryUID);
 
+$queryCreator = "SELECT * FROM users, class WHERE users.user_id = class.teacher_id AND class.teacher_id = '$uid' ";
+$resultCreator = mysqli_query($db,$queryCreator);
+
 // SQL get post query
-$queryPost = "SELECT * FROM post WHERE class_id='$classid'";
+$queryPost = "SELECT * FROM post WHERE class_id='$classid' ORDER BY post_id desc";
 $post_exec = mysqli_query($db,$queryPost);
-<<<<<<< HEAD
 
 //SQL get comment query
 $queryComment = "SELECT * FROM comment WHERE post_id='$post_id'";
 $comment_exec = mysqli_query($db,$queryComment);
 
-=======
-$post_Row = mysqli_fetch_assoc($post_exec);
->>>>>>> parent of cb5c75c... Merge branch 'update_branch' of https://github.com/vinhnk3100/classroom_project into update_branch
 
 require("Initials.php");
 ?>
@@ -54,9 +53,12 @@ require("Initials.php");
 
 <body>
 <main>
-    <!--====== NAVBAR TOP =======================-->
-
     <?php include ("./function/nav-bar-actions-class.php")?>
+    </nav>
+    </div>
+
+
+    <!--====== NAVBAR TOP =======================-->
 
     <!--=================================================================================================================-->
     <!--=================================================================================================================-->
@@ -216,22 +218,113 @@ require("Initials.php");
                     $user_exec = mysqli_query($db,$queryUser);
                     $user_result = mysqli_fetch_assoc($user_exec);
                     $initials = new Initials();
-                    $generateName = $initials->generate($_SESSION['fullname']);
+                    $generateName = $initials->generate($_SESSION['fullname']); ?>
 
-                    // ================== FUNCTION ACTION IN POST - ONLY TEACHER IN THAT CLASS ====================== //
-                    if(isset($_SESSION['role'])){
-                        if($_SESSION['role'] == 'tea'){
-                            include ("./function/post_modal.php");
-                        }
-                    }
+                    <!-- ===================================== DROPDOWN MENU POST ACTION ===================================== -->
+                         <ul class="drop_down_menu">
+                            <a class="round-btn-cyan table_btn_right" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></i></a>
+                            <div class="dropdown-menu dd_menu_content" id="dd_content">
+                                <div class="text-center margin-dropdown"><a id="update_post_btn" name='update_post_btn' data-target='#modal-update-post<?php echo $postID ?>' data-toggle='modal' href='#modal-update-post' >Edit</a></div>
+                                <div class="text-center margin-dropdown"><a type='button' id="delete_post_btn" data-target='#modal-delete-post<?php echo $postID ?>' data-toggle='modal' href='#modal-delete-post' name='delete_post_btn' >Delete</a></div>            
+                            </div>
+                        </ul>
 
-                    ?>
+                    <!-- ================================== Modal FOR DELETE POST PASSING ID ================================== -->
+
+                    <!-- ================================== PASS ID THROUGH MODAL ======================================= -->
+                        <div id="modal-delete-post<?php echo $postID ?>" class="modal fade">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <div>Are you sure you want to delete ?</div><br><p>All comments will be deleted !</p>
+                                            <form action="./actions/post_handle.php?post_id=<?php echo $postID?>&class_id=<?php echo $classid?>" method="post">
+                                                <input name='delete_post_btn' type="submit" class="delete_post_btn"  value="Yes">
+                                            </form>
+                                            <input type= "button" class="class-delete-btn-no" data-dismiss="modal" value="No">
+                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <!--=================================================================================================================-->
+                        <!--=================================================================================================================-->
+
+
+
+
+                    <!-- ================================== Modal FOR DELETE POST PASSING ID ================================== -->
+
+                    <!-- ================================== PASS ID THROUGH MODAL ======================================= -->
+                    <div id="modal-delete-post<?php echo $postID ?>" class="modal fade">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <div>Are you sure you want to delete ?</div><br><p>All comments will be deleted !</p>
+                                            <form action="./actions/post_handle.php?post_id=<?php echo $postID?>&class_id=<?php echo $classid?>" method="post">
+                                                <input name='delete_post_btn' type="submit" class="delete_post_btn"  value="Yes">
+                                            </form>
+                                            <input type= "button" class="class-delete-btn-no" data-dismiss="modal" value="No">
+                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <!--=================================================================================================================-->
+                        <!--=================================================================================================================-->
+
+
+
+
+
+                    <!-- ================================== Modal FOR UPDATE POST PASSING ID ================================== -->
+
+                    <!-- ================================== PASS ID THROUGH MODAL ======================================= -->
+                    <div id="modal-update-post<?php echo $postID ?>" class="modal fade">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Edit Post</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="false">&times;</button>
+                                    </div>
+                                        <div class="modal-body">
+                                            <form action="./actions/post_handle.php?post_id=<?php echo $postID?>&class_id=<?php echo $classid?>" method="post">
+                                                <textarea name="post_content_update" id="comments_textarea" placeholder="Share with your class" oninput='this.style.height = "";this.style.height = this.scrollHeight + 3 +  "px"' cols="50" ></textarea>
+                                                <div class="post_file">
+                                                <input id="file_btn_comment" type="file" name="file_btn_comment" multiple="multiple" onchange="uploadOnChange()">
+                                                </div>
+                                                <div class="post_edit_submit_btn">
+                                                <input type= "button" class="class-update-btn-no" data-dismiss="modal" value="Cancel">
+                                                <input name='update_post_btn' type="submit" class="update_post_btn" value="Post">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <!--=================================================================================================================-->
+                        <!--=================================================================================================================-->
+
+
+
+
+
+
+
 
                     <div class='post_user_name'> <?php echo $user_result['fullName'] ?>
                     <!--Post create date -->
-                    <div class="post_date"><?php echo date("j M", strtotime($post_result['dateT_current']))  ?></div>
+                    <div class="post_date"><?php 
+                    $postDate = date("j M", strtotime($post_result['dateT_current']));
+                    $postDateUpdate = date("j M", strtotime($post_result['dateT_update']));
+                    if($post_result['dateT_current'] != $post_result['dateT_update']){
+                    $postDate .= ' (Edited on ' .$postDateUpdate . ')';
+                    }
+                    echo $postDate;
+                     ?></div>
                     </div>      
-<!--                    <div class='circle circle-avt-post'><div class='initials'></div></div>-->
+                    <!--<div class='circle circle-avt-post'><div class='initials'></div></div>-->
                     <img class="circle circle-avt-post" src='css/images/avatar/avatar.jpg' alt=''>
                 </div>
                 
@@ -243,23 +336,30 @@ require("Initials.php");
       
             <hr>
 
-            <!--====== POST COMMENTS ========================================-->
                 <!-- Chứa họ tên, avatar, nội dung comment ( không up file được ) của người comment bài post trên -->
-            <div class="post_expand_comments">Click to see more comments....
+                <div class="post_expand_comments">Click to see more comments....
             </div>
+
+
+            <?php
+            
+            
+                //Lay noi dung comment dua vao post_id tuong ung
+            
+            
+            ?>
             <div class="post_comments">
                 <div class="nav-link" aria-haspopup="true" aria-expanded="false">
                     <?php
                     $initials = new Initials();
-                    $generateName = $initials->generate($_SESSION['fullname']);
-                    // Họ tên và ảnh ở đây
-                    echo "<div class='post_user_name'>Nguyen Van A</div>";
-//                    echo "<div class='circle circle-avt-comments avt_in_post'><div class='initials name_in_post'></div></div>";
-                    echo "<img class=\"circle circle-avt-comments avt_in_post\" src='css/images/avatar/avatar.jpg' alt=''>";
+                    $generateName = $initials->generate($_SESSION['fullname']);?>
+                    <!-- Họ tên và ảnh ở đây -->
+                    <div class='post_user_name'>Nguyen Van A</div>
+                    <div class='circle circle-avt-comments avt_in_post'><div class='initials name_in_post'>$generateName</div></div>
 
-                        // Nội dung comment ở đây !
-                    echo "<div class='post_comments_users'>Lorem Ipsum is psum ipsum ipsum isimply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</div>";
-                    ?>
+                        <!-- Nội dung comment ở đây ! -->
+                    <div class='post_comments_users'>Lorem Ipsum is psum ipsum ipsum isimply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</div>
+                    
                 </div>
             </div>
             <!--======END POST COMMENTS ========================================-->
@@ -271,15 +371,14 @@ require("Initials.php");
             <div class="nav-link p-l-26" aria-haspopup="true" aria-expanded="false">
                 <?php
                 $initials = new Initials();
-                $generateName = $initials->generate($_SESSION['fullname']);
-                echo "<div class='circle circle-avt-comments avt_in_post'><div class='initials name_in_post'>$generateName</div></div>";
-                echo "
-                <form action='' method='post' class='form_post_comments'>
-                    <div class='input_comments' contenteditable='true' data-text='Say something here....'></div>
-                    <button class='post_comments_btn' type='submit'><i class='fa fa-paper-plane' aria-hidden=\"true\"></i></button>
+                $generateName = $initials->generate($_SESSION['fullname']);?>
+                <div class='circle circle-avt-comments avt_in_post'><div class='initials name_in_post'><?php echo $generateName?></div></div>
+                <form action='./actions/post_comment_handle.php?post_id=<?php echo $postID?>&class_id=<?php echo $classid?>' method='post' class='form_post_comments'>
+                    <div class='input_comments' name='post_comment' contenteditable='true' data-text='Say something here....'><input type="text" name="post_comment_input"></div>
+                    <button class='post_comments_btn' name='post_comment_btn' type='submit'><i class='fa fa-paper-plane' aria-hidden="true"></i></button>
                 </form>
-                ";
-                ?>
+
+                
             </div>
 
             <!--====== CREAT POST COMMENTS ========================================-->
