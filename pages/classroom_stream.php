@@ -28,7 +28,7 @@ $queryPost = "SELECT * FROM post WHERE class_id='$classid' ORDER BY post_id desc
 $post_exec = mysqli_query($db,$queryPost);
 
 //SQL get comment query
-$queryComment = "SELECT * FROM comment WHERE post_id=$post_id";
+$queryComment = "SELECT * FROM comment WHERE post_id='$post_id'";
 $comment_exec = mysqli_query($db,$queryComment);
 
 
