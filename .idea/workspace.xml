@@ -22,6 +22,7 @@
     <list default="true" id="c4f90356-e38e-4199-8c9f-76cceeffb7e1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/classroom_stream.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/classroom_stream.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/function/post_modal.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/function/post_modal.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +207,7 @@
       <workItem from="1605590387216" duration="75000" />
       <workItem from="1606660130057" duration="10991000" />
       <workItem from="1606722900637" duration="7621000" />
-      <workItem from="1606741285141" duration="2768000" />
+      <workItem from="1606741285141" duration="5477000" />
     </task>
     <servers />
   </component>
@@ -332,10 +333,10 @@
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824/1920.0.864.1496@0.0.1536.824" timestamp="1601955352461" />
     <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1606725607381" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1606672212102">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1606752648610">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.0.864.1496@0.0.1536.824" timestamp="1601958666844" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1606672212102" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1606752648610" />
   </component>
 </project>

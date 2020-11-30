@@ -168,6 +168,8 @@ require("Initials.php");
     </div>
 
     <!--====== POST CREATE ========================================-->
+    <?php if($_SESSION['role'] == 'tea'){
+        ?>
     <div class="classuis hide_comment_area">
         <div class="comment-area">
             <div class="nav-link" aria-haspopup="true" aria-expanded="false">
@@ -183,6 +185,7 @@ require("Initials.php");
         </div>
 
     </div>
+    <?php }?>
     <!--Create Post Form-->
     <div class="classuis comment_show">
         <div class="comment-content">
@@ -221,88 +224,28 @@ require("Initials.php");
 
                     ?>
 
-
-                    <!-- ===================================== DROPDOWN MENU POST ACTION ===================================== -->
                     <!-- ================================== Modal FOR DELETE POST PASSING ID ================================== -->
                     <!-- ================================== PASS ID THROUGH MODAL ======================================= -->
+
                         <?php include ("./function/post_modal.php");?>
-                        <!--=================================================================================================================-->
-                        <!--=================================================================================================================-->
 
-
-
-
-                    <!-- ================================== Modal FOR DELETE POST PASSING ID ================================== -->
-
-                    <!-- ================================== PASS ID THROUGH MODAL ======================================= -->
-                    <div id="modal-delete-post<?php echo $postID ?>" class="modal fade">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-body">
-                                            <div>Are you sure you want to delete ?</div><br><p>All comments will be deleted !</p>
-                                            <form action="./actions/post_handle.php?post_id=<?php echo $postID?>&class_id=<?php echo $classid?>" method="post">
-                                                <input name='delete_post_btn' type="submit" class="delete_post_btn"  value="Yes">
-                                            </form>
-                                            <input type= "button" class="class-delete-btn-no" data-dismiss="modal" value="No">
-                            
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        <!--=================================================================================================================-->
-                        <!--=================================================================================================================-->
-
-
-
-
-
-                    <!-- ================================== Modal FOR UPDATE POST PASSING ID ================================== -->
-
-                    <!-- ================================== PASS ID THROUGH MODAL ======================================= -->
-                    <div id="modal-update-post<?php echo $postID ?>" class="modal fade">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title">Edit Post</h4>
-                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="false">&times;</button>
-                                    </div>
-                                        <div class="modal-body">
-                                            <form action="./actions/post_handle.php?post_id=<?php echo $postID?>&class_id=<?php echo $classid?>" method="post">
-                                                <textarea name="post_content_update" id="comments_textarea" placeholder="Share with your class" oninput='this.style.height = "";this.style.height = this.scrollHeight + 3 +  "px"' cols="50" ></textarea>
-                                                <div class="post_file">
-                                                <input id="file_btn_comment" type="file" name="file_btn_comment" multiple="multiple" onchange="uploadOnChange()">
-                                                </div>
-                                                <div class="post_edit_submit_btn">
-                                                <input type= "button" class="class-update-btn-no" data-dismiss="modal" value="Cancel">
-                                                <input name='update_post_btn' type="submit" class="update_post_btn" value="Post">
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        <!--=================================================================================================================-->
-                        <!--=================================================================================================================-->
-
-
-
-
-
+                    <!--=================================================================================================================-->
+                    <!--=================================================================================================================-->
 
 
 
                     <div class='post_user_name'> <?php echo $user_result['fullName'] ?>
                     <!--Post create date -->
-                    <div class="post_date"><?php 
-                    $postDate = date("j M", strtotime($post_result['dateT_current']));
-                    $postDateUpdate = date("j M", strtotime($post_result['dateT_update']));
-                    if($post_result['dateT_current'] != $post_result['dateT_update']){
-                    $postDate .= ' (Edited on ' .$postDateUpdate . ')';
-                    }
-                    echo $postDate;
-                     ?></div>
+                        <div class="post_date">
+                            <?php
+                                $postDate = date("j M", strtotime($post_result['dateT_current']));
+                                $postDateUpdate = date("j M", strtotime($post_result['dateT_update']));
+                                if($post_result['dateT_current'] != $post_result['dateT_update']){
+                                    $postDate .= ' (Edited on ' .$postDateUpdate . ')';
+                                }
+                                echo $postDate;
+                                ?>
+                        </div>
                     </div>      
                     <!--<div class='circle circle-avt-post'><div class='initials'></div></div>-->
                     <img class="circle circle-avt-post" src='css/images/avatar/avatar.jpg' alt=''>
@@ -315,7 +258,6 @@ require("Initials.php");
                 </div>
       
             <hr>
-
                 <!-- Chứa họ tên, avatar, nội dung comment ( không up file được ) của người comment bài post trên -->
                 <div class="post_expand_comments">Click to see more comments....
             </div>
@@ -354,7 +296,7 @@ require("Initials.php");
                 $generateName = $initials->generate($_SESSION['fullname']);?>
                 <div class='circle circle-avt-comments avt_in_post'><div class='initials name_in_post'><?php echo $generateName?></div></div>
                 <form action='./actions/post_comment_handle.php?post_id=<?php echo $postID?>&class_id=<?php echo $classid?>' method='post' class='form_post_comments'>
-                    <div class='input_comments' name='post_comment' contenteditable='true' data-text='Say something here....'><input type="text" name="post_comment_input"></div>
+                    <div class='input_comments' name='post_comment_input' contenteditable='true' data-text='Say something here....'></div>
                     <button class='post_comments_btn' name='post_comment_btn' type='submit'><i class='fa fa-paper-plane' aria-hidden="true"></i></button>
                 </form>
 
