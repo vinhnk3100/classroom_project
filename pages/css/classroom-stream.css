@@ -860,3 +860,22 @@ input[type=submit]
     color: #ff0000;
 }
 
+.post_edit_submit_btn{
+    text-align: right;
+}
+
+.update_post_btn{
+    width: 3rem;
+    height: 2.5rem;
+}
+.class-update-btn-no{
+    width: 4.5rem;
+    height: 2rem;
+    background-color: white;
+    border: none;
+}
+
+.class-update-btn-no:hover{
+    background-color:grey;
+    border-color: black;
+}
