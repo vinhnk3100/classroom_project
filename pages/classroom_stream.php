@@ -24,7 +24,7 @@ $queryCreator = "SELECT * FROM users, class WHERE users.user_id = class.teacher_
 $resultCreator = mysqli_query($db,$queryCreator);
 
 // SQL get post query
-$queryPost = "SELECT * FROM post WHERE class_id='$classid'";
+$queryPost = "SELECT * FROM post WHERE class_id='$classid' ORDER BY post_id desc";
 $post_exec = mysqli_query($db,$queryPost);
 
 
@@ -314,7 +314,9 @@ require("Initials.php");
                     <div class="post_date"><?php 
                     $postDate = date("j M", strtotime($post_result['dateT_current']));
                     $postDateUpdate = date("j M", strtotime($post_result['dateT_update']));
-                    $postDate .= '(Edited on' .$postDateUpdate . ')';
+                    if($postDate != $postDateUpdate){
+                    $postDate .= ' (Edited on ' .$postDateUpdate . ')';
+                    }
                     echo $postDate;
                      ?></div>
                     </div>      
