@@ -20,12 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4f90356-e38e-4199-8c9f-76cceeffb7e1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/pages/function/post_modal.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/actions/post_handle.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/actions/post_handle.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/classroom_stream.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/classroom_stream.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/css/classroom-stream.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/css/classroom-stream.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/function/nav-bar-actions-class.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/function/nav-bar-actions-class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/function/nav-bar-action-home.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/function/nav-bar-action-home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/js/login_main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/login_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login_form.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,6 +210,8 @@
       <workItem from="1605585825427" duration="4484000" />
       <workItem from="1605590387216" duration="75000" />
       <workItem from="1606660130057" duration="10991000" />
+      <workItem from="1606722900637" duration="7621000" />
+      <workItem from="1606741285141" duration="296000" />
     </task>
     <servers />
   </component>
@@ -252,10 +255,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="498" y="192" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper/0.0.1536.824@0.0.1536.824" timestamp="1603523700077" />
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603258844174">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606727823470">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1603258844174" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1606727823470" />
     <state x="484" y="95" key="#validation_controller.php" timestamp="1601921592961">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -316,11 +319,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="462" y="135" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1602665593215" />
-    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1606664872770">
+    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1606722960796">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824/1920.0.864.1496@0.0.1536.824" timestamp="1601960008444" />
-    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1606664872770" />
+    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1606722960796" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1603523735437">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -329,11 +332,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="578" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1603600455295" />
-    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1605586444187">
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1606725607381">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824/1920.0.864.1496@0.0.1536.824" timestamp="1601955352461" />
-    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1605586444187" />
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1606725607381" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1606672212102">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

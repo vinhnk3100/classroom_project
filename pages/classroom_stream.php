@@ -20,13 +20,10 @@ $rowsClass = mysqli_fetch_assoc($resultClass);
 $queryUID = "SELECT * FROM class,users WHERE  class.teacher_id = users.user_id AND class.teacher_id = '$uid'";
 $resultUID = mysqli_query($db,$queryUID);
 
-$queryCreator = "SELECT * FROM users, class WHERE users.user_id = class.teacher_id AND class.teacher_id = '$uid' ";
-$resultCreator = mysqli_query($db,$queryCreator);
-
 // SQL get post query
 $queryPost = "SELECT * FROM post WHERE class_id='$classid'";
 $post_exec = mysqli_query($db,$queryPost);
-
+$post_Row = mysqli_fetch_assoc($post_exec);
 
 require("Initials.php");
 ?>
@@ -49,12 +46,9 @@ require("Initials.php");
 
 <body>
 <main>
-    <?php include ("./function/nav-bar-actions-class.php")?>
-    </nav>
-    </div>
-
-
     <!--====== NAVBAR TOP =======================-->
+
+    <?php include ("./function/nav-bar-actions-class.php")?>
 
     <!--=================================================================================================================-->
     <!--=================================================================================================================-->
@@ -216,40 +210,13 @@ require("Initials.php");
                     $initials = new Initials();
                     $generateName = $initials->generate($_SESSION['fullname']);
 
-                    /* ===================================== DROPDOWN MENU POST ACTION ===================================== */
-                    echo "<ul class=\"drop_down_menu\">
-                            <a class=\"round-btn-cyan table_btn_right\" href=\"#\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"><i class=\"fas fa-ellipsis-v\"></i></i></a>
-                            <div class=\"dropdown-menu dd_menu_content\" id=\"dd_content\">
-                                <div class=\"text-center margin-dropdown\"><a id=\"edit_post_btn\" href=\"#\">Edit</a></div>
-                                <div class=\"text-center margin-dropdown\"><a type='button' id=\"delete_post_btn\" data-target='#modal-delete-post$postID' data-toggle='modal' href='#modal-delete-post' name='delete_post_btn' >Delete</a></div>            
-                            </div>
-                        </ul>";
+                    // ================== FUNCTION ACTION IN POST - ONLY TEACHER IN THAT CLASS ====================== //
+                    if(isset($_SESSION['role'])){
+                        if($_SESSION['role'] == 'tea'){
+                            include ("./function/post_modal.php");
+                        }
+                    }
 
-                    // ================================== Modal FOR DELETE POST PASSING ID ================================== //
-
-                    // ================================== PASS ID THROUGH MODAL ======================================= //
-                    echo "<div id=\"modal-delete-post$postID\" class=\"modal fade\">
-                                <div class=\"modal-dialog\">
-                                    <div class=\"modal-content\">
-                                        <div class=\"modal-header\">
-                                            <h4 class=\"modal-title\">Delete Post</h4>
-                                            <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"false\">&times;</button>
-                                        </div>
-                                        <div class=\"modal-body\">
-                                            <div>Are you sure you want to delete ?</div><br><p>All comments will be deleted !</p>
-                                            <form action=\"./actions/post_handle.php?post_id=$postID&class_id=$classid\" method=\"post\">
-                                                <input name='delete_post_btn' type=\"submit\" class=\"delete_post_btn\" name = \"btn_create_class\" id=\"btn_create_class\" value=\"Yes\">
-                                            </form>
-                            
-                                            <input type= \"button\" class=\"class-delete-btn-no\" data-dismiss=\"modal\" value=\"No\">
-                            
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        <!--=================================================================================================================-->
-                        <!--=================================================================================================================-->";
                     ?>
 
                     <div class='post_user_name'> <?php echo $user_result['fullName'] ?>

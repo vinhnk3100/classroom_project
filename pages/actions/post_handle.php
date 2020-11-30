@@ -41,7 +41,7 @@
     }
 
 
-    if(isset($_POST['post_btn_update'])){
+    if(isset($_POST['edit_post_btn'])){
             $classid = $_GET['class_id'];
             $post_id = $_GET['post_id'];
             //Update query
