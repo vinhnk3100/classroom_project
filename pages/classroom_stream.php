@@ -27,10 +27,6 @@ $resultCreator = mysqli_query($db,$queryCreator);
 $queryPost = "SELECT * FROM post WHERE class_id='$classid' ORDER BY post_id desc";
 $post_exec = mysqli_query($db,$queryPost);
 
-//SQL get comment query
-$queryComment = "SELECT * FROM comment WHERE post_id='$post_id'";
-$comment_exec = mysqli_query($db,$queryComment);
-
 
 require("Initials.php");
 ?>
@@ -218,34 +214,18 @@ require("Initials.php");
                     $user_exec = mysqli_query($db,$queryUser);
                     $user_result = mysqli_fetch_assoc($user_exec);
                     $initials = new Initials();
-                    $generateName = $initials->generate($_SESSION['fullname']); ?>
+                    $generateName = $initials->generate($_SESSION['fullname']);
+                    //SQL get comment query
+                    $queryComment = "SELECT * FROM comment WHERE post_id='$postID'";
+                    $comment_exec = mysqli_query($db,$queryComment);
+
+                    ?>
+
 
                     <!-- ===================================== DROPDOWN MENU POST ACTION ===================================== -->
-                         <ul class="drop_down_menu">
-                            <a class="round-btn-cyan table_btn_right" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></i></a>
-                            <div class="dropdown-menu dd_menu_content" id="dd_content">
-                                <div class="text-center margin-dropdown"><a id="update_post_btn" name='update_post_btn' data-target='#modal-update-post<?php echo $postID ?>' data-toggle='modal' href='#modal-update-post' >Edit</a></div>
-                                <div class="text-center margin-dropdown"><a type='button' id="delete_post_btn" data-target='#modal-delete-post<?php echo $postID ?>' data-toggle='modal' href='#modal-delete-post' name='delete_post_btn' >Delete</a></div>            
-                            </div>
-                        </ul>
-
                     <!-- ================================== Modal FOR DELETE POST PASSING ID ================================== -->
-
                     <!-- ================================== PASS ID THROUGH MODAL ======================================= -->
-                        <div id="modal-delete-post<?php echo $postID ?>" class="modal fade">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-body">
-                                            <div>Are you sure you want to delete ?</div><br><p>All comments will be deleted !</p>
-                                            <form action="./actions/post_handle.php?post_id=<?php echo $postID?>&class_id=<?php echo $classid?>" method="post">
-                                                <input name='delete_post_btn' type="submit" class="delete_post_btn"  value="Yes">
-                                            </form>
-                                            <input type= "button" class="class-delete-btn-no" data-dismiss="modal" value="No">
-                            
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <?php include ("./function/post_modal.php");?>
                         <!--=================================================================================================================-->
                         <!--=================================================================================================================-->
 
@@ -355,7 +335,7 @@ require("Initials.php");
                     $generateName = $initials->generate($_SESSION['fullname']);?>
                     <!-- Họ tên và ảnh ở đây -->
                     <div class='post_user_name'>Nguyen Van A</div>
-                    <div class='circle circle-avt-comments avt_in_post'><div class='initials name_in_post'>$generateName</div></div>
+                    <div class='circle circle-avt-comments avt_in_post'><div class='initials name_in_post'></div></div>
 
                         <!-- Nội dung comment ở đây ! -->
                     <div class='post_comments_users'>Lorem Ipsum is psum ipsum ipsum isimply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</div>
