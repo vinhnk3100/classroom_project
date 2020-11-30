@@ -27,6 +27,10 @@ $resultCreator = mysqli_query($db,$queryCreator);
 $queryPost = "SELECT * FROM post WHERE class_id='$classid' ORDER BY post_id desc";
 $post_exec = mysqli_query($db,$queryPost);
 
+//SQL get comment query
+$queryComment = "SELECT * FROM comment WHERE post_id=$post_id";
+$comment_exec = mysqli_query($db,$queryComment);
+
 
 require("Initials.php");
 ?>
@@ -314,7 +318,7 @@ require("Initials.php");
                     <div class="post_date"><?php 
                     $postDate = date("j M", strtotime($post_result['dateT_current']));
                     $postDateUpdate = date("j M", strtotime($post_result['dateT_update']));
-                    if($postDate != $postDateUpdate){
+                    if($post_result['dateT_current'] != $post_result['dateT_update']){
                     $postDate .= ' (Edited on ' .$postDateUpdate . ')';
                     }
                     echo $postDate;
@@ -335,18 +339,27 @@ require("Initials.php");
                 <!-- Chứa họ tên, avatar, nội dung comment ( không up file được ) của người comment bài post trên -->
                 <div class="post_expand_comments">Click to see more comments....
             </div>
+
+
+            <?php
+            
+            
+                //Lay noi dung comment dua vao post_id tuong ung
+            
+            
+            ?>
             <div class="post_comments">
                 <div class="nav-link" aria-haspopup="true" aria-expanded="false">
                     <?php
                     $initials = new Initials();
-                    $generateName = $initials->generate($_SESSION['fullname']);
-                    // Họ tên và ảnh ở đây
-                    echo "<div class='post_user_name'>Nguyen Van A</div>";
-                    echo "<div class='circle circle-avt-comments avt_in_post'><div class='initials name_in_post'>$generateName</div></div>";
+                    $generateName = $initials->generate($_SESSION['fullname']);?>
+                    <!-- Họ tên và ảnh ở đây -->
+                    <div class='post_user_name'>Nguyen Van A</div>
+                    <div class='circle circle-avt-comments avt_in_post'><div class='initials name_in_post'>$generateName</div></div>
 
-                        // Nội dung comment ở đây !
-                    echo "<div class='post_comments_users'>Lorem Ipsum is psum ipsum ipsum isimply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</div>";
-                    ?>
+                        <!-- Nội dung comment ở đây ! -->
+                    <div class='post_comments_users'>Lorem Ipsum is psum ipsum ipsum isimply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</div>
+                    
                 </div>
             </div>
             <!--======END POST COMMENTS ========================================-->
@@ -360,8 +373,8 @@ require("Initials.php");
                 $initials = new Initials();
                 $generateName = $initials->generate($_SESSION['fullname']);?>
                 <div class='circle circle-avt-comments avt_in_post'><div class='initials name_in_post'><?php echo $generateName?></div></div>
-                <form action='./actions/post_comment_handle.php?class_id=<?php echo $rowsClass['class_id']; ?>' method='post' class='form_post_comments'>
-                    <div class='input_comments' name='post_comment' contenteditable='true' data-text='Say something here....'></div>
+                <form action='./actions/post_comment_handle.php?post_id=<?php echo $postID?>&class_id=<?php echo $classid?>' method='post' class='form_post_comments'>
+                    <div class='input_comments' name='post_comment' contenteditable='true' data-text='Say something here....'><input type="text" name="post_comment_input"></div>
                     <button class='post_comments_btn' name='post_comment_btn' type='submit'><i class='fa fa-paper-plane' aria-hidden="true"></i></button>
                 </form>
 

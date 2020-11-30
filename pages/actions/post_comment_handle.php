@@ -6,12 +6,12 @@ session_start();
 $classid = $_GET['class_id'];
 
 if(isset($_POST['post_comment_btn'])){
-    $comment = mysqli_real_escape_string($db, $_POST['post_comment']);
-
+    $comment = mysqli_real_escape_string($db, $_POST['post_comment_input']);
     //Insert query
-    $stmt_crt = $db->prepare("INSERT INTO comment(user_id,comment,post_id) VALUES(?,?,?");
+    $stmt_crt = $db->prepare("INSERT INTO comment(user_id,comment,post_id) VALUES(?,?,?)");
     $userID = $_SESSION['uid'];
-    $stmt_crt->bind_param("sss",$userID,$comment,$post_id);
+    $post_id = $_GET['post_id'];
+    $stmt_crt->bind_param("ssi",$userID,$comment,$post_id);
 
     //check if database error
     if  (($stmt_crt->execute()) === TRUE){

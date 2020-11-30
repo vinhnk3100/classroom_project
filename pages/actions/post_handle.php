@@ -52,7 +52,6 @@
             //check if database error
             if  (($stmt_upd->execute()) === TRUE){
                 $_SESSION["dbAddedSuccess"]= true;
-                $_SESSION["post_updated"]=true;
                 header("Location: ../classroom_stream.php?class_id=$classid");
                 } else {
                 echo $stmt_upd->error;
