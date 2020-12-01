@@ -5,11 +5,15 @@
 
     if(isset($_POST['post_btn_create'])){
             $classid = $_GET['class_id'];
+
+            $filename = $_FILES['file_input']['name'];
+            $destination = '../uploads/' . $filename;
+
             $postContent = mysqli_real_escape_string($db, $_POST["comments_textarea"]);
             //Insert query
-            $stmt_crt = $db->prepare("INSERT INTO post(user_id,content,class_id) VALUES(?,?,?)");
+            $stmt_crt = $db->prepare("INSERT INTO post(user_id,content,class_id,file_dir) VALUES(?,?,?,?)");
             $userID = $_SESSION['uid'];
-            $stmt_crt->bind_param("sss",$userID,$postContent,$classid);
+            $stmt_crt->bind_param("ssss",$userID,$postContent,$classid,$filename);
 
             //check if database error
             if  (($stmt_crt->execute()) === TRUE){

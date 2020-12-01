@@ -168,3 +168,9 @@ function showClassComment() {
 }
 
 // =================================================================================================
+
+function autoHeight(e) {
+    e.style.overflowY = "hidden";
+    e.style.height = "4px";
+    e.style.height = (e.scrollHeight) + "px";
+}

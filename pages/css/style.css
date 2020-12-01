@@ -317,7 +317,7 @@ progress[value="100"]::-webkit-progress-value {
 .delete_post_btn{
     position: absolute;
     width: 40% !important;
-    height: 18% !important;
+    height: 21% !important;
     margin: unset !important;
     padding: unset !important;
     border: 2px solid black !important;
@@ -351,6 +351,7 @@ progress[value="100"]::-webkit-progress-value {
 }
 
 .class-delete-btn-no{
+    height: 21% !important;
     position: relative;
     left: 60%;
     border-radius: 4px;
