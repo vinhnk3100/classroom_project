@@ -879,3 +879,9 @@ input[type=submit]
     background-color:grey;
     border-color: black;
 }
+
+.comment_date{
+    font-size: 1rem;
+    padding-left: 1rem;
+    color: grey;
+}

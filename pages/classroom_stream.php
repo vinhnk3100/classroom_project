@@ -213,13 +213,13 @@ require("Initials.php");
                     <?php
                     // SQL get user query
                     $postID = $post_result['post_id'];
-                    $queryUser = "SELECT fullName FROM users,post WHERE users.user_id = post.user_id AND post_id='$postID'";
+                    $queryUser = "SELECT fullName FROM users,post WHERE post.user_id = users.user_id  AND post_id='$postID'";
                     $user_exec = mysqli_query($db,$queryUser);
                     $user_result = mysqli_fetch_assoc($user_exec);
                     $initials = new Initials();
                     $generateName = $initials->generate($_SESSION['fullname']);
                     //SQL get comment query
-                    $queryComment = "SELECT * FROM comment WHERE post_id='$postID'";
+                    $queryComment = "SELECT * FROM comment,users WHERE comment.user_id= users.user_id AND post_id='$postID'";
                     $comment_exec = mysqli_query($db,$queryComment);
 
                     ?>
@@ -238,8 +238,8 @@ require("Initials.php");
                     <!--Post create date -->
                         <div class="post_date">
                             <?php
-                                $postDate = date("j M", strtotime($post_result['dateT_current']));
-                                $postDateUpdate = date("j M", strtotime($post_result['dateT_update']));
+                                $postDate = date("M j", strtotime($post_result['dateT_current']));
+                                $postDateUpdate = date("M j", strtotime($post_result['dateT_update']));
                                 if($post_result['dateT_current'] != $post_result['dateT_update']){
                                     $postDate .= ' (Edited on ' .$postDateUpdate . ')';
                                 }
@@ -265,6 +265,7 @@ require("Initials.php");
 
             <?php
             
+            while($comment_result = mysqli_fetch_assoc($comment_exec)){
             
                 //Lay noi dung comment dua vao post_id tuong ung
             
@@ -276,14 +277,29 @@ require("Initials.php");
                     $initials = new Initials();
                     $generateName = $initials->generate($_SESSION['fullname']);?>
                     <!-- Họ tên và ảnh ở đây -->
-                    <div class='post_user_name'>Nguyen Van A</div>
+                    <div class='post_user_name'><?php echo $comment_result['fullName'] ?>
+                    <span class="comment_date">
+                            <?php
+                                $commentDate = date("M j", strtotime($comment_result['dateT_current']));
+                                $commentDateUpdate = date("M j", strtotime($comment_result['dateT_update']));
+                                if($comment_result['dateT_current'] != $comment_result['dateT_update']){
+                                    $commentDate .= ' (Edited on ' .$commentDateUpdate . ')';
+                                }
+                                echo $commentDate;
+                                ?>
+                        </span>
+                    </div>
                     <div class='circle circle-avt-comments avt_in_post'><div class='initials name_in_post'></div></div>
 
                         <!-- Nội dung comment ở đây ! -->
-                    <div class='post_comments_users'>Lorem Ipsum is psum ipsum ipsum isimply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</div>
+                    <div class='post_comments_users'><?php echo $comment_result['comment'] ?></div>
                     
                 </div>
             </div>
+
+            <?php
+            }
+            ?>
             <!--======END POST COMMENTS ========================================-->
 
             <hr>
