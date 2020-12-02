@@ -2,25 +2,28 @@
     require('database.php');
     session_start();
 
+    // File upload path
+    $targetDir = "../uploads/";
+    $fileName = basename($_FILES["file_input"]["name"]);
+    $targetFilePath = $targetDir.$fileName;
+    $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
 
     if(isset($_POST['post_btn_create'])){
             $classid = $_GET['class_id'];
-
-            $filename = $_FILES['file_input']['name'];
-            $destination = '../uploads/' . $filename;
-
             $postContent = mysqli_real_escape_string($db, $_POST["comments_textarea"]);
+
             //Insert query
             $stmt_crt = $db->prepare("INSERT INTO post(user_id,content,class_id,file_dir) VALUES(?,?,?,?)");
             $userID = $_SESSION['uid'];
-            $stmt_crt->bind_param("ssss",$userID,$postContent,$classid,$filename);
+            $stmt_crt->bind_param("ssss",$userID,$postContent,$classid,$fileName);
 
             //check if database error
             if  (($stmt_crt->execute()) === TRUE){
                 $_SESSION["dbAddedSuccess"]= true;
+                move_uploaded_file($_FILES["file_input"]["tmp_name"], $targetFilePath);
                 header("Location: ../classroom_stream.php?class_id=$classid");
                 } else {   
-                echo $stmt_crt->error;  
+                echo $stmt_crt->error;
                 }
                 $stmt_crt->close();
                 $db->close();

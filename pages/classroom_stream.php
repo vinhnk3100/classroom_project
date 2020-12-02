@@ -191,8 +191,8 @@ require("Initials.php");
         <div class="comment-content">
             <form action="./actions/post_handle.php?class_id=<?php echo $rowsClass['class_id']; ?>" method="post" enctype="multipart/form-data">
                 <textarea placeholder="Say something to share with your class...." id="comments_textarea" name="comments_textarea" oninput='this.style.height = "";this.style.height = this.scrollHeight + 3 +  "px"' cols="138"></textarea>
-                <input id="post_btn_create" name="post_btn_create" value="Post" type="submit">
                 <input id="file_btn_comment" type="file" name="file_input" multiple="multiple" onchange="uploadOnChange()">
+                <input id="post_btn_create" name="post_btn_create" value="Post" type="submit">
             </form>
             <input id="cancel_btn_comment" value="Cancel" type="submit" onclick="showClassComment()">
             <div id="display_file_comment"></div>
@@ -255,19 +255,37 @@ require("Initials.php");
                     <img class="circle circle-avt-post" src='css/images/avatar/avatar.jpg' alt=''>
                 </div>
                 <div class="post_content">
-                    <td><a href="./actions/file_download.php?file_id=<?php echo $post_result['post_id']; ?>"><?php echo $post_result['file_dir']; ?></a></td>
+                        <!-- GET POST CONTENT -->
                     <?php
                         echo $post_result['content'];
                     ?>
+                        <!-- FILE IN POST -->
+                    <?php
+
+                        // Get file from query
+                        include ("./function/file_query.php");
+                        // Check if exist file
+                    ?>
+                    <div class="row">
+                        <?php if(!empty($fileRow['file_dir'])){ ?>
+                        <div class="col-sm-100">
+                            <div class="card">
+                                <div class="card-body">
+                                    <a href="./actions/file_download.php?file_name=<?php echo $post_result['file_dir']; ?>"><?php echo $post_result['file_dir']; ?></a>
+                                </div>
+                            </div>
+                        </div>
+                        <?php } ?>
+                    </div>
                 </div>
             <hr>
             <!--=========================================== END POST SECTION =========================================-->
             <!--======================================================================================================-->
 
 
+
             <!--======================================== COMMENTS SECTION ============================================-->
             <!--======================================================================================================-->
-
 
             <?php
             while($comment_result = mysqli_fetch_assoc($comment_exec)){
@@ -310,7 +328,6 @@ require("Initials.php");
 
                         <!-- Nội dung comment ở đây ! -->
                     <div class='post_comments_users'><?php echo $comment_result['comment'].$commentID ?></div>
-                    
                 </div>
             </div>
 
