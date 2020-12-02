@@ -1,0 +1,14 @@
+Admin : Real in Google mail
+eclassroom.me@gmail.com
+123456 ( password in classroom )
+eclassroom24 ( password in gmail)
+
+Teacher : Real in Google mail
+teacher.eclassB@gmail.com
+123 ( password in classroom )
+eclassroom24 ( password in gmail)
+
+Student : Real in Google mail
+eclassroom.student1@gmail.com
+123 ( password in classroom )
+eclassroom24 ( password in gmail)
