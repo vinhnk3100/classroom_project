@@ -108,13 +108,13 @@ require("Initials.php");
                     <div class="class-title">
                         <div class="shaded_background"><?php echo $rowsClass["fullName"]?></div>
                     </div>
-                    <?php
-                    echo "<div class=\"class-code\">
-                                    <em class=\"class-code-text shaded_background\">Class code : $classid</em>
-                                </div>";
-                    echo "
-                        <button onclick='showClassInforms()' class='btn btn-outline-success btn_classstream'><i class='fa fa-arrow-circle-down'></i></button>";
-                    ?>
+                    <!--CLASS CODE -->
+                    <div class="class-code">
+                                    <em class="class-code-text shaded_background">Class code : </em>
+                                    <span id="class-code-text"><?php echo $classid ?></span>
+                                    <button onclick="copyToClipBoard('#class-code-text')"><i class="fas fa-copy"></i></button>
+                    </div>
+                        <button onclick='showClassInforms()' class='btn btn-outline-success btn_classstream'><i class='fa fa-arrow-circle-down'></i></button>
                 </div>
 
                 <!-- SHOWING CLASS INFORMATION -->
