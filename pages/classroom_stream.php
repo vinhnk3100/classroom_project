@@ -266,6 +266,7 @@ require("Initials.php");
                         include ("./function/file_query.php");
                         // Check if exist file
                     ?>
+                    <hr>
                     <div class="row">
                         <?php if(!empty($fileRow['file_dir'])){ ?>
                         <div class="col-sm-100">
