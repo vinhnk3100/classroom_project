@@ -5,8 +5,6 @@
     //CREATE POST
     if(isset($_POST['post_btn_create'])){
             $classid = $_GET['class_id'];
-<<<<<<< Updated upstream
-=======
 
             //GET FILE
             //filter empty string
@@ -14,7 +12,6 @@
             //Count # of files in array
             $fileTotal = count($_FILES['file_input']['name']);
 
->>>>>>> Stashed changes
             $postContent = mysqli_real_escape_string($db, $_POST["comments_textarea"]);
             //Insert query
             $stmt_crt = $db->prepare("INSERT INTO post(user_id,content,class_id) VALUES(?,?,?)");
@@ -93,8 +90,8 @@
                 //Count # of files in array
                 $fileTotal = count($_FILES['file_input']['name']);
 
-                $getPathQuery = $db->prepare("SELECT file_dir FROM post WHERE post_id = ?");
-                $getPathQuery->bind_param("s",$post_id);
+                $getPathQuery ="SELECT file_dir FROM post WHERE post_id = $post_id";
+                //$getPathQuery->bind_param("s",$post_id);
                 $getPathQueryExec = mysqli_query($db,$getPathQuery);
                 $postDirPath = mysqli_fetch_assoc($getPathQueryExec);
 
