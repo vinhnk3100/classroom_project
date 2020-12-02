@@ -191,7 +191,6 @@ require("Initials.php");
         <div class="comment-content">
             <form action="./actions/post_handle.php?class_id=<?php echo $rowsClass['class_id']; ?>" method="post" enctype="multipart/form-data">
                 <textarea placeholder="Say something to share with your class...." id="comments_textarea" name="comments_textarea" oninput='this.style.height = "";this.style.height = this.scrollHeight + 3 +  "px"' cols="138"></textarea>
-                <input id="file_btn_comment" type="file" name="file_input" multiple="multiple" onchange="uploadOnChange()">
                 <input id="post_btn_create" name="post_btn_create" value="Post" type="submit">
                 <input id="file_btn_comment" type="file" name="file_input[]" multiple="multiple" onchange="uploadOnChange()">
             </form>
