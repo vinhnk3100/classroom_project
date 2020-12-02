@@ -58,7 +58,7 @@ if(isset($_POST['btn_invite_class'])){
                 ";
             // ====== Sendmail function
             $result = mail($student_email,"INVITE TO JOIN CLASSROOM ",$message,$headers);
-            header("Location: ../home.php");
+            header("Location: ../classroom_everyone.php?class_id=$classid");
         }
     }else{
         $_SESSION['valid_email'] = 0;

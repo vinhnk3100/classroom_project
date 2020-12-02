@@ -13,10 +13,10 @@
                         <a class="text-nav-bar dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Classroom
                         </a>
-<!--                        <form action="./actions/class_search.php" method="post">-->
-<!--                            <input name="class_search_bar" class="class_search_bar" type='text' placeholder='Searching for class id....' />-->
-<!--                            <button name="class_search_btn" class="class_search_btn" type="submit"><i class="fa fa-search"></i></button>-->
-<!--                        </form>-->
+                        <form action="./actions/class_search.php" method="post">
+                            <input name="class_search_bar" class="class_search_bar" type='text' placeholder='Searching for class id....' />
+                            <button name="class_search_btn" class="class_search_btn" type="submit"><i class="fa fa-search"></i></button>
+                        </form>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <?php
                             // Check if admin, teacher, student

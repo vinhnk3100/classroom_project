@@ -111,7 +111,7 @@ require("Initials.php");
                     <!--CLASS CODE -->
                     <div class="class-code">
                                     <em class="class-code-text shaded_background">Class code : </em>
-                                    <span id="class-code-text"><?php echo $classid ?></span>
+                                    <span id="class-code-text" class="class-code-text shaded_background"><?php echo $classid ?></span>
                                     <button onclick="copyToClipBoard('#class-code-text')"><i class="fas fa-copy"></i></button>
                     </div>
                         <button onclick='showClassInforms()' class='btn btn-outline-success btn_classstream'><i class='fa fa-arrow-circle-down'></i></button>
@@ -168,7 +168,7 @@ require("Initials.php");
     </div>
 
     <!--====== POST CREATE ========================================-->
-    <?php if($_SESSION['role'] == 'tea'){
+    <?php if($_SESSION['role'] == 'tea' || $_SESSION['role'] == 'adm'){
         ?>
     <div class="classuis hide_comment_area">
         <div class="comment-area">
@@ -273,7 +273,7 @@ require("Initials.php");
                         <div class="col-sm-100">
                             <div class="card">
                                 <div class="card-body">
-                                    <a href="./actions/file_download.php?file_name=<?php echo $post_result['file_dir']; ?>"><?php echo $post_result['file_dir']; ?></a>
+                                    <a href="./actions/file_download.php?post_id=<?php echo $post_result['post_id']; ?>"><?php echo $post_result['file_dir']; ?></a>
                                 </div>
                             </div>
                         </div>
@@ -325,8 +325,7 @@ require("Initials.php");
                                 ?>
                         </span>
                     </div>
-                    <div class='circle circle-avt-comments avt_in_post'><div class='initials name_in_post'></div></div>
-
+                    <img class="circle circle-avt-comments avt_in_post" src='css/images/avatar/avatar.jpg' alt=''>
                         <!-- Nội dung comment ở đây ! -->
                     <div class='post_comments_users'><?php echo $comment_result['comment']?></div>
                 </div>
