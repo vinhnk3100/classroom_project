@@ -811,6 +811,15 @@ input[type=submit]
     position: relative;
 }
 
+<<<<<<< Updated upstream
+=======
+.comment_button{
+    position: relative;
+    top: 2rem;
+    right: 10rem;
+}
+
+>>>>>>> Stashed changes
 .dd_menu_btn{
     transition: 0.2s ease-in-out;
     position: relative;

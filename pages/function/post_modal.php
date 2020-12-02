@@ -59,7 +59,7 @@
                 <form action="./actions/post_handle.php?post_id=<?php echo $postID?>&class_id=<?php echo $classid?>" method="post">
                     <textarea name="post_content_update" id="comments_textarea" placeholder="Share with your class" oninput='this.style.height = "";this.style.height = this.scrollHeight + 3 +  "px"' cols="50" ></textarea>
                     <div class="post_file">
-                        <input id="file_btn_comment" type="file" name="file_btn_comment" multiple="multiple" onchange="uploadOnChange()">
+                        <input id="file_btn_comment" type="file" name="file_input[]" multiple="multiple" onchange="uploadOnChange()">
                     </div>
                     <div class="post_edit_submit_btn">
                         <input type= "button" class="class-update-btn-no" data-dismiss="modal" value="Cancel">

@@ -192,6 +192,10 @@ require("Initials.php");
             <form action="./actions/post_handle.php?class_id=<?php echo $rowsClass['class_id']; ?>" method="post">
                 <textarea placeholder="Say something to share with your class...." id="comments_textarea" name="comments_textarea" oninput='this.style.height = "";this.style.height = this.scrollHeight + 3 +  "px"' cols="138"></textarea>
                 <input id="post_btn_create" name="post_btn_create" value="Post" type="submit">
+<<<<<<< Updated upstream
+=======
+                <input id="file_btn_comment" type="file" name="file_input[]" multiple="multiple" onchange="uploadOnChange()">
+>>>>>>> Stashed changes
             </form>
             <input id="file_btn_comment" type="file" name="file_btn_comment" multiple="multiple" onchange="uploadOnChange()">
             <input id="cancel_btn_comment" value="Cancel" type="submit" onclick="showClassComment()">
@@ -252,9 +256,15 @@ require("Initials.php");
                 </div>
                 
                 <div class="post_content">
+<<<<<<< Updated upstream
                     <?php  
+=======
+                    <?php
+>>>>>>> Stashed changes
                         echo $post_result['content'];
                     ?>
+                    <br>
+                <td><a href="./actions/file_download.php?file_id=<?php echo $post_result['post_id']; ?>"><?php echo $post_result['file_dir']; ?></a></td>
                 </div>
       
             <hr>
