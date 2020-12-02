@@ -21,7 +21,6 @@ if(isset($_POST['btn_upload_class_image'])){
         $_SESSION["dbAddedSuccess"]= true;
         // Move the uploaded image into folder 
         if (move_uploaded_file($tempName,$folder)){
-            
             header("Location: ../classroom_stream.php?class_id=$classid");
         } else {
             die ("Failed to move image to".$folder);

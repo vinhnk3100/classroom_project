@@ -815,11 +815,20 @@ input[type=submit]
     position: relative;
 }
 
+
+.comment_button{
+    position: relative;
+    top: 2rem;
+    right: 10rem;
+}
+
+
 .comment_button{
     position: relative;
     top: 1rem;
     right: 10rem;
 }
+
 
 .dd_menu_btn{
     transition: 0.2s ease-in-out;

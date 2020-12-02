@@ -108,13 +108,13 @@ require("Initials.php");
                     <div class="class-title">
                         <div class="shaded_background"><?php echo $rowsClass["fullName"]?></div>
                     </div>
-                    <?php
-                    echo "<div class=\"class-code\">
-                                    <em class=\"class-code-text shaded_background\">Class code : $classid</em>
-                                </div>";
-                    echo "
-                        <button onclick='showClassInforms()' class='btn btn-outline-success btn_classstream'><i class='fa fa-arrow-circle-down'></i></button>";
-                    ?>
+                    <!--CLASS CODE -->
+                    <div class="class-code">
+                                    <em class="class-code-text shaded_background">Class code : </em>
+                                    <span id="class-code-text"><?php echo $classid ?></span>
+                                    <button onclick="copyToClipBoard('#class-code-text')"><i class="fas fa-copy"></i></button>
+                    </div>
+                        <button onclick='showClassInforms()' class='btn btn-outline-success btn_classstream'><i class='fa fa-arrow-circle-down'></i></button>
                 </div>
 
                 <!-- SHOWING CLASS INFORMATION -->
@@ -191,8 +191,8 @@ require("Initials.php");
         <div class="comment-content">
             <form action="./actions/post_handle.php?class_id=<?php echo $rowsClass['class_id']; ?>" method="post" enctype="multipart/form-data">
                 <textarea placeholder="Say something to share with your class...." id="comments_textarea" name="comments_textarea" oninput='this.style.height = "";this.style.height = this.scrollHeight + 3 +  "px"' cols="138"></textarea>
-                <input id="file_btn_comment" type="file" name="file_input" multiple="multiple" onchange="uploadOnChange()">
                 <input id="post_btn_create" name="post_btn_create" value="Post" type="submit">
+                <input id="file_btn_comment" type="file" name="file_input[]" multiple="multiple" onchange="uploadOnChange()">
             </form>
             <input id="cancel_btn_comment" value="Cancel" type="submit" onclick="showClassComment()">
             <div id="display_file_comment"></div>

@@ -174,3 +174,13 @@ function autoHeight(e) {
     e.style.height = "4px";
     e.style.height = (e.scrollHeight) + "px";
 }
+
+// ===================COPY CLASS CODE TO CLIPBOARD =============================
+
+function copyToClipBoard(element) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($(element).text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+  }
