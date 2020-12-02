@@ -4,6 +4,7 @@ require ('database.php');
 session_start();
 
 $classid = $_GET['class_id'];
+$commentID = $_GET['c_id'];
 
 if(isset($_POST['post_comment_btn'])){
     $comment = mysqli_real_escape_string($db, $_POST['post_comment_input']);
@@ -25,10 +26,10 @@ if(isset($_POST['post_comment_btn'])){
     }
 
 
-/*
+
 if(isset($_POST['post_comment_delete_btn'])){
     $post_id = $_GET['post_id'];
-    $stmt_dlt = $db->prepare("DELETE FROM comment WHERE c_id = $c_id");
+    $stmt_dlt = $db->prepare("DELETE FROM comment WHERE c_id = '$commentID'");
 
     //check if database error
     if  (($stmt_dlt->execute()) === TRUE){
@@ -41,6 +42,7 @@ if(isset($_POST['post_comment_delete_btn'])){
         $db->close();
 }
 
+/*
 if(isset($_POST['post_comment_update_btn'])){
     $post_id = $_GET['post_id'];
 

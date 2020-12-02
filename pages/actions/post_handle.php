@@ -13,10 +13,11 @@
             $fileTotal = count($_FILES['file_input']['name']);
 
             $postContent = mysqli_real_escape_string($db, $_POST["comments_textarea"]);
+
             //Insert query
-            $stmt_crt = $db->prepare("INSERT INTO post(user_id,content,class_id) VALUES(?,?,?)");
+            $stmt_crt = $db->prepare("INSERT INTO post(user_id,content,class_id,file_dir) VALUES(?,?,?,?)");
             $userID = $_SESSION['uid'];
-            $stmt_crt->bind_param("sss",$userID,$postContent,$classid);
+            $stmt_crt->bind_param("ssss",$userID,$postContent,$classid,$fileName);
 
             //check if database error
             if  (($stmt_crt->execute()) === TRUE){
@@ -51,7 +52,7 @@
                     echo $uploadFile->error;
                 }
                 } else {   
-                echo $stmt_crt->error;  
+                echo $stmt_crt->error;
                 }
                 $stmt_crt->close();
                 $db->close();

@@ -191,6 +191,7 @@ require("Initials.php");
         <div class="comment-content">
             <form action="./actions/post_handle.php?class_id=<?php echo $rowsClass['class_id']; ?>" method="post" enctype="multipart/form-data">
                 <textarea placeholder="Say something to share with your class...." id="comments_textarea" name="comments_textarea" oninput='this.style.height = "";this.style.height = this.scrollHeight + 3 +  "px"' cols="138"></textarea>
+                <input id="file_btn_comment" type="file" name="file_input" multiple="multiple" onchange="uploadOnChange()">
                 <input id="post_btn_create" name="post_btn_create" value="Post" type="submit">
                 <input id="file_btn_comment" type="file" name="file_input[]" multiple="multiple" onchange="uploadOnChange()">
             </form>
@@ -200,9 +201,10 @@ require("Initials.php");
     </div>
 
 
-    <!--====== END POST CREATE ========================================-->
+    <!--============================================= END POST CREATE ========================================-->
 
-    <!--====== POST ========================================-->
+    <!--=========================================== POST SECTION =============================================-->
+    <!--======================================================================================================-->
     <?php
     // SQL Select post query
                 while($post_result = mysqli_fetch_assoc($post_exec)){
@@ -219,7 +221,7 @@ require("Initials.php");
                     $initials = new Initials();
                     $generateName = $initials->generate($_SESSION['fullname']);
                     //SQL get comment query
-                    $queryComment = "SELECT * FROM comment,users WHERE comment.user_id= users.user_id AND post_id='$postID'";
+                    $queryComment = "SELECT * FROM comment,users WHERE comment.user_id = users.user_id AND post_id='$postID'";
                     $comment_exec = mysqli_query($db,$queryComment);
 
                     ?>
@@ -227,11 +229,14 @@ require("Initials.php");
                     <!-- ================================== Modal FOR DELETE POST PASSING ID ================================== -->
                     <!-- ================================== PASS ID THROUGH MODAL ======================================= -->
 
-                        <?php include ("./function/post_modal.php");?>
+                        <?php
+                        if($_SESSION['role'] == 'tea' || $_SESSION['role'] == 'adm'){
+                            include ("./function/post_modal.php");
+                        }
+                        ?>
 
                     <!--=================================================================================================================-->
                     <!--=================================================================================================================-->
-
 
 
                     <div class='post_user_name'> <?php echo $user_result['fullName'] ?>
@@ -250,30 +255,59 @@ require("Initials.php");
                     <!--<div class='circle circle-avt-post'><div class='initials'></div></div>-->
                     <img class="circle circle-avt-post" src='css/images/avatar/avatar.jpg' alt=''>
                 </div>
-                
                 <div class="post_content">
-                    <?php  
+                        <!-- GET POST CONTENT -->
+                    <?php
                         echo $post_result['content'];
                     ?>
-                    <br>
-                <td><a href="./actions/file_download.php?file_id=<?php echo $post_result['post_id']; ?>"><?php echo $post_result['file_dir']; ?></a></td>
-                </div>
-      
-            <hr>
-                <!-- Chứa họ tên, avatar, nội dung comment ( không up file được ) của người comment bài post trên -->
-                <div class="post_expand_comments">Click to see more comments....
-            </div>
+                        <!-- FILE IN POST -->
+                    <?php
 
+                        // Get file from query
+                        include ("./function/file_query.php");
+                        // Check if exist file
+                    ?>
+                    <div class="row">
+                        <?php if(!empty($fileRow['file_dir'])){ ?>
+                        <div class="col-sm-100">
+                            <div class="card">
+                                <div class="card-body">
+                                    <a href="./actions/file_download.php?file_name=<?php echo $post_result['file_dir']; ?>"><?php echo $post_result['file_dir']; ?></a>
+                                </div>
+                            </div>
+                        </div>
+                        <?php } ?>
+                    </div>
+                </div>
+            <hr>
+            <!--=========================================== END POST SECTION =========================================-->
+            <!--======================================================================================================-->
+
+
+
+            <!--======================================== COMMENTS SECTION ============================================-->
+            <!--======================================================================================================-->
 
             <?php
-            
             while($comment_result = mysqli_fetch_assoc($comment_exec)){
-            
+                $commentID = $comment_result['c_id'];
                 //Lay noi dung comment dua vao post_id tuong ung
-            
-            
             ?>
-            <div class="post_comments">
+
+                <!-- ================================== Modal FOR DELETE COMMENTS PASSING ID ================================== -->
+                <!-- ================================== PASS ID THROUGH MODAL ======================================= -->
+
+
+                <?php
+                if($_SESSION['role'] == 'tea' || $_SESSION['role'] == 'adm'){
+                    include ("./function/comments_modal.php");
+                }
+                ?>
+
+                <!--=================================================================================================================-->
+                <!--=================================================================================================================-->
+
+                <div class="post_comments">
                 <div class="nav-link" aria-haspopup="true" aria-expanded="false">
                     <?php
                     $initials = new Initials();
@@ -294,19 +328,21 @@ require("Initials.php");
                     <div class='circle circle-avt-comments avt_in_post'><div class='initials name_in_post'></div></div>
 
                         <!-- Nội dung comment ở đây ! -->
-                    <div class='post_comments_users'><?php echo $comment_result['comment'] ?></div>
-                    
+                    <div class='post_comments_users'><?php echo $comment_result['comment'].$commentID ?></div>
                 </div>
             </div>
 
             <?php
             }
             ?>
-            <!--======END POST COMMENTS ========================================-->
+            <!--======================================== END COMMENTS SECTION ========================================-->
+            <!--======================================================================================================-->
 
             <hr>
 
-            <!--====== CREATE POST COMMENTS ========================================-->
+            <!--======================================== CREATE COMMENTS SECTION =====================================-->
+            <!--======================================================================================================-->
+
                 <!-- Chứa input comment của người đang log hiện tại -->
             <div class="nav-link p-l-26" aria-haspopup="true" aria-expanded="false">
                 <?php
@@ -314,24 +350,25 @@ require("Initials.php");
                 $generateName = $initials->generate($_SESSION['fullname']);?>
                 <div class='circle circle-avt-comments avt_in_post'><div class='initials name_in_post'><?php echo $generateName?></div></div>
                 <form action='./actions/post_comment_handle.php?post_id=<?php echo $postID?>&class_id=<?php echo $classid?>' method='post' class='form_post_comments'>
-                    <div class='input_comments' name='post_comment_input' contenteditable='true' data-text='Say something here....'></div>
+<!--                    <div class='input_comments' contenteditable='true'>-->
+<!--                        <input type="text" name="post_comment_input" hidden>-->
+<!--                    </div>-->
+                    <textarea rows="1" class='input_comments' oninput="autoHeight(this)" id="textarea_comments" name="post_comment_input"></textarea>
                     <button class='post_comments_btn' name='post_comment_btn' type='submit'><i class='fa fa-paper-plane' aria-hidden="true"></i></button>
                 </form>
 
                 
             </div>
 
-            <!--====== CREAT POST COMMENTS ========================================-->
+            <!--======================================== END COMMENTS SECTION ========================================-->
+            <!--======================================================================================================-->
            
-        </div><!--END OF CLASS POST -->
-
-
-
+        </div>
+        <!--END OF CLASS POST -->
     </div>
     <?php
             }
             ?>
-
     <!--====== END POST ========================================-->
     <br><br><br>
 
