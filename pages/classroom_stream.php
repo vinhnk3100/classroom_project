@@ -207,6 +207,7 @@ require("Initials.php");
     <?php
     // SQL Select post query
                 while($post_result = mysqli_fetch_assoc($post_exec)){
+
         ?>
     <div class="classuis" id="<?php echo $post_result['post_id'] ?>">
         <div class="post" >
@@ -305,7 +306,6 @@ require("Initials.php");
                 ?>
 
                 <!--=================================================================================================================-->
-                <!--=================================================================================================================-->
 
                 <div class="post_comments">
                 <div class="nav-link" aria-haspopup="true" aria-expanded="false">
@@ -328,7 +328,7 @@ require("Initials.php");
                     <div class='circle circle-avt-comments avt_in_post'><div class='initials name_in_post'></div></div>
 
                         <!-- Nội dung comment ở đây ! -->
-                    <div class='post_comments_users'><?php echo $comment_result['comment'].$commentID ?></div>
+                    <div class='post_comments_users'><?php echo $comment_result['comment']?></div>
                 </div>
             </div>
 

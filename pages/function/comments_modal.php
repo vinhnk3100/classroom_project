@@ -1,6 +1,7 @@
 <!-- THIS FILE CONTAINING ALL POST MODAL -->
 
 <?php
+
 $classid = $_GET['class_id'];
 ?>
 <!-- // ================================= DROPDOWN ACTION IN POST ============================================= // -->
